@@ -37,18 +37,31 @@ All colors MUST be HSL.
     --ring: 210 100% 20%;
 
     /* Custom ROS Global tokens */
-    --corporate-blue: 210 100% 20%;
-    --corporate-blue-light: 210 60% 45%;
-    --corporate-gray: 210 8% 46%;
-    --corporate-gray-light: 210 20% 96%;
+    --ros-red: 0 76% 54%;         /* #eb232b */
+    --ros-blue: 225 54% 35%;      /* #2c4c8c */
+    --ros-blue-light: 225 54% 45%;
+    --ros-gray: 220 13% 91%;
+    --ros-gray-dark: 220 13% 18%;
+    
+    /* Updated primary colors to use ROS branding */
+    --primary: 0 76% 54%;         /* ROS Red */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 225 54% 35%;     /* ROS Blue */
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Legacy corporate colors for backward compatibility */
+    --corporate-blue: 225 54% 35%;
+    --corporate-blue-light: 225 54% 45%;
+    --corporate-gray: 220 13% 18%;
+    --corporate-gray-light: 220 13% 91%;
     
     /* Gradients */
-    --gradient-corporate: linear-gradient(135deg, hsl(var(--corporate-blue)), hsl(var(--corporate-blue-light)));
-    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--corporate-gray-light)));
+    --gradient-corporate: linear-gradient(135deg, hsl(var(--ros-blue)), hsl(var(--ros-red)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--ros-gray)));
     
     /* Shadows */
-    --shadow-corporate: 0 10px 30px -10px hsl(var(--corporate-blue) / 0.1);
-    --shadow-card: 0 4px 20px -4px hsl(var(--corporate-blue) / 0.08);
+    --shadow-corporate: 0 10px 30px -10px hsl(var(--ros-blue) / 0.15);
+    --shadow-card: 0 4px 20px -4px hsl(var(--ros-blue) / 0.1);
 
     --radius: 0.5rem;
 
@@ -98,11 +111,24 @@ All colors MUST be HSL.
     --input: 210 12% 16%;
     --ring: 210 100% 60%;
 
+    /* Dark mode ROS tokens */
+    --ros-red: 0 76% 60%;
+    --ros-blue: 225 54% 45%;
+    --ros-blue-light: 225 54% 55%;
+    --ros-gray: 220 13% 91%;
+    --ros-gray-dark: 220 13% 12%;
+    
+    /* Updated primary colors for dark mode */
+    --primary: 0 76% 60%;
+    --primary-foreground: 220 13% 12%;
+    --secondary: 225 54% 45%;
+    --secondary-foreground: 0 0% 100%;
+    
     /* Dark mode corporate tokens */
-    --corporate-blue: 210 100% 60%;
-    --corporate-blue-light: 210 60% 55%;
-    --corporate-gray: 210 8% 65%;
-    --corporate-gray-light: 210 12% 16%;
+    --corporate-blue: 225 54% 45%;
+    --corporate-blue-light: 225 54% 55%;
+    --corporate-gray: 220 13% 91%;
+    --corporate-gray-light: 220 13% 12%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;

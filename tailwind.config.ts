@@ -52,6 +52,13 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				ros: {
+					red: 'hsl(var(--ros-red))',
+					blue: 'hsl(var(--ros-blue))',
+					'blue-light': 'hsl(var(--ros-blue-light))',
+					gray: 'hsl(var(--ros-gray))',
+					'gray-dark': 'hsl(var(--ros-gray-dark))'
+				},
 				corporate: {
 					blue: 'hsl(var(--corporate-blue))',
 					'blue-light': 'hsl(var(--corporate-blue-light))',

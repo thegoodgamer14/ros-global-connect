@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "./button";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import rosLogo from "@/assets/ros-global-logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,15 +15,14 @@ const Navigation = () => {
     { href: "/hvac", label: "HVAC" },
     { href: "/datacenter", label: "Data Center" },
     { href: "/rhamnolipids", label: "Rhamnolipids" },
-    { href: "/contact", label: "Contact" },
   ];
 
   return (
     <nav className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="font-bold text-2xl text-primary">ROS Global</div>
+          <Link to="/" className="flex items-center space-x-3">
+            <img src={rosLogo} alt="ROS Global Solutions" className="h-12 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -41,9 +41,11 @@ const Navigation = () => {
                 {item.label}
               </Link>
             ))}
-            <Button variant="corporate" size="sm">
-              Request Materials
-            </Button>
+            <Link to="/contact">
+              <Button variant="default" size="sm">
+                Contact Us
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -74,9 +76,11 @@ const Navigation = () => {
                   {item.label}
                 </Link>
               ))}
-              <Button variant="corporate" size="sm" className="w-fit">
-                Request Materials
-              </Button>
+              <Link to="/contact">
+                <Button variant="default" size="sm" className="w-fit">
+                  Contact Us
+                </Button>
+              </Link>
             </div>
           </div>
         )}
