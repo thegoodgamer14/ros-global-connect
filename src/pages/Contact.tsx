@@ -1,10 +1,12 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import ContactForm from "@/components/ui/contact-form";
+import SocialMediaSidebar from "@/components/ui/social-media-sidebar";
 import { MapPin, Mail, Phone, Clock, Linkedin } from "lucide-react";
 
 const Contact = () => {
   return (
     <div className="min-h-screen">
+      <SocialMediaSidebar />
       {/* Contact Information & Form */}
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4">

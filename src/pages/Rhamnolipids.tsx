@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import ContactForm from "@/components/ui/contact-form";
+import SocialMediaSidebar from "@/components/ui/social-media-sidebar";
 import { Leaf, Users, Globe, Beaker, Factory, Recycle } from "lucide-react";
 import heroImage from "@/assets/hero-rhamnolipids.jpg";
 
@@ -53,6 +54,7 @@ const Rhamnolipids = () => {
 
   return (
     <div className="min-h-screen">
+      <SocialMediaSidebar />
       {/* Hero Section */}
       <section 
         className="py-16 lg:py-24 relative bg-cover bg-center bg-no-repeat"
@@ -348,6 +350,7 @@ const Rhamnolipids = () => {
               <ContactForm 
                 title="Request Rhamnolipids Information"
                 description="Let us know about your surfactant requirements and we'll connect you with the right solutions."
+                defaultProductLine="rhamnolipids"
               />
             </div>
           </div>

@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import ContactForm from "@/components/ui/contact-form";
+import SocialMediaSidebar from "@/components/ui/social-media-sidebar";
 import { Drill, Zap, Gauge, Wrench } from "lucide-react";
 import heroImage from "@/assets/hero-oil-gas.jpg";
 
@@ -35,6 +36,7 @@ const OilGas = () => {
 
   return (
     <div className="min-h-screen">
+      <SocialMediaSidebar />
       {/* Hero Section */}
       <section 
         className="py-16 lg:py-24 relative bg-cover bg-center bg-no-repeat"
@@ -207,6 +209,7 @@ const OilGas = () => {
               <ContactForm 
                 title="Request Oil & Gas Quote"
                 description="Tell us about your project requirements and we'll provide a detailed quote."
+                defaultProductLine="oil-gas"
               />
             </div>
           </div>

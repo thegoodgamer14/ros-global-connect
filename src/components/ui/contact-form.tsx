@@ -11,18 +11,20 @@ interface ContactFormProps {
   title?: string;
   description?: string;
   compact?: boolean;
+  defaultProductLine?: string;
 }
 
 const ContactForm = ({ 
   title = "Get In Touch", 
   description = "Submit your inquiry and we'll get back to you promptly.",
-  compact = false 
+  compact = false,
+  defaultProductLine = ""
 }: ContactFormProps) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    productLine: "",
+    productLine: defaultProductLine,
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -42,7 +44,7 @@ const ContactForm = ({
         name: "",
         email: "",
         phone: "",
-        productLine: "",
+        productLine: defaultProductLine,
         message: "",
       });
       setIsSubmitting(false);
@@ -94,7 +96,7 @@ const ContactForm = ({
             </div>
             <div className="space-y-2">
               <Label htmlFor="productLine">Product Line</Label>
-              <Select onValueChange={(value) => handleChange("productLine", value)}>
+              <Select onValueChange={(value) => handleChange("productLine", value)} value={formData.productLine}>
                 <SelectTrigger>
                   <SelectValue placeholder="Select a product line" />
                 </SelectTrigger>

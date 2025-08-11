@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import ContactForm from "@/components/ui/contact-form";
+import SocialMediaSidebar from "@/components/ui/social-media-sidebar";
 import { Server, Shield, Snowflake, Zap, Filter, Wind } from "lucide-react";
 import heroImage from "@/assets/hero-datacenter.jpg";
 
@@ -53,6 +54,7 @@ const DataCenter = () => {
 
   return (
     <div className="min-h-screen">
+      <SocialMediaSidebar />
       {/* Hero Section */}
       <section 
         className="py-16 lg:py-24 relative bg-cover bg-center bg-no-repeat"
@@ -297,6 +299,7 @@ const DataCenter = () => {
               <ContactForm 
                 title="Request Data Center Assessment"
                 description="Contact us for a comprehensive evaluation of your data center's filtration needs."
+                defaultProductLine="datacenter"
               />
             </div>
           </div>

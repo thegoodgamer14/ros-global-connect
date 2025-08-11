@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import ContactForm from "@/components/ui/contact-form";
 import ProductModal from "@/components/ui/product-modal";
+import SocialMediaSidebar from "@/components/ui/social-media-sidebar";
 import { Wind, Droplets, Filter, Thermometer, Zap, Wrench } from "lucide-react";
 import heroImage from "@/assets/hero-hvac.jpg";
 
@@ -194,6 +195,7 @@ const HVAC = () => {
 
   return (
     <div className="min-h-screen">
+      <SocialMediaSidebar />
       {/* Hero Section */}
       <section 
         className="py-16 lg:py-24 relative bg-cover bg-center bg-no-repeat"
@@ -428,6 +430,7 @@ const HVAC = () => {
               <ContactForm 
                 title="Request HVAC Quote"
                 description="Tell us about your climate control requirements and we'll recommend the best solution."
+                defaultProductLine="hvac"
               />
             </div>
           </div>
