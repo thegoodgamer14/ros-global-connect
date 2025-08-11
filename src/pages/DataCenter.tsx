@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import ContactForm from "@/components/ui/contact-form";
 import { Server, Shield, Snowflake, Zap, Filter, Wind } from "lucide-react";
+import heroImage from "@/assets/hero-datacenter.jpg";
 
 const DataCenter = () => {
   const solutions = [
@@ -53,16 +54,20 @@ const DataCenter = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-16 lg:py-24 bg-[var(--gradient-corporate)]">
-        <div className="container mx-auto px-4">
+      <section 
+        className="py-16 lg:py-24 relative bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroImage})` }}
+      >
+        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <Badge variant="outline" className="mb-4 border-white text-white">
+            <Badge variant="outline" className="mb-4 border-white text-white bg-white/10 backdrop-blur-sm">
               Data Center Solutions
             </Badge>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               Air & Chemical Filtration for Data Centers
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-100">
+            <p className="text-xl md:text-2xl mb-8 text-white/90">
               Specialized filtration systems designed to protect critical data center 
               infrastructure from airborne contaminants and ensure optimal performance.
             </p>

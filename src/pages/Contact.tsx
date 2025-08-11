@@ -5,21 +5,6 @@ import { MapPin, Mail, Phone, Clock, Linkedin } from "lucide-react";
 const Contact = () => {
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="py-16 lg:py-24 bg-[var(--gradient-corporate)]">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Contact ROS Global
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-100">
-              Get in touch with our team of specialists to discuss your industrial 
-              supply and consulting needs. We're here to help you find the right solutions.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Contact Information & Form */}
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4">
