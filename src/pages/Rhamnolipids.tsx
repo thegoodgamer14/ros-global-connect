@@ -60,7 +60,7 @@ const Rhamnolipids = () => {
         className="py-16 lg:py-24 relative bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-black/50"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center text-white">
             <Badge variant="outline" className="mb-4 border-white text-white bg-white/10 backdrop-blur-sm">
