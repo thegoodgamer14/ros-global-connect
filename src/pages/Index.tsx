@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import SocialMediaSidebar from "@/components/ui/social-media-sidebar";
+import CustomerLogos from "@/components/ui/customer-logos";
 import { ArrowRight, Globe, Shield, Users, Zap } from "lucide-react";
 import heroImage from "@/assets/hero-corporate.jpg";
 import oilGasIcon from "@/assets/oil-gas-icon.jpg";
@@ -107,6 +108,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Customer Logos */}
+      <CustomerLogos />
 
       {/* Company Introduction */}
       <section className="py-16 lg:py-24 bg-secondary/50">
