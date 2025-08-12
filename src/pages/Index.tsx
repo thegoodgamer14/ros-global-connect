@@ -85,7 +85,7 @@ const Index = () => {
               </span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto">
-              ROS Global delivers specialized consulting and product supply solutions 
+              ROS Global Solutions delivers specialized consulting and product supply solutions 
               across oil & gas, HVAC, data centers, and biotechnology sectors worldwide.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -113,13 +113,13 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <Badge variant="outline" className="mb-4 text-corporate-blue border-corporate-blue">
-              About ROS Global
+              About ROS Global Solutions
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-corporate-blue">
-              Your Trusted Partner in Industrial Solutions
+              Your Trusted Partner in Industrial Engineering Solutions
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              With decades of combined experience, ROS Global specializes in providing 
+              With decades of experience, ROS Global Solutions specializes in providing 
               mission-critical products and consulting services to the world's most demanding 
               industries. From oil & gas operations to cutting-edge data centers, we deliver 
               the reliability and expertise your business demands.
@@ -188,7 +188,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-corporate-blue">
-              Why Choose ROS Global
+              Why Choose ROS Global Solutions
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               We combine global capabilities with local expertise to deliver 
@@ -222,7 +222,7 @@ const Index = () => {
           </h2>
           <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
             Contact our team today to discuss your requirements and discover 
-            how ROS Global can support your business objectives.
+            how ROS Global Solutions can support your business objectives.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact">
@@ -239,9 +239,9 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-2xl font-bold text-white mb-4">ROS Global</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">ROS Global Solutions</h3>
               <p className="text-gray-400 mb-4">
-                Global consulting and product supply solutions for critical industries.
+                Total engineering solutions provider.
               </p>
             </div>
             <div>
