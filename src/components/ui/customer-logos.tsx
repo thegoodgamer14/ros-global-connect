@@ -6,6 +6,10 @@ import healthyhome from "@/assets/customer-logos/healthyhome-logo.webp";
 import kec from "@/assets/customer-logos/KEC_International_logo.webp";
 import npsc from "@/assets/customer-logos/npsc-logo.webp";
 import petronas from "@/assets/customer-logos/petronas-logo.webp";
+import intercol from "@/assets/customer-logos/intercol-logo.webp";
+import mhd from "@/assets/customer-logos/mhd-logo.webp";
+import natarchive from "@/assets/customer-logos/nat-archive-logo.webp";
+import dpoc from "@/assets/customer-logos/dpoc-logo.webp";
 
 const CustomerLogos = () => {
   const logos = [
@@ -17,36 +21,41 @@ const CustomerLogos = () => {
     { src: kec, alt: "KEC International" },
     { src: npsc, alt: "NPSC" },
     { src: petronas, alt: "Petronas" },
+    { src: intercol, alt: "Intercol" },
+    { src: mhd, alt: "MHD" },
+    { src: natarchive, alt: "National Archive" },
+    { src: dpoc, alt: "DPOC" },
   ];
 
-  // Duplicate logos for seamless infinite scroll
-  const duplicatedLogos = [...logos, ...logos];
-
   return (
-    <section className="py-12 bg-secondary/20 overflow-hidden">
+    <section className="py-12 bg-secondary/20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
-          <h2 className="text-2xl md:text-3xl font-semibold text-corporate-blue mb-2">
+          <h2 className="text-2xl md:text-3xl font-semibold text-corporate-blue mb-4">
             Ensuring customer satisfaction for 15+ years
           </h2>
         </div>
         
-        <div className="relative">
-          <div className="flex animate-scroll">
-            {duplicatedLogos.map((logo, index) => (
+        <div className="flex flex-wrap justify-center items-center gap-8 max-w-6xl mx-auto">
+          {logos.map((logo, index) => {
+            const isDPOC = logo.src === dpoc;
+            return (
               <div
                 key={index}
-                className="flex-shrink-0 mx-8 flex items-center justify-center"
-                style={{ width: "150px", height: "80px" }}
+                className="flex items-center justify-center"
+                style={{ 
+                  width: isDPOC ? "300px" : "200px", 
+                  height: isDPOC ? "160px" : "106.67px" 
+                }}
               >
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                  className="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-300"
                 />
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </div>
     </section>
