@@ -178,9 +178,6 @@ const DataCenter = () => {
                       </Badge>
                     ))}
                   </div>
-                  <Button variant="outline" size="sm" className="w-full">
-                    View Details
-                  </Button>
                 </CardContent>
               </Card>
             ))}
