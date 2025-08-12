@@ -412,7 +412,7 @@ const Rhamnolipids = () => {
               <ContactForm 
                 title="Request Rhamnolipids Information"
                 description="Let us know about your surfactant requirements and we'll connect you with the right solutions."
-                defaultProductLine="rhamnolipids"
+                defaultQueryType="rhamnolipids"
               />
             </div>
           </div>

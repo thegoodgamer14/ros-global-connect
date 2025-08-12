@@ -11,20 +11,20 @@ interface ContactFormProps {
   title?: string;
   description?: string;
   compact?: boolean;
-  defaultProductLine?: string;
+  defaultQueryType?: string;
 }
 
 const ContactForm = ({ 
   title = "Get In Touch", 
   description = "Submit your inquiry and we'll get back to you promptly.",
   compact = false,
-  defaultProductLine = ""
+  defaultQueryType = ""
 }: ContactFormProps) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    productLine: defaultProductLine,
+    queryType: defaultQueryType,
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -44,7 +44,7 @@ const ContactForm = ({
         name: "",
         email: "",
         phone: "",
-        productLine: defaultProductLine,
+        queryType: defaultQueryType,
         message: "",
       });
       setIsSubmitting(false);
@@ -95,10 +95,10 @@ const ContactForm = ({
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="productLine">Product Line</Label>
-              <Select onValueChange={(value) => handleChange("productLine", value)} value={formData.productLine}>
+              <Label htmlFor="queryType">Query Type *</Label>
+              <Select onValueChange={(value) => handleChange("queryType", value)} value={formData.queryType} required>
                 <SelectTrigger>
-                  <SelectValue placeholder="Select a product line" />
+                  <SelectValue placeholder="Select query type" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="oil-gas">Oil & Gas</SelectItem>
@@ -112,14 +112,13 @@ const ContactForm = ({
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="message">Message *</Label>
+            <Label htmlFor="message">Message</Label>
             <Textarea
               id="message"
               value={formData.message}
               onChange={(e) => handleChange("message", e.target.value)}
               placeholder="Tell us about your requirements..."
               rows={4}
-              required
             />
           </div>
 

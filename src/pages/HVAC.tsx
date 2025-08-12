@@ -434,7 +434,7 @@ const HVAC = () => {
               <ContactForm 
                 title="Request HVAC Quote"
                 description="Tell us about your climate control requirements and we'll recommend the best solution."
-                defaultProductLine="hvac"
+                defaultQueryType="hvac"
               />
             </div>
           </div>

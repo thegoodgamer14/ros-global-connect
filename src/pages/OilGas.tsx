@@ -271,7 +271,7 @@ const OilGas = () => {
               <ContactForm 
                 title="Request Oil & Gas Quote"
                 description="Tell us about your project requirements and we'll provide a detailed quote."
-                defaultProductLine="oil-gas"
+                defaultQueryType="oil-gas"
               />
             </div>
           </div>
