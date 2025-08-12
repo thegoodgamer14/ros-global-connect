@@ -218,7 +218,7 @@ const HVAC = () => {
             <Button 
               variant="cta" 
               size="lg" 
-              onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'end' })}
             >
               Request Product Catalog
             </Button>

@@ -153,7 +153,7 @@ const ProductModal = ({ isOpen, onClose, product }: ProductModalProps) => {
             <Button 
               variant="cta" 
               size="lg" 
-              onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'end' })}
             >
               Request Quote for {product.title}
             </Button>

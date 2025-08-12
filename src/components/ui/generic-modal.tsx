@@ -160,7 +160,7 @@ const GenericModal = ({ isOpen, onClose, data }: GenericModalProps) => {
             <Button 
               variant="cta" 
               size="lg" 
-              onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'end' })}
             >
               {data.ctaText || `Request Quote for ${data.title}`}
             </Button>
