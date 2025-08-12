@@ -289,7 +289,7 @@ const HVAC = () => {
                   </div>
                   <div className="pt-2">
                     <Button variant="outline" size="sm" className="w-full">
-                      View Full Details
+                      View Details
                     </Button>
                   </div>
                 </CardContent>
