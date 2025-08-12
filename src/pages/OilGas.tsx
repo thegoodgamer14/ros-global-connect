@@ -1,12 +1,63 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import ContactForm from "@/components/ui/contact-form";
 import SocialMediaSidebar from "@/components/ui/social-media-sidebar";
+import GenericModal, { GenericModalData } from "@/components/ui/generic-modal";
 import { Drill, Zap, Gauge, Wrench } from "lucide-react";
 import heroImage from "@/assets/hero-oil-gas.jpg";
 
 const OilGas = () => {
+  const [selectedService, setSelectedService] = useState<GenericModalData | null>(null);
+
+  const serviceDetails: { [key: string]: GenericModalData } = {
+    "Field Surface Facility - Electrical": {
+      title: "Field Surface Facility - Electrical",
+      overview: "Complete electrical systems and components for oil & gas field operations including power distribution, control panels, and safety systems.",
+      detailedDescription: "Our electrical systems for oil & gas field surface facilities provide comprehensive power distribution, control, and safety solutions designed for the harsh environments of upstream operations. These systems meet industry standards for hazardous locations and ensure reliable operation in critical applications.",
+      workingPrinciple: "Electrical systems are designed with redundancy and fail-safe operation in mind. Power distribution systems use weatherproof enclosures rated for hazardous locations, while control systems employ industrial-grade components with remote monitoring capabilities for safe and efficient operation.",
+      features: ["Hazardous Location Rated", "Weatherproof Enclosures", "Remote Monitoring", "Redundant Systems", "Emergency Shutdown", "NEMA 4X Rated"],
+      specifications: ["Voltage Range: 120V-4160V", "Temperature Range: -40°F to 140°F", "Enclosure Rating: NEMA 4X/7/9", "Hazardous Area: Class I, Div 1&2", "Certification: UL, CSA, ATEX"],
+      applications: ["Well Sites", "Production Facilities", "Processing Plants", "Pump Stations", "Compressor Stations"],
+      benefits: ["Enhanced safety", "Regulatory compliance", "Reduced downtime", "Remote operation", "Weather resistant", "Long service life"],
+      ctaText: "Request Electrical Quote"
+    },
+    "Field Surface Facility - Mechanical": {
+      title: "Field Surface Facility - Mechanical",
+      overview: "Mechanical equipment and systems for surface facility operations including pumps, compressors, and processing equipment.",
+      detailedDescription: "Mechanical systems for oil & gas surface facilities encompass all rotating equipment, pressure vessels, and process systems required for production operations. Our solutions are engineered for continuous operation in demanding environments with minimal maintenance requirements.",
+      workingPrinciple: "Mechanical systems are designed for optimal efficiency and reliability using proven technologies. Pumps and compressors utilize advanced materials and designs for extended service life, while processing equipment incorporates automated controls for safe and efficient operation.",
+      features: ["Continuous Duty Rating", "Corrosion Resistant Materials", "Automated Controls", "Vibration Monitoring", "Easy Maintenance", "API Standards"],
+      specifications: ["Operating Pressure: 150-1500 PSI", "Flow Rates: 10-5000 GPM", "Materials: Stainless Steel, Hastelloy", "Standards: API 610, 674", "Temperature: -20°F to 400°F"],
+      applications: ["Oil Production", "Gas Processing", "Water Injection", "Chemical Injection", "Separation Systems"],
+      benefits: ["High reliability", "Extended service life", "Reduced maintenance", "Energy efficient", "API compliant", "Cost effective"],
+      ctaText: "Get Mechanical Quote"
+    },
+    "Field Surface Facility - Instrumentation": {
+      title: "Field Surface Facility - Instrumentation",
+      overview: "Precision instrumentation and monitoring systems for accurate measurement and control of field operations.",
+      detailedDescription: "Instrumentation systems provide critical measurement and control capabilities for oil & gas operations. Our instruments are selected for accuracy, reliability, and compatibility with field environments, ensuring precise monitoring and control of process variables.",
+      workingPrinciple: "Instrumentation systems use various measurement principles including differential pressure, electromagnetic, and ultrasonic technologies. Smart transmitters provide digital communication and diagnostics, while control systems ensure safe and efficient operation through automated responses to process conditions.",
+      features: ["Smart Transmitters", "Digital Communication", "Self-Diagnostics", "Hazardous Area Rated", "SIL Rated Safety", "Wireless Options"],
+      specifications: ["Accuracy: ±0.1% of span", "Operating Range: -40°F to 185°F", "Communication: HART, Foundation Fieldbus", "Safety Rating: SIL 2/3", "Explosion Proof: Class I Div 1"],
+      applications: ["Flow Measurement", "Pressure Monitoring", "Temperature Control", "Level Detection", "Gas Analysis"],
+      benefits: ["High accuracy", "Predictive maintenance", "Remote monitoring", "Safety compliance", "Reduced calibration", "Long-term stability"],
+      ctaText: "Request Instrumentation Quote"
+    },
+    "Drilling - Rig Spaces & Mud Pumps": {
+      title: "Drilling - Rig Spaces & Mud Pumps",
+      overview: "Specialized drilling equipment and mud pump systems for efficient and safe drilling operations worldwide.",
+      detailedDescription: "Drilling equipment and mud pump systems are critical components for successful drilling operations. Our solutions include high-pressure mud pumps, rig floor equipment, and support systems designed for the most demanding drilling applications worldwide.",
+      workingPrinciple: "Mud pump systems use reciprocating pumps to circulate drilling fluid through the drill string and annulus. The drilling fluid removes cuttings, cools the bit, maintains wellbore stability, and controls formation pressures through hydrostatic pressure.",
+      features: ["High Pressure Rating", "Continuous Operation", "Remote Control", "Automated Systems", "Safety Interlocks", "Modular Design"],
+      specifications: ["Operating Pressure: 3000-7500 PSI", "Flow Rate: 350-1200 GPM", "Power: 1000-3000 HP", "Liner Size: 5-7.5 inches", "Stroke Rate: 40-120 SPM"],
+      applications: ["Onshore Drilling", "Offshore Operations", "Directional Drilling", "Extended Reach", "HPHT Wells"],
+      benefits: ["Enhanced drilling performance", "Improved safety", "Reduced NPT", "Higher penetration rates", "Better hole cleaning", "Extended equipment life"],
+      ctaText: "Get Drilling Equipment Quote"
+    }
+  };
+
   const services = [
     {
       icon: Zap,
@@ -81,7 +132,11 @@ const OilGas = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {services.map((service, index) => (
-              <Card key={index} className="h-full shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-corporate)] transition-all duration-300">
+              <Card 
+                key={index} 
+                className="h-full shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-corporate)] transition-all duration-300 cursor-pointer hover:scale-105"
+                onClick={() => setSelectedService(serviceDetails[service.title])}
+              >
                 <CardHeader>
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 bg-corporate-blue rounded-lg flex items-center justify-center mr-4">
@@ -98,13 +153,16 @@ const OilGas = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-2 gap-2">
+                  <div className="grid grid-cols-2 gap-2 mb-4">
                     {service.features.map((feature, idx) => (
                       <Badge key={idx} variant="secondary" className="text-xs">
                         {feature}
                       </Badge>
                     ))}
                   </div>
+                  <Button variant="outline" size="sm" className="w-full">
+                    View Details
+                  </Button>
                 </CardContent>
               </Card>
             ))}
@@ -219,6 +277,15 @@ const OilGas = () => {
           </div>
         </div>
       </section>
+
+      {/* Modal */}
+      {selectedService && (
+        <GenericModal
+          isOpen={!!selectedService}
+          onClose={() => setSelectedService(null)}
+          data={selectedService}
+        />
+      )}
     </div>
   );
 };

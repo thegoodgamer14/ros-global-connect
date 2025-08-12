@@ -1,12 +1,63 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import ContactForm from "@/components/ui/contact-form";
 import SocialMediaSidebar from "@/components/ui/social-media-sidebar";
+import GenericModal, { GenericModalData } from "@/components/ui/generic-modal";
 import { Server, Shield, Snowflake, Zap, Filter, Wind } from "lucide-react";
 import heroImage from "@/assets/hero-datacenter.jpg";
 
 const DataCenter = () => {
+  const [selectedSolution, setSelectedSolution] = useState<GenericModalData | null>(null);
+
+  const solutionDetails: { [key: string]: GenericModalData } = {
+    "Air Filtration Systems": {
+      title: "Air Filtration Systems",
+      overview: "Advanced HEPA and ULPA filtration systems designed specifically for data center environments to remove particles and contaminants.",
+      detailedDescription: "Our data center air filtration systems provide comprehensive protection against particulate contamination that can damage sensitive electronic equipment. These systems feature advanced HEPA and ULPA filters with high efficiency ratings, ensuring removal of particles down to 0.3 microns with 99.97% efficiency.",
+      workingPrinciple: "The filtration system works by drawing contaminated air through a series of progressively finer filters. Pre-filters capture larger particles, while HEPA/ULPA filters remove microscopic contaminants. The filtered air is then distributed throughout the data center maintaining positive pressure to prevent contamination infiltration.",
+      features: ["HEPA/ULPA Grade Efficiency", "Low Pressure Drop Design", "High Dust Holding Capacity", "Long Service Life", "Smart Monitoring", "Energy Efficient"],
+      specifications: ["Efficiency: 99.97% at 0.3 microns", "Initial Pressure Drop: 0.5-1.0\" WG", "Operating Temperature: -20°F to 200°F", "Frame: Galvanized Steel", "Media: Pleated Synthetic"],
+      applications: ["Data Centers", "Server Rooms", "Telecom Facilities", "Cloud Computing Centers", "Network Operations Centers"],
+      benefits: ["Protects sensitive equipment", "Reduces equipment failures", "Extends hardware lifespan", "Maintains optimal performance", "Meets industry standards", "Energy efficient operation"],
+      ctaText: "Get Air Filtration Assessment"
+    },
+    "Chemical Filtration": {
+      title: "Chemical Filtration",
+      overview: "Specialized chemical filtration to protect sensitive electronic equipment from corrosive gases and airborne molecular contamination.",
+      detailedDescription: "Chemical filtration systems are essential for data centers to remove gaseous contaminants that can cause corrosion and failure of electronic components. Our systems use activated carbon and specialized media to target specific contaminants common in data center environments.",
+      workingPrinciple: "Chemical filtration occurs through adsorption and chemical reaction processes. Activated carbon media provides a large surface area for contaminant adsorption, while impregnated carbons target specific gases like hydrogen sulfide, sulfur dioxide, and nitrogen oxides through chemical neutralization.",
+      features: ["Activated Carbon Media", "Multi-Stage Filtration", "Corrosion Protection", "Real-time Monitoring", "Automatic Regeneration", "Custom Solutions"],
+      specifications: ["Removal Efficiency: >95% for target gases", "Bed Depth: 2-4 inches", "Contact Time: 0.1-0.3 seconds", "Operating Temperature: 32-150°F", "Media Life: 12-24 months"],
+      applications: ["Data Centers", "Server Farms", "Telecom Switching Centers", "IT Equipment Rooms", "Control Rooms"],
+      benefits: ["Prevents equipment corrosion", "Eliminates odors", "Protects circuit boards", "Reduces maintenance costs", "Ensures reliable operation", "Meets ASHRAE standards"],
+      ctaText: "Request Chemical Filtration Quote"
+    },
+    "Precision Cooling": {
+      title: "Precision Cooling",
+      overview: "High-efficiency cooling solutions that work in conjunction with filtration systems to maintain optimal temperature and humidity.",
+      detailedDescription: "Precision cooling systems for data centers provide accurate temperature and humidity control essential for optimal equipment performance. These systems integrate seamlessly with filtration technology to deliver clean, conditioned air throughout the facility.",
+      workingPrinciple: "Precision cooling systems use advanced sensors and controls to maintain tight temperature and humidity tolerances. Variable capacity compressors and intelligent controls respond quickly to load changes, while integrated filtration ensures clean air delivery to equipment.",
+      features: ["Variable Capacity Control", "Precise Temperature Control", "Humidity Management", "Energy Recovery", "Intelligent Controls", "Redundant Systems"],
+      specifications: ["Temperature Accuracy: ±1°F", "Humidity Control: ±5% RH", "Energy Efficiency: Up to 30% savings", "Cooling Capacity: 5-100 tons", "Operating Range: 65-80°F"],
+      applications: ["Data Centers", "Server Rooms", "Edge Computing", "Colocation Facilities", "Enterprise IT"],
+      benefits: ["Optimal equipment performance", "Energy cost savings", "Improved reliability", "Extended equipment life", "Reduced hotspots", "Meets ASHRAE guidelines"],
+      ctaText: "Get Cooling System Quote"
+    },
+    "Environmental Control": {
+      title: "Environmental Control",
+      overview: "Comprehensive environmental management systems that integrate air filtration, chemical removal, and climate control.",
+      detailedDescription: "Complete environmental control systems provide integrated management of all aspects of data center air quality including temperature, humidity, particle filtration, and chemical contamination control. These systems ensure optimal conditions for sensitive electronic equipment.",
+      workingPrinciple: "Environmental control systems use integrated sensors and controls to monitor and manage all aspects of the data center environment. Real-time monitoring enables predictive maintenance and automatic adjustments to maintain optimal conditions while minimizing energy consumption.",
+      features: ["Integrated Control Systems", "Real-time Monitoring", "Predictive Maintenance", "Energy Optimization", "Remote Access", "Automated Alarms"],
+      specifications: ["Monitoring Points: Temperature, Humidity, Particles, Gases", "Control Accuracy: ±1°F, ±3% RH", "Response Time: <60 seconds", "Energy Savings: Up to 40%", "Uptime: 99.9%+"],
+      applications: ["Large Data Centers", "Mission Critical Facilities", "Cloud Service Providers", "Financial Data Centers", "Government Facilities"],
+      benefits: ["Comprehensive protection", "Automated operation", "Energy efficiency", "Predictive maintenance", "Maximum uptime", "Regulatory compliance"],
+      ctaText: "Request Environmental Assessment"
+    }
+  };
+
   const solutions = [
     {
       icon: Filter,
@@ -99,7 +150,11 @@ const DataCenter = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {solutions.map((solution, index) => (
-              <Card key={index} className="h-full shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-corporate)] transition-all duration-300">
+              <Card 
+                key={index} 
+                className="h-full shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-corporate)] transition-all duration-300 cursor-pointer hover:scale-105"
+                onClick={() => setSelectedSolution(solutionDetails[solution.title])}
+              >
                 <CardHeader>
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 bg-corporate-blue rounded-lg flex items-center justify-center mr-4">
@@ -116,13 +171,16 @@ const DataCenter = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-2 gap-2">
+                  <div className="grid grid-cols-2 gap-2 mb-4">
                     {solution.features.map((feature, idx) => (
                       <Badge key={idx} variant="secondary" className="text-xs">
                         {feature}
                       </Badge>
                     ))}
                   </div>
+                  <Button variant="outline" size="sm" className="w-full">
+                    View Details
+                  </Button>
                 </CardContent>
               </Card>
             ))}
@@ -309,6 +367,15 @@ const DataCenter = () => {
           </div>
         </div>
       </section>
+
+      {/* Modal */}
+      {selectedSolution && (
+        <GenericModal
+          isOpen={!!selectedSolution}
+          onClose={() => setSelectedSolution(null)}
+          data={selectedSolution}
+        />
+      )}
     </div>
   );
 };

@@ -1,12 +1,63 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import ContactForm from "@/components/ui/contact-form";
 import SocialMediaSidebar from "@/components/ui/social-media-sidebar";
+import GenericModal, { GenericModalData } from "@/components/ui/generic-modal";
 import { Leaf, Users, Globe, Beaker, Factory, Recycle } from "lucide-react";
 import heroImage from "@/assets/hero-rhamnolipids.jpg";
 
 const Rhamnolipids = () => {
+  const [selectedApplication, setSelectedApplication] = useState<GenericModalData | null>(null);
+
+  const applicationDetails: { [key: string]: GenericModalData } = {
+    "Industrial Applications": {
+      title: "Industrial Applications",
+      overview: "Enhanced oil recovery, cleaning agents, and industrial processing applications where bio-based surfactants provide superior performance.",
+      detailedDescription: "Rhamnolipids offer exceptional performance in industrial applications due to their unique molecular structure and surface-active properties. These biosurfactants demonstrate superior emulsification, wetting, and foaming characteristics compared to synthetic alternatives, making them ideal for various industrial processes.",
+      workingPrinciple: "Rhamnolipids work by reducing surface tension at interfaces, enabling better mixing of oil and water phases. Their amphiphilic structure allows them to position at interfaces and form micelles, improving solubilization of hydrophobic compounds and enhancing cleaning efficiency in industrial processes.",
+      features: ["Superior Emulsification", "Enhanced Oil Recovery", "Industrial Cleaning", "Process Enhancement", "Temperature Stability", "pH Tolerance"],
+      specifications: ["Surface Tension: <30 mN/m", "CMC: 50-200 mg/L", "Temperature Stability: Up to 100°C", "pH Range: 4-12", "Biodegradation: >90% in 28 days"],
+      applications: ["Enhanced Oil Recovery", "Metal Cleaning", "Textile Processing", "Leather Treatment", "Paint Manufacturing"],
+      benefits: ["Biodegradable formulation", "Low toxicity profile", "High performance efficiency", "Cost-effective solution", "Regulatory compliance", "Sustainable alternative"],
+      ctaText: "Request Industrial Application Quote"
+    },
+    "Environmental Solutions": {
+      title: "Environmental Solutions", 
+      overview: "Bioremediation and environmental cleanup applications leveraging the natural properties of rhamnolipids for soil and water treatment.",
+      detailedDescription: "Rhamnolipids excel in environmental applications due to their natural origin and biodegradability. They enhance the bioavailability of hydrophobic contaminants, making them more accessible to degrading microorganisms in bioremediation processes while being completely safe for the environment.",
+      workingPrinciple: "In environmental applications, rhamnolipids enhance the solubilization and mobilization of hydrophobic contaminants from soil and groundwater. They increase the surface area available for microbial degradation and facilitate the transport of contaminants to treatment zones.",
+      features: ["Bioremediation Enhancement", "Soil Washing", "Groundwater Treatment", "Oil Spill Cleanup", "Heavy Metal Extraction", "Eco-Friendly"],
+      specifications: ["Biodegradability: >95% in 21 days", "Toxicity: LC50 >1000 mg/L", "Solubility: High in water", "Stability: Stable at environmental pH", "Biocompatibility: Excellent"],
+      applications: ["Soil Remediation", "Groundwater Cleanup", "Oil Spill Response", "Industrial Site Cleanup", "Sediment Treatment"],
+      benefits: ["100% biodegradable", "Non-toxic to environment", "Enhances natural processes", "Reduces cleanup time", "Cost-effective remediation", "Regulatory approved"],
+      ctaText: "Get Environmental Solutions Quote"
+    },
+    "Biotechnology": {
+      title: "Biotechnology",
+      overview: "Research and development applications in biotechnology, pharmaceuticals, and specialty chemical manufacturing.",
+      detailedDescription: "In biotechnology applications, rhamnolipids serve as key components in pharmaceutical formulations, drug delivery systems, and biotechnological processes. Their biocompatibility and unique properties make them valuable for various high-tech applications requiring natural, safe surfactants.",
+      workingPrinciple: "Rhamnolipids function in biotechnology through their ability to interact with biological membranes, enhance drug solubility, and facilitate cellular uptake. Their natural origin and biocompatibility make them ideal for applications where synthetic surfactants would be unsuitable.",
+      features: ["Pharmaceutical Grade", "Drug Delivery", "Cell Culture Media", "Protein Purification", "Vaccine Adjuvant", "Biocompatible"],
+      specifications: ["Purity: >95%", "Endotoxin: <0.1 EU/mg", "Heavy Metals: <10 ppm", "Sterility: USP <71>", "pH: 6.0-8.0"],
+      applications: ["Drug Formulation", "Gene Therapy", "Vaccine Development", "Cell Culture", "Protein Production"],
+      benefits: ["Pharmaceutical grade quality", "Excellent biocompatibility", "Enhanced drug delivery", "Research grade purity", "Regulatory compliant", "Technical support included"],
+      ctaText: "Request Biotech Grade Quote"
+    },
+    "Sustainable Manufacturing": {
+      title: "Sustainable Manufacturing",
+      overview: "Green manufacturing processes that require environmentally friendly surfactants and bio-based chemical solutions.",
+      detailedDescription: "Rhamnolipids support sustainable manufacturing initiatives by replacing petroleum-based surfactants with renewable, biodegradable alternatives. They maintain high performance while reducing environmental impact and supporting circular economy principles in manufacturing processes.",
+      workingPrinciple: "In sustainable manufacturing, rhamnolipids provide the same functionality as synthetic surfactants while offering superior environmental credentials. They can be produced from renewable feedstocks and completely biodegrade, supporting cradle-to-cradle manufacturing approaches.",
+      features: ["Renewable Source", "Carbon Neutral", "Zero VOCs", "Circular Economy", "Green Chemistry", "Life Cycle Benefits"],
+      specifications: ["Renewable Content: 100%", "Carbon Footprint: Neutral", "Biodegradation: Complete", "VOC Content: 0%", "Sustainability: Certified"],
+      applications: ["Green Cleaning Products", "Sustainable Cosmetics", "Eco-Friendly Paints", "Bio-based Plastics", "Renewable Chemicals"],
+      benefits: ["100% renewable origin", "Carbon neutral production", "Supports sustainability goals", "Reduces environmental impact", "Consumer preferred", "Future-ready technology"],
+      ctaText: "Get Sustainable Solutions Quote"
+    }
+  };
+
   const applications = [
     {
       icon: Factory,
@@ -157,7 +208,11 @@ const Rhamnolipids = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {applications.map((application, index) => (
-              <Card key={index} className="h-full shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-corporate)] transition-all duration-300">
+              <Card 
+                key={index} 
+                className="h-full shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-corporate)] transition-all duration-300 cursor-pointer hover:scale-105"
+                onClick={() => setSelectedApplication(applicationDetails[application.title])}
+              >
                 <CardHeader>
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 bg-corporate-blue rounded-lg flex items-center justify-center mr-4">
@@ -174,13 +229,16 @@ const Rhamnolipids = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-2 gap-2">
+                  <div className="grid grid-cols-2 gap-2 mb-4">
                     {application.benefits.map((benefit, idx) => (
                       <Badge key={idx} variant="secondary" className="text-xs">
                         {benefit}
                       </Badge>
                     ))}
                   </div>
+                  <Button variant="outline" size="sm" className="w-full">
+                    View Details
+                  </Button>
                 </CardContent>
               </Card>
             ))}
@@ -360,6 +418,15 @@ const Rhamnolipids = () => {
           </div>
         </div>
       </section>
+
+      {/* Modal */}
+      {selectedApplication && (
+        <GenericModal
+          isOpen={!!selectedApplication}
+          onClose={() => setSelectedApplication(null)}
+          data={selectedApplication}
+        />
+      )}
     </div>
   );
 };
