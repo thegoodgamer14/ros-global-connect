@@ -73,7 +73,11 @@ const Rhamnolipids = () => {
               Access high-quality rhamnolipid products through our strategic partnerships, 
               offering sustainable and environmentally friendly surfactant solutions.
             </p>
-            <Button variant="cta" size="lg" className="bg-white text-corporate-blue hover:bg-gray-100">
+            <Button 
+              variant="cta" 
+              size="lg" 
+              onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Request Information
             </Button>
           </div>
@@ -322,7 +326,7 @@ const Rhamnolipids = () => {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div id="contact-form" className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
               <div>
                 <h3 className="text-2xl font-semibold mb-6 text-corporate-blue">
                   Why Choose Bio-Based Surfactants?

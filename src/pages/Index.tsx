@@ -89,11 +89,18 @@ const Index = () => {
               across oil & gas, HVAC, data centers, and biotechnology sectors worldwide.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="cta" size="lg" className="text-lg px-8 py-3">
-                Request Materials
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button variant="corporate-outline" size="lg" className="text-lg px-8 py-3 border-white text-white hover:bg-white hover:text-corporate-blue">
+              <Link to="/contact">
+                <Button variant="cta" size="lg" className="text-lg px-8 py-3">
+                  Request Materials
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <Button 
+                variant="corporate-outline" 
+                size="lg" 
+                className="text-lg px-8 py-3 border-white text-white hover:bg-white hover:text-corporate-blue"
+                onClick={() => document.getElementById('product-lines')?.scrollIntoView({ behavior: 'smooth' })}
+              >
                 Learn More
               </Button>
             </div>
@@ -122,7 +129,7 @@ const Index = () => {
       </section>
 
       {/* Product Lines */}
-      <section className="py-16 lg:py-24">
+      <section id="product-lines" className="py-16 lg:py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-corporate-blue">
@@ -219,13 +226,10 @@ const Index = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact">
-              <Button variant="cta" size="lg" className="text-lg px-8 py-3 bg-white text-corporate-blue hover:bg-gray-100">
+              <Button variant="cta" size="lg" className="text-lg px-8 py-3">
                 Contact Us Today
               </Button>
             </Link>
-            <Button variant="corporate-outline" size="lg" className="text-lg px-8 py-3 border-white text-white hover:bg-white/10">
-              Request Materials
-            </Button>
           </div>
         </div>
       </section>
@@ -254,12 +258,12 @@ const Index = () => {
               <ul className="space-y-2">
                 <li><Link to="/contact" className="hover:text-white transition-colors">Get In Touch</Link></li>
                 <li><span className="text-gray-400">Email: info@rosglobal.com</span></li>
-                <li><span className="text-gray-400">Phone: +1 (555) 123-4567</span></li>
+                <li><span className="text-gray-400">Phone: +971 55 526 2149</span></li>
               </ul>
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 ROS Global. All rights reserved.</p>
+            <p>&copy; 2025 ROS Global Solutions. All rights reserved.</p>
           </div>
         </div>
       </footer>

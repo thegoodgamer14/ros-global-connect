@@ -215,7 +215,11 @@ const HVAC = () => {
               high-performance filtration systems, and advanced air quality management technologies. Our products 
               are engineered for demanding commercial and industrial environments where precision and reliability are essential.
             </p>
-            <Button size="lg" className="bg-ros-red hover:bg-ros-red/90 text-white border-0">
+            <Button 
+              variant="cta" 
+              size="lg" 
+              onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Request Product Catalog
             </Button>
           </div>
@@ -402,7 +406,7 @@ const HVAC = () => {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div id="contact-form" className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
               <div>
                 <h3 className="text-2xl font-semibold mb-6 text-corporate-blue">
                   HVAC Solutions for Every Industry

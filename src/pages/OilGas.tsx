@@ -55,7 +55,11 @@ const OilGas = () => {
               From field surface facilities to drilling operations, we provide comprehensive 
               electrical, mechanical, and instrumentation solutions for the oil & gas industry.
             </p>
-            <Button variant="cta" size="lg" className="bg-white text-corporate-blue hover:bg-gray-100">
+            <Button 
+              variant="cta" 
+              size="lg" 
+              onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Request Quote
             </Button>
           </div>
@@ -181,7 +185,7 @@ const OilGas = () => {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div id="contact-form" className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
               <div>
                 <h3 className="text-2xl font-semibold mb-6 text-corporate-blue">
                   Why Choose ROS Global for Oil & Gas?

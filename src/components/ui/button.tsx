@@ -20,7 +20,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         corporate: "bg-corporate-blue text-white hover:bg-corporate-blue-light shadow-lg hover:shadow-xl transform hover:-translate-y-0.5",
         "corporate-outline": "border-2 border-corporate-blue text-corporate-blue bg-transparent hover:bg-corporate-blue hover:text-white",
-        cta: "bg-gradient-to-r from-corporate-blue to-corporate-blue-light text-white hover:from-corporate-blue-light hover:to-corporate-blue shadow-lg hover:shadow-xl transform hover:-translate-y-1",
+        cta: "bg-gradient-to-r from-corporate-blue to-corporate-blue-light text-white hover:from-corporate-blue-light hover:to-corporate-blue shadow-lg hover:shadow-xl transform hover:-translate-y-1 font-semibold",
       },
       size: {
         default: "h-10 px-4 py-2",
