@@ -91,7 +91,7 @@ const Index = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact">
-                <Button variant="cta" size="lg" className="text-lg px-8 py-3">
+                <Button variant="cta" size="lg" className="text-lg px-8 py-3 h-12 w-full sm:w-auto">
                   Request Materials
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
@@ -99,7 +99,7 @@ const Index = () => {
               <Button 
                 variant="corporate-outline" 
                 size="lg" 
-                className="text-lg px-8 py-3 border-white text-white hover:bg-white hover:text-corporate-blue"
+                className="text-lg px-8 py-3 h-12 w-full sm:w-auto border-white text-white hover:bg-white hover:text-corporate-blue"
                 onClick={() => document.getElementById('product-lines')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Learn More
