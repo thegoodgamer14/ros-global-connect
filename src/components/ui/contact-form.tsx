@@ -6,6 +6,7 @@ import { Label } from "./label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./select";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./card";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 
 interface ContactFormProps {
   title?: string;
@@ -34,12 +35,45 @@ const ContactForm = ({
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      const now = new Date();
+      const formattedDate = now.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+      const formattedTime = now.toLocaleTimeString('en-US', {
+        hour: '2-digit',
+        minute: '2-digit',
+        timeZoneName: 'short'
+      });
+      const formattedDateTime = `${formattedDate} at ${formattedTime}`;
+
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        query_type: formData.queryType,
+        message: formData.message,
+        to_email: import.meta.env.TO_EMAIL,
+        date: formattedDate,
+        time: formattedTime,
+        date_time: formattedDateTime,
+        subject: `New Form Submission - ${formattedDate}`,
+      };
+
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+
       toast({
         title: "Message Sent!",
         description: "Thank you for your inquiry. We'll get back to you within 24 hours.",
       });
+
+      // Clear form on success
       setFormData({
         name: "",
         email: "",
@@ -47,8 +81,16 @@ const ContactForm = ({
         queryType: defaultQueryType,
         message: "",
       });
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      toast({
+        title: "Error Sending Message",
+        description: "There was a problem sending your message. Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   const handleChange = (field: string, value: string) => {

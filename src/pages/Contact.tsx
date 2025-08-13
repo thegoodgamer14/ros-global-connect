@@ -80,7 +80,7 @@ const Contact = () => {
                     </CardContent>
                   </Card>
 
-                  <Card className="shadow-[var(--shadow-card)]">
+                  {/* <Card className="shadow-[var(--shadow-card)]">
                     <CardContent className="flex items-center p-6">
                       <div className="w-12 h-12 bg-corporate-blue rounded-full flex items-center justify-center mr-4">
                         <Linkedin className="h-6 w-6 text-white" />
@@ -93,7 +93,7 @@ const Contact = () => {
                         </a>
                       </div>
                     </CardContent>
-                  </Card>
+                  </Card> */}
                 </div>
               </div>
 
