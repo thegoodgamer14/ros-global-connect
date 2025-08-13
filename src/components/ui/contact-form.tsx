@@ -6,6 +6,7 @@ import { Label } from "./label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./select";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./card";
 import { useToast } from "@/hooks/use-toast";
+import PhoneInput from "./phone-input";
 import emailjs from '@emailjs/browser';
 
 interface ContactFormProps {
@@ -29,7 +30,15 @@ const ContactForm = ({
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [validationErrors, setValidationErrors] = useState({
+    email: false,
+    phone: false
+  });
+  const [isPhoneValid, setIsPhoneValid] = useState(true);
   const { toast } = useToast();
+
+  // Email validation regex
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -52,6 +61,24 @@ const ContactForm = ({
         timeZoneName: 'short'
       });
       const formattedDateTime = `${formattedDate} at ${formattedTime}`;
+
+      // Validate email and phone before submission
+      const emailValid = emailRegex.test(formData.email);
+      const phoneValid = !formData.phone || isPhoneValid;
+
+      if (!emailValid || !phoneValid) {
+        setValidationErrors({
+          email: !emailValid,
+          phone: !phoneValid
+        });
+        setIsSubmitting(false);
+        toast({
+          title: "Validation Error",
+          description: "Please check your email and phone number formats.",
+          variant: "destructive",
+        });
+        return;
+      }
 
       const templateParams = {
         from_name: formData.name,
@@ -81,6 +108,7 @@ const ContactForm = ({
         queryType: defaultQueryType,
         message: "",
       });
+      setValidationErrors({ email: false, phone: false });
     } catch (error) {
       console.error('EmailJS error:', error);
       toast({
@@ -95,6 +123,19 @@ const ContactForm = ({
 
   const handleChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
+    
+    if (field === 'email' && validationErrors.email) {
+      setValidationErrors(prev => ({ ...prev, email: false }));
+    }
+  };
+
+  const handlePhoneChange = (phoneNumber: string, isValid: boolean) => {
+    setFormData(prev => ({ ...prev, phone: phoneNumber }));
+    setIsPhoneValid(isValid);
+    
+    if (validationErrors.phone) {
+      setValidationErrors(prev => ({ ...prev, phone: false }));
+    }
   };
 
   return (
@@ -122,18 +163,23 @@ const ContactForm = ({
                 type="email"
                 value={formData.email}
                 onChange={(e) => handleChange("email", e.target.value)}
+                className={validationErrors.email ? "border-red-500" : ""}
                 required
               />
+              {validationErrors.email && (
+                <p className="text-sm text-red-500">Please enter a valid email address</p>
+              )}
             </div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="phone">Phone</Label>
-              <Input
+              <PhoneInput
                 id="phone"
                 value={formData.phone}
-                onChange={(e) => handleChange("phone", e.target.value)}
+                onChange={handlePhoneChange}
+                className={validationErrors.phone ? "border-red-500" : ""}
               />
             </div>
             <div className="space-y-2">
