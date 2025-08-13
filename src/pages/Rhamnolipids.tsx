@@ -6,7 +6,7 @@ import ContactForm from "@/components/ui/contact-form";
 import SocialMediaSidebar from "@/components/ui/social-media-sidebar";
 import GenericModal, { GenericModalData } from "@/components/ui/generic-modal";
 import { Leaf, Users, Globe, Beaker, Factory, Recycle } from "lucide-react";
-import heroImage from "@/assets/hero-rhamnolipids.jpg";
+import heroImage from "@/assets/hero-rhamnolipids.webp";
 
 const Rhamnolipids = () => {
   const [selectedApplication, setSelectedApplication] = useState<GenericModalData | null>(null);

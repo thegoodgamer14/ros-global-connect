@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import SocialMediaSidebar from "@/components/ui/social-media-sidebar";
 import CustomerLogos from "@/components/ui/customer-logos";
 import { ArrowRight, Globe, Shield, Users, Zap } from "lucide-react";
-import heroImage from "@/assets/hero-corporate.jpg";
+import heroImage from "@/assets/hero-corporate.webp";
 import oilGasIcon from "@/assets/oil-gas-icon.jpg";
 import hvacIcon from "@/assets/hvac-icon.jpg";
 import datacenterIcon from "@/assets/datacenter-icon.jpg";

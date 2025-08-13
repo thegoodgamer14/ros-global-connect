@@ -6,7 +6,7 @@ import ContactForm from "@/components/ui/contact-form";
 import SocialMediaSidebar from "@/components/ui/social-media-sidebar";
 import GenericModal, { GenericModalData } from "@/components/ui/generic-modal";
 import { Drill, Zap, Gauge, Wrench } from "lucide-react";
-import heroImage from "@/assets/hero-oil-gas.jpg";
+import heroImage from "@/assets/hero-oil-gas.webp";
 
 const OilGas = () => {
   const [selectedService, setSelectedService] = useState<GenericModalData | null>(null);
