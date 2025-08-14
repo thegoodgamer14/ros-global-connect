@@ -14,7 +14,7 @@ const Rhamnolipids = () => {
   const applicationDetails: { [key: string]: GenericModalData } = {
     "Industrial Applications": {
       title: "Industrial Applications",
-      overview: "Enhanced oil recovery, cleaning agents, and industrial processing applications where bio-based surfactants provide superior performance.",
+      overview: "Enhanced oil recovery, cleaning agents, and industrial processing applications where bio-surfactants provide superior performance.",
       detailedDescription: "Rhamnolipids offer exceptional performance in industrial applications due to their unique molecular structure and surface-active properties. These biosurfactants demonstrate superior emulsification, wetting, and foaming characteristics compared to synthetic alternatives, making them ideal for various industrial processes.",
       workingPrinciple: "Rhamnolipids work by reducing surface tension at interfaces, enabling better mixing of oil and water phases. Their amphiphilic structure allows them to position at interfaces and form micelles, improving solubilization of hydrophobic compounds and enhancing cleaning efficiency in industrial processes.",
       features: ["Superior Emulsification", "Enhanced Oil Recovery", "Industrial Cleaning", "Process Enhancement", "Temperature Stability", "pH Tolerance"],
@@ -47,12 +47,12 @@ const Rhamnolipids = () => {
     },
     "Sustainable Manufacturing": {
       title: "Sustainable Manufacturing",
-      overview: "Green manufacturing processes that require environmentally friendly surfactants and bio-based chemical solutions.",
+      overview: "Green manufacturing processes that require environmentally friendly surfactants and bio-chemical solutions.",
       detailedDescription: "Rhamnolipids support sustainable manufacturing initiatives by replacing petroleum-based surfactants with renewable, biodegradable alternatives. They maintain high performance while reducing environmental impact and supporting circular economy principles in manufacturing processes.",
       workingPrinciple: "In sustainable manufacturing, rhamnolipids provide the same functionality as synthetic surfactants while offering superior environmental credentials. They can be produced from renewable feedstocks and completely biodegrade, supporting cradle-to-cradle manufacturing approaches.",
       features: ["Renewable Source", "Carbon Neutral", "Zero VOCs", "Circular Economy", "Green Chemistry", "Life Cycle Benefits"],
       specifications: ["Renewable Content: 100%", "Carbon Footprint: Neutral", "Biodegradation: Complete", "VOC Content: 0%", "Sustainability: Certified"],
-      applications: ["Green Cleaning Products", "Sustainable Cosmetics", "Eco-Friendly Paints", "Bio-based Plastics", "Renewable Chemicals"],
+      applications: ["Green Cleaning Products", "Sustainable Cosmetics", "Eco-Friendly Paints", "Bio-Plastics", "Renewable Chemicals"],
       benefits: ["100% renewable origin", "Carbon neutral production", "Supports sustainability goals", "Reduces environmental impact", "Consumer preferred", "Future-ready technology"],
       ctaText: "Get Sustainable Solutions Quote"
     }
@@ -62,7 +62,7 @@ const Rhamnolipids = () => {
     {
       icon: Factory,
       title: "Industrial Applications",
-      description: "Enhanced oil recovery, cleaning agents, and industrial processing applications where bio-based surfactants provide superior performance.",
+      description: "Enhanced oil recovery, cleaning agents, and industrial processing applications where bio-surfactants provide superior performance.",
       benefits: ["Biodegradable", "Low Toxicity", "High Performance", "Cost Effective"]
     },
     {
@@ -80,7 +80,7 @@ const Rhamnolipids = () => {
     {
       icon: Recycle,
       title: "Sustainable Manufacturing",
-      description: "Green manufacturing processes that require environmentally friendly surfactants and bio-based chemical solutions.",
+      description: "Green manufacturing processes that require environmentally friendly surfactants and bio-chemical solutions.",
       benefits: ["Renewable", "Sustainable", "Green Chemistry", "Carbon Neutral"]
     }
   ];
@@ -118,7 +118,7 @@ const Rhamnolipids = () => {
               Rhamnolipids Solutions
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              Bio-Based Surfactant Solutions
+              Bio-surfactant Solutions
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-white/90">
               Access high-quality rhamnolipid products through our strategic partnerships, 
@@ -144,7 +144,7 @@ const Rhamnolipids = () => {
                 What are Rhamnolipids?
               </h2>
               <p className="text-lg text-muted-foreground">
-                Understanding the revolutionary bio-based surfactant technology
+                Understanding the revolutionary bio-surfactant technology
               </p>
             </div>
 
@@ -384,7 +384,7 @@ const Rhamnolipids = () => {
             <div id="contact-form" className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
               <div>
                 <h3 className="text-2xl font-semibold mb-6 text-corporate-blue">
-                  Why Choose Bio-Based Surfactants?
+                  Why Choose Bio-surfactants?
                 </h3>
                 <div className="space-y-4 text-muted-foreground">
                   <div className="flex items-start">

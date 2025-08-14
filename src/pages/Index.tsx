@@ -36,7 +36,7 @@ const Index = () => {
     },
     {
       title: "Rhamnolipids",
-      description: "Bio-based surfactant products through strategic partnerships",
+      description: "Bio-surfactant products through strategic partnerships",
       icon: rhamnolipidsIcon,
       href: "/rhamnolipids",
       features: ["Bio-surfactants", "Partnership Model", "Sourcing Support", "Custom Solutions"]
