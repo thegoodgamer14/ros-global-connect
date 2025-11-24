@@ -151,7 +151,6 @@ All colors MUST be HSL.
 }
 
 /* Customer logos infinite scroll animation */
-/* Customer logos infinite scroll animation */
 .marquee {
   width: 100%;
   overflow: hidden;
@@ -176,9 +175,3 @@ All colors MUST be HSL.
     transform: translateX(-50%);
   }
 }
-
-
-
-/* .animate-scroll {
-  animation: scroll 10s linear infinite;
-} */
