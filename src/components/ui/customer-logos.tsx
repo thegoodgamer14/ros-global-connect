@@ -9,7 +9,8 @@ import petronas from "@/assets/customer-logos/petronas-logo.webp";
 import intercol from "@/assets/customer-logos/intercol-logo.webp";
 import mhd from "@/assets/customer-logos/mhd-logo.webp";
 import natarchive from "@/assets/customer-logos/nat-archive-logo.webp";
-import dpoc from "@/assets/customer-logos/dpoc-logo.webp";
+import sjs from "@/assets/customer-logos/sjs-logo.webp";
+import nia from "@/assets/customer-logos/nia-logo.webp";
 
 const CustomerLogos = () => {
   const logos = [
@@ -24,7 +25,8 @@ const CustomerLogos = () => {
     { src: intercol, alt: "Intercol" },
     { src: mhd, alt: "MHD" },
     { src: natarchive, alt: "National Archive" },
-    { src: dpoc, alt: "DPOC" },
+    { src: sjs, alt: "SJS" },
+    { src: nia, alt: "NIA" },
   ];
 
   const infiniteLogos = [...logos, ...logos];
@@ -39,22 +41,25 @@ const CustomerLogos = () => {
         </div>
 
         <div className="marquee">
-          <div className="marquee__inner">
+          <div
+            className="marquee__inner"
+            style={{ animationDuration: "35s" }}
+          >
             {infiniteLogos.map((logo, index) => {
-              const isDPOC = logo.src === dpoc;
-              const width = isDPOC ? "300px" : "200px";
-              const height = isDPOC ? "150px" : "106.67px";
+              const isNIA = logo.src === nia;
+              const width = "200px";
+              const height = "106.67px";
 
               return (
                 <div
                   key={index}
-                  className="flex items-center justify-center shrink-0"
+                  className="flex items-center justify-center shrink-0 mx-4"
                   style={{ width, height }}
                 >
                   <img
                     src={logo.src}
                     alt={logo.alt}
-                    className="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-300"
+                    className="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-600"
                   />
                 </div>
               );
