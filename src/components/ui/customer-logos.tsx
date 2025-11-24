@@ -27,6 +27,8 @@ const CustomerLogos = () => {
     { src: dpoc, alt: "DPOC" },
   ];
 
+  const infiniteLogos = [...logos, ...logos];
+
   return (
     <section className="py-12 bg-secondary/20">
       <div className="container mx-auto px-4">
@@ -35,27 +37,29 @@ const CustomerLogos = () => {
             Ensuring customer satisfaction for 15+ years
           </h2>
         </div>
-        
-        <div className="flex flex-wrap justify-center items-center gap-8 max-w-6xl mx-auto">
-          {logos.map((logo, index) => {
-            const isDPOC = logo.src === dpoc;
-            return (
-              <div
-                key={index}
-                className="flex items-center justify-center"
-                style={{ 
-                  width: isDPOC ? "300px" : "200px", 
-                  height: isDPOC ? "160px" : "106.67px" 
-                }}
-              >
-                <img
-                  src={logo.src}
-                  alt={logo.alt}
-                  className="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-            );
-          })}
+
+        <div className="marquee">
+          <div className="marquee__inner">
+            {infiniteLogos.map((logo, index) => {
+              const isDPOC = logo.src === dpoc;
+              const width = isDPOC ? "300px" : "200px";
+              const height = isDPOC ? "150px" : "106.67px";
+
+              return (
+                <div
+                  key={index}
+                  className="flex items-center justify-center shrink-0"
+                  style={{ width, height }}
+                >
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

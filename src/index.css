@@ -151,15 +151,27 @@ All colors MUST be HSL.
 }
 
 /* Customer logos infinite scroll animation */
-@keyframes scroll {
-  0% {
-    transform: translateX(-40%);
-  }
-  100% {
-    transform: translateX(-60%);
-  }
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
-.animate-scroll {
-  animation: scroll 10s linear infinite;
+.marquee__inner {
+  display: flex;
+  width: max-content;
+  animation: marquee 20s linear infinite;
+}
+
+.marquee:hover .marquee__inner {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
