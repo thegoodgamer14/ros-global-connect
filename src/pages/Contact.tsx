@@ -34,8 +34,8 @@ const Contact = () => {
                       </div>
                       <div>
                         <h3 className="font-semibold text-corporate-blue">Email</h3>
-                        <p className="text-muted-foreground">info@rosglobal.com</p>
-                        <p className="text-sm text-muted-foreground">sales@rosglobal.com</p>
+                        <p className="text-muted-foreground">inquiry@rosglobal.com</p>
+                        <p className="text-muted-foreground">sales@rosglobal.com</p>
                       </div>
                     </CardContent>
                   </Card>
@@ -47,8 +47,9 @@ const Contact = () => {
                       </div>
                       <div>
                         <h3 className="font-semibold text-corporate-blue">Phone</h3>
-                        <p className="text-muted-foreground">+1 (555) 123-4567</p>
-                        <p className="text-sm text-muted-foreground">+1 (555) 123-4568 (Sales)</p>
+                        <p className="text-muted-foreground">+971 56 547 7065</p>
+                        <p className="text-muted-foreground">+971 54 791 7288</p>
+                        <p className="text-muted-foreground">+971 6 704 1447</p>
                       </div>
                     </CardContent>
                   </Card>
@@ -60,9 +61,9 @@ const Contact = () => {
                       </div>
                       <div>
                         <h3 className="font-semibold text-corporate-blue">Headquarters</h3>
-                        <p className="text-muted-foreground">123 Global Business Plaza</p>
-                        <p className="text-muted-foreground">International District</p>
-                        <p className="text-muted-foreground">Houston, TX 77001, USA</p>
+                        <p className="text-muted-foreground">16G-01, Hamriya Free Zone</p>
+                        <p className="text-muted-foreground">Sharjah, UAE</p>
+                        <p className="text-muted-foreground">PO Box - 52319</p>
                       </div>
                     </CardContent>
                   </Card>
@@ -74,7 +75,7 @@ const Contact = () => {
                       </div>
                       <div>
                         <h3 className="font-semibold text-corporate-blue">Business Hours</h3>
-                        <p className="text-muted-foreground">Monday - Friday: 8:00 AM - 6:00 PM CST</p>
+                        <p className="text-muted-foreground">Monday - Friday: 9:00 AM - 7:00 PM GST</p>
                         <p className="text-sm text-muted-foreground">Emergency support available 24/7</p>
                       </div>
                     </CardContent>
@@ -110,7 +111,7 @@ const Contact = () => {
       </section>
 
       {/* Office Locations */}
-      <section className="py-16 lg:py-24 bg-secondary/30">
+      {/* <section className="py-16 lg:py-24 bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -164,10 +165,10 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Map Section */}
-      <section className="py-16 lg:py-24">
+      {/* <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">
@@ -188,9 +189,9 @@ const Contact = () => {
                       ROS Global Headquarters
                     </h3>
                     <p className="text-muted-foreground">
-                      123 Global Business Plaza<br />
-                      International District<br />
-                      Houston, TX 77001, USA
+                      16G-01, Hamriya Free Zone<br />
+                      Sharjah, UAE<br />
+                      PO Box - 52319
                     </p>
                     <p className="text-sm text-muted-foreground mt-4">
                       [Interactive map would be embedded here]
@@ -201,7 +202,7 @@ const Contact = () => {
             </Card>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-16 lg:py-24 bg-corporate-blue">
