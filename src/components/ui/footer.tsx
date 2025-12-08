@@ -24,13 +24,16 @@ const Footer = () => {
             <h4 className="text-lg font-semibold text-white mb-4">Contact</h4>
             <ul className="space-y-2">
               <li><Link to="/contact" className="hover:text-white transition-colors">Get In Touch</Link></li>
-              <li><span className="text-gray-400">Email: info@rosglobal.com</span></li>
-              <li><span className="text-gray-400">Phone: +971 55 526 2149</span></li>
+              <li><span className="text-gray-400">Email: inquiry@rosglobal.com</span></li>
+              <li><span className="text-gray-400">Tel: +971 6 704 1447</span></li>
+              <li><span className="text-gray-400">Mobile: +971 55 526 2149</span></li>
+              <li><span className="text-gray-400">Mobile: +971 56 547 7065</span></li>
+
             </ul>
           </div>
         </div>
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2025 ROS Global Solutions. All rights reserved.</p>
+          <p>&copy; 2025 ROS Global Solutions FZE. All rights reserved.</p>
         </div>
       </div>
     </footer>
