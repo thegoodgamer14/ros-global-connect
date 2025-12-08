@@ -34,8 +34,8 @@ const Contact = () => {
                       </div>
                       <div>
                         <h3 className="font-semibold text-corporate-blue">Email</h3>
-                        <p className="text-muted-foreground">inquiry@rosglobal.com</p>
-                        <p className="text-muted-foreground">sales@rosglobal.com</p>
+                        <a href="mailto:inquiry@rosglobal.com"><p className="text-muted-foreground">inquiry@rosglobal.com</p></a>
+                        <a href="mailto:sales@rosglobal.com"><p className="text-muted-foreground">sales@rosglobal.com</p></a>
                       </div>
                     </CardContent>
                   </Card>
@@ -47,9 +47,9 @@ const Contact = () => {
                       </div>
                       <div>
                         <h3 className="font-semibold text-corporate-blue">Phone</h3>
-                        <p className="text-muted-foreground">+971 56 547 7065</p>
-                        <p className="text-muted-foreground">+971 54 791 7288</p>
-                        <p className="text-muted-foreground">+971 6 704 1447</p>
+                        <a href="tel:+971565477065" className=""><p className="text-muted-foreground">+971 56 547 7065</p></a>
+                        <a href="tel:+971547917288" className=""><p className="text-muted-foreground">+971 54 791 7288</p></a>
+                        <a href="tel:+97167041447" className=""><p className="text-muted-foreground">+971 6 704 1447</p></a>
                       </div>
                     </CardContent>
                   </Card>
@@ -215,12 +215,12 @@ const Contact = () => {
             solutions for your industrial supply and consulting needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@rosglobal.com" className="inline-block">
+            <a href="mailto:inquiry@rosglobal.com" className="inline-block">
               <button className="px-8 py-3 bg-white text-corporate-blue font-semibold rounded-md hover:bg-gray-100 transition-colors">
                 Email Us Now
               </button>
             </a>
-            <a href="tel:+15551234567" className="inline-block">
+            <a href="tel:+971547917288" className="inline-block">
               <button className="px-8 py-3 border-2 border-white text-white font-semibold rounded-md hover:bg-white/10 transition-colors">
                 Call Today
               </button>
