@@ -116,7 +116,7 @@ const Rhamnolipids = () => {
               Exclusive Distributor: AGAE Technologies
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              Bridging Innovation and Sustainability
+              Bio-surfactant Solutions
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-white/90">
               We provide the world's most versatile biosurfactants to industries that refuse to compromise on performance or the planet.
