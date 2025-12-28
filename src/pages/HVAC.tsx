@@ -10,7 +10,7 @@ import heroImage from "@/assets/hero-hvac.webp";
 
 const HVAC = () => {
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
-  
+
   const productDetails = {
     dehumidifier: {
       title: "Dehumidifier / Humidifier",
@@ -47,6 +47,10 @@ const HVAC = () => {
         "Extends equipment lifespan",
         "Meets industry compliance standards",
         "24/7 reliable operation"
+      ],
+      images: [
+        "https://i0.wp.com/www.bryair.com/wp-content/uploads/2023/10/FLB-1-1.png?fit=646%2C306&ssl=1",
+        "https://i0.wp.com/www.bryair.com/wp-content/uploads/2024/01/P95x.webp?fit=646%2C306&ssl=1"
       ]
     },
     celdecPad: {
@@ -84,6 +88,10 @@ const HVAC = () => {
         "Reduces dust and particulates",
         "Self-cleaning action reduces clogging",
         "Long service life with proper maintenance"
+      ],
+      images: [
+        "https://www.climatecontrolairtreatment.com/emea/wp-content/uploads/sites/climatecontrol/2025/08/CELdek-RR-greenhouse-608.jpg",
+        "https://cdn-ilblcbn.nitrocdn.com/XMgYWWKIvpBdgcpsxvqWjXsXkdbyzuHe/assets/images/optimized/rev-6bcdd7b/chinaexhaustfan.com/wp-content/uploads/2024/10/%E6%B9%BF%E5%B8%98-1-1.png"
       ]
     },
     airFilter: {
@@ -121,6 +129,10 @@ const HVAC = () => {
         "Extends HVAC system life",
         "Reduces cleaning and maintenance costs",
         "Ensures regulatory compliance"
+      ],
+      images: [
+        "https://cdn.prod.website-files.com/605bb73f62e039589786b760/66e31b80b37854bca42859bb_industrial-air-gas.jpeg",
+        "https://nigen.com/wp-content/uploads/2022/05/air-filtration.png"
       ]
     },
     gasFilter: {
@@ -158,6 +170,10 @@ const HVAC = () => {
         "Improves workplace conditions",
         "Customizable for specific applications",
         "Cost-effective gas removal solution"
+      ],
+      images: [
+        "https://energas.co.za/wp-content/uploads/2022/07/Gas-Filtration.jpg",
+        "https://www.filsonfilters.com/wp-content/uploads/2020/07/Figure-5-Components-of-gas-filter.jpg"
       ]
     }
   };
@@ -197,7 +213,7 @@ const HVAC = () => {
     <div className="min-h-screen">
       <SocialMediaSidebar />
       {/* Hero Section */}
-      <section 
+      <section
         className="py-16 lg:py-24 relative bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
@@ -211,13 +227,13 @@ const HVAC = () => {
               Advanced Air Control & Filtration Systems
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-white/90 leading-relaxed">
-              ROS Global provides comprehensive HVAC solutions including industrial-grade dehumidifiers, 
-              high-performance filtration systems, and advanced air quality management technologies. Our products 
+              ROS Global provides comprehensive HVAC solutions including industrial-grade dehumidifiers,
+              high-performance filtration systems, and advanced air quality management technologies. Our products
               are engineered for demanding commercial and industrial environments where precision and reliability are essential.
             </p>
-            <Button 
-              variant="cta" 
-              size="lg" 
+            <Button
+              variant="cta"
+              size="lg"
               onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'end' })}
             >
               Request Product Catalog
@@ -234,17 +250,17 @@ const HVAC = () => {
               Our HVAC Product Line
             </h2>
             <p className="text-lg text-foreground max-w-3xl mx-auto leading-relaxed">
-              ROS Global specializes in providing professional-grade HVAC equipment and filtration systems 
-              engineered for demanding commercial and industrial environments. Our comprehensive product line 
-              ensures optimal air quality, temperature control, and environmental management for critical applications 
+              ROS Global specializes in providing professional-grade HVAC equipment and filtration systems
+              engineered for demanding commercial and industrial environments. Our comprehensive product line
+              ensures optimal air quality, temperature control, and environmental management for critical applications
               across industries including healthcare, manufacturing, data centers, and food processing.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {products.map((product, index) => (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className="h-full shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-corporate)] transition-all duration-300 cursor-pointer hover:scale-105"
                 onClick={() => {
                   const productKey = product.title.toLowerCase().replace(/[^a-z0-9]/g, '').replace('dehumidifierhumidifier', 'dehumidifier').replace('celdecpad', 'celdecPad').replace('airfilter', 'airFilter').replace('gasfilter', 'gasFilter');
@@ -301,7 +317,7 @@ const HVAC = () => {
             <h2 className="text-3xl font-bold mb-12 text-corporate-blue text-center">
               Complete HVAC Solutions
             </h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <Card className="shadow-[var(--shadow-card)]">
                 <CardHeader>
@@ -313,14 +329,14 @@ const HVAC = () => {
                     <div>
                       <h4 className="font-semibold text-corporate-blue mb-2">Dehumidifier / Humidifier Systems</h4>
                       <p className="text-muted-foreground text-sm">
-                        Advanced humidity control for maintaining optimal moisture levels in critical environments. 
+                        Advanced humidity control for maintaining optimal moisture levels in critical environments.
                         Features include precise controls, energy efficiency, and reliable operation.
                       </p>
                     </div>
                     <div>
                       <h4 className="font-semibold text-corporate-blue mb-2">Temperature Management</h4>
                       <p className="text-muted-foreground text-sm">
-                        Integrated systems that work with your existing HVAC infrastructure to maintain 
+                        Integrated systems that work with your existing HVAC infrastructure to maintain
                         precise temperature and humidity parameters.
                       </p>
                     </div>
@@ -338,14 +354,14 @@ const HVAC = () => {
                     <div>
                       <h4 className="font-semibold text-corporate-blue mb-2">Celdec Pad & Air Filters</h4>
                       <p className="text-muted-foreground text-sm">
-                        High-performance filtration media including evaporative cooling pads and HEPA-grade 
+                        High-performance filtration media including evaporative cooling pads and HEPA-grade
                         air filters for superior air quality management.
                       </p>
                     </div>
                     <div>
                       <h4 className="font-semibold text-corporate-blue mb-2">Gas Filter Systems</h4>
                       <p className="text-muted-foreground text-sm">
-                        Specialized chemical and gas filtration solutions for removing harmful contaminants 
+                        Specialized chemical and gas filtration solutions for removing harmful contaminants
                         and ensuring safe, clean air in industrial environments.
                       </p>
                     </div>
@@ -396,11 +412,11 @@ const HVAC = () => {
                 Get Your HVAC Solution Quote
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Our HVAC specialists are ready to help you find the perfect climate control 
+                Our HVAC specialists are ready to help you find the perfect climate control
                 and filtration solutions for your specific requirements.
               </p>
             </div>
-            
+
             <div id="contact-form" className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
               <div>
                 <h3 className="text-2xl font-semibold mb-6 text-corporate-blue">
@@ -425,8 +441,8 @@ const HVAC = () => {
                   </div>
                 </div>
               </div>
-              
-              <ContactForm 
+
+              <ContactForm
                 title="Request HVAC Quote"
                 description="Tell us about your climate control requirements and we'll recommend the best solution."
                 defaultQueryType="hvac"

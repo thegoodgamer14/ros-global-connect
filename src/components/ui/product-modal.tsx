@@ -38,13 +38,27 @@ const ProductModal = ({ isOpen, onClose, product }: ProductModalProps) => {
 
         <div className="space-y-6">
           {/* Product Images Placeholder */}
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-ros-gray/20 rounded-lg h-48 flex items-center justify-center">
-              <span className="text-muted-foreground">Product Image 1</span>
-            </div>
-            <div className="bg-ros-gray/20 rounded-lg h-48 flex items-center justify-center">
-              <span className="text-muted-foreground">Product Image 2</span>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {product.images && product.images.length > 0 ? (
+              product.images.map((img, index) => (
+                <div key={index} className="relative rounded-xl overflow-hidden group shadow-md border border-border">
+                  <img
+                    src={img}
+                    alt={`${product.title} - ${index + 1}`}
+                    className="w-full h-auto object-contain max-h-[450px] transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
+              ))
+            ) : (
+              <>
+                <div className="bg-ros-gray/20 rounded-lg h-48 flex items-center justify-center">
+                  <span className="text-muted-foreground">Product Image 1 Placeholder</span>
+                </div>
+                <div className="bg-ros-gray/20 rounded-lg h-48 flex items-center justify-center">
+                  <span className="text-muted-foreground">Product Image 2 Placeholder</span>
+                </div>
+              </>
+            )}
           </div>
 
           {/* Detailed Description */}
@@ -150,9 +164,9 @@ const ProductModal = ({ isOpen, onClose, product }: ProductModalProps) => {
 
           {/* Contact CTA */}
           <div className="text-center pt-4 border-t border-border">
-            <Button 
-              variant="cta" 
-              size="lg" 
+            <Button
+              variant="cta"
+              size="lg"
               onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'end' })}
             >
               Request Quote for {product.title}
