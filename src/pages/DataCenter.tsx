@@ -21,6 +21,10 @@ const DataCenter = () => {
       specifications: ["Efficiency: 99.97% at 0.3 microns", "Initial Pressure Drop: 0.5-1.0\" WG", "Operating Temperature: -20°F to 200°F", "Frame: Galvanized Steel", "Media: Pleated Synthetic"],
       applications: ["Data Centers", "Server Rooms", "Telecom Facilities", "Cloud Computing Centers", "Network Operations Centers"],
       benefits: ["Protects sensitive equipment", "Reduces equipment failures", "Extends hardware lifespan", "Maintains optimal performance", "Meets industry standards", "Energy efficient operation"],
+      images: [
+        "https://www.camfil.com/dam/images/30911/90246/absolute_opakfil.png?width=470&height=470&bgcolor=white",
+        "https://www.camfil.com/dam/images/18135/1329037/Absolute-D-Dust-HEPA_wooden-frame_1500x1500.png?width=470&height=470&bgcolor=white"
+      ],
       ctaText: "Get Air Filtration Assessment"
     },
     "Chemical Filtration": {
@@ -32,6 +36,10 @@ const DataCenter = () => {
       specifications: ["Removal Efficiency: >95% for target gases", "Bed Depth: 2-4 inches", "Contact Time: 0.1-0.3 seconds", "Operating Temperature: 32-150°F", "Media Life: 12-24 months"],
       applications: ["Data Centers", "Server Farms", "Telecom Switching Centers", "IT Equipment Rooms", "Control Rooms"],
       benefits: ["Prevents equipment corrosion", "Eliminates odors", "Protects circuit boards", "Reduces maintenance costs", "Ensures reliable operation", "Meets ASHRAE standards"],
+      images: [
+        "https://fltr.com.au/wp-content/uploads/2025/02/Schematic-of-a-data-center-cooling-system-FLTR.jpg",
+        "https://www.airpurifiers-r-us.com/images/capture-recirculating-data-center2.jpg?crc=3882485462"
+      ],
       ctaText: "Request Chemical Filtration Quote"
     },
     "Precision Cooling": {
@@ -43,6 +51,10 @@ const DataCenter = () => {
       specifications: ["Temperature Accuracy: ±1°F", "Humidity Control: ±5% RH", "Energy Efficiency: Up to 30% savings", "Cooling Capacity: 5-100 tons", "Operating Range: 65-80°F"],
       applications: ["Data Centers", "Server Rooms", "Edge Computing", "Colocation Facilities", "Enterprise IT"],
       benefits: ["Optimal equipment performance", "Energy cost savings", "Improved reliability", "Extended equipment life", "Reduced hotspots", "Meets ASHRAE guidelines"],
+      images: [
+        "https://www.deltapowersolutions.com/media/download/Liquid-to-Air-CDU-115kW-front_1.jpg.jpg",
+        "https://appliance-standards.org/sites/default/files/styles/content_890/public/computer_room_air_conditioners.jpg?itok=usG_Q6s4"
+      ],
       ctaText: "Get Cooling System Quote"
     },
     "Environmental Control": {
@@ -54,6 +66,10 @@ const DataCenter = () => {
       specifications: ["Monitoring Points: Temperature, Humidity, Particles, Gases", "Control Accuracy: ±1°F, ±3% RH", "Response Time: <60 seconds", "Energy Savings: Up to 40%", "Uptime: 99.9%+"],
       applications: ["Large Data Centers", "Mission Critical Facilities", "Cloud Service Providers", "Financial Data Centers", "Government Facilities"],
       benefits: ["Comprehensive protection", "Automated operation", "Energy efficiency", "Predictive maintenance", "Maximum uptime", "Regulatory compliance"],
+      images: [
+        "https://www.raritan.com/assets/ram/blog/data-center-infrastructure-management-DCIM.jpg",
+        "https://www.akcp.com/wp-content/uploads/2025/03/server-room-environmental-monitoring-software-systems-1-e1620291899532.jpg"
+      ],
       ctaText: "Request Environmental Assessment"
     }
   };
@@ -107,7 +123,7 @@ const DataCenter = () => {
     <div className="min-h-screen">
       <SocialMediaSidebar />
       {/* Hero Section */}
-      <section 
+      <section
         className="py-16 lg:py-24 relative bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
@@ -121,12 +137,12 @@ const DataCenter = () => {
               Air & Chemical Filtration for Data Centers
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-white/90">
-              Specialized filtration systems designed to protect critical data center 
+              Specialized filtration systems designed to protect critical data center
               infrastructure from airborne contaminants and ensure optimal performance.
             </p>
-            <Button 
-              variant="cta" 
-              size="lg" 
+            <Button
+              variant="cta"
+              size="lg"
               onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'end' })}
             >
               Get Assessment
@@ -143,15 +159,15 @@ const DataCenter = () => {
               Data Center Filtration Solutions
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive air and chemical filtration systems specifically engineered 
+              Comprehensive air and chemical filtration systems specifically engineered
               for the demanding requirements of modern data centers.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {solutions.map((solution, index) => (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className="h-full shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-corporate)] transition-all duration-300 cursor-pointer hover:scale-105"
                 onClick={() => setSelectedSolution(solutionDetails[solution.title])}
               >
@@ -192,7 +208,7 @@ const DataCenter = () => {
             <h2 className="text-3xl font-bold mb-12 text-corporate-blue text-center">
               Data Center Environmental Challenges
             </h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
               {challenges.map((challenge, index) => (
                 <Card key={index} className="text-center shadow-[var(--shadow-card)]">
@@ -325,11 +341,11 @@ const DataCenter = () => {
                 Get Your Data Center Assessment
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Our data center specialists will evaluate your facility and recommend 
+                Our data center specialists will evaluate your facility and recommend
                 the optimal filtration strategy for your specific requirements.
               </p>
             </div>
-            
+
             <div id="contact-form" className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
               <div>
                 <h3 className="text-2xl font-semibold mb-6 text-corporate-blue">
@@ -354,8 +370,8 @@ const DataCenter = () => {
                   </div>
                 </div>
               </div>
-              
-              <ContactForm 
+
+              <ContactForm
                 title="Request Data Center Assessment"
                 description="Contact us for a comprehensive evaluation of your data center's filtration needs."
                 defaultQueryType="datacenter"
