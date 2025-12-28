@@ -5,101 +5,99 @@ import { Badge } from "@/components/ui/badge";
 import ContactForm from "@/components/ui/contact-form";
 import SocialMediaSidebar from "@/components/ui/social-media-sidebar";
 import GenericModal, { GenericModalData } from "@/components/ui/generic-modal";
-import { Leaf, Users, Globe, Beaker, Factory, Recycle } from "lucide-react";
-import heroImage from "@/assets/hero-rhamnolipids.webp";
+import { Leaf, Users, Globe, Beaker, Factory, Recycle, Droplets, Shield, CheckCircle } from "lucide-react";
 
 const Rhamnolipids = () => {
   const [selectedApplication, setSelectedApplication] = useState<GenericModalData | null>(null);
 
+  // AGAE Assets
+  const agaeLogo = "https://www.agaetech.com/cdn/shop/files/AGAE-logos_300x90.jpg?v=1647969471";
+  const productImages = [
+    "https://www.agaetech.com/cdn/shop/files/AGAER90_600x600.png?v=1710523604",
+    "https://www.agaetech.com/cdn/shop/files/AGAER95Md_600x600.png?v=1710523804",
+    "https://www.agaetech.com/cdn/shop/files/dR95D90-edited_600x600.png?v=1719269812"
+  ];
+  const contextImages = {
+    science: "https://www.agaetech.com/cdn/shop/files/tubes_1440x.jpg?v=1614295070",
+    agriculture: "https://www.agaetech.com/cdn/shop/files/horti_1440x.jpg?v=1614295130",
+    nature: "https://www.agaetech.com/cdn/shop/files/North_West_Mountain_Picture_1440x.jpg?v=1754766557"
+  };
+
   const applicationDetails: { [key: string]: GenericModalData } = {
-    "Industrial Applications": {
-      title: "Industrial Applications",
-      overview: "Enhanced oil recovery, cleaning agents, and industrial processing applications where bio-surfactants provide superior performance.",
-      detailedDescription: "Rhamnolipids offer exceptional performance in industrial applications due to their unique molecular structure and surface-active properties. These biosurfactants demonstrate superior emulsification, wetting, and foaming characteristics compared to synthetic alternatives, making them ideal for various industrial processes.",
-      workingPrinciple: "Rhamnolipids work by reducing surface tension at interfaces, enabling better mixing of oil and water phases. Their amphiphilic structure allows them to position at interfaces and form micelles, improving solubilization of hydrophobic compounds and enhancing cleaning efficiency in industrial processes.",
-      features: ["Superior Emulsification", "Enhanced Oil Recovery", "Industrial Cleaning", "Process Enhancement", "Temperature Stability", "pH Tolerance"],
-      specifications: ["Surface Tension: <30 mN/m", "CMC: 50-200 mg/L", "Temperature Stability: Up to 100°C", "pH Range: 4-12", "Biodegradation: >90% in 28 days"],
-      applications: ["Enhanced Oil Recovery", "Metal Cleaning", "Textile Processing", "Leather Treatment", "Paint Manufacturing"],
-      benefits: ["Biodegradable formulation", "Low toxicity profile", "High performance efficiency", "Cost-effective solution", "Regulatory compliance", "Sustainable alternative"],
-      ctaText: "Request Industrial Application Quote"
+    "Energy & Oil": {
+      title: "Energy & Oil",
+      overview: "Microbial Enhanced Oil Recovery (MEOR) & Tank Cleaning solutions optimized for high-salinity environments.",
+      detailedDescription: "In the Energy & Oil sector, our Rhamnolipids offer a sustainable revolution. Specifically optimized for the high-salinity and high-heat environments characteristic of the Gulf region, these bio-surfactants excel in Microbial Enhanced Oil Recovery (MEOR) and tank cleaning applications where traditional chemicals fail.",
+      workingPrinciple: "The unique chemical structure of Rhamnolipids allows them to reduce surface tension effectively even in extreme conditions. They mobilize residual oil trapped in porous rock formations and emulsify heavy crude for easier extraction and transport, all while being 100% biodegradable.",
+      features: ["High Salinity Tolerance", "Thermal Stability", "Superior Emulsification", "Biodegradable", "Non-Corrosive"],
+      specifications: ["Purity: 90-95%", "pH Stability: 2-12", "Temp Stability: >90°C", "Salinity Tolerance: >10%"],
+      applications: ["MEOR", "Tank Cleaning", "Sludge Removal", "Drilling Mud Additives", "Flow Assurance"],
+      benefits: ["Increases recovery rates", "Reduces environmental liability", "Lowers treatment costs", "Safe for personnel", "Regulatory compliance"],
+      images: productImages,
+      ctaText: "Request Quote"
     },
-    "Environmental Solutions": {
-      title: "Environmental Solutions", 
-      overview: "Bioremediation and environmental cleanup applications leveraging the natural properties of rhamnolipids for soil and water treatment.",
-      detailedDescription: "Rhamnolipids excel in environmental applications due to their natural origin and biodegradability. They enhance the bioavailability of hydrophobic contaminants, making them more accessible to degrading microorganisms in bioremediation processes while being completely safe for the environment.",
-      workingPrinciple: "In environmental applications, rhamnolipids enhance the solubilization and mobilization of hydrophobic contaminants from soil and groundwater. They increase the surface area available for microbial degradation and facilitate the transport of contaminants to treatment zones.",
-      features: ["Bioremediation Enhancement", "Soil Washing", "Groundwater Treatment", "Oil Spill Cleanup", "Heavy Metal Extraction", "Eco-Friendly"],
-      specifications: ["Biodegradability: >95% in 21 days", "Toxicity: LC50 >1000 mg/L", "Solubility: High in water", "Stability: Stable at environmental pH", "Biocompatibility: Excellent"],
-      applications: ["Soil Remediation", "Groundwater Cleanup", "Oil Spill Response", "Industrial Site Cleanup", "Sediment Treatment"],
-      benefits: ["100% biodegradable", "Non-toxic to environment", "Enhances natural processes", "Reduces cleanup time", "Cost-effective remediation", "Regulatory approved"],
-      ctaText: "Get Environmental Solutions Quote"
+    "Personal Care": {
+      title: "Personal Care",
+      overview: "Premium ingredients for luxury skincare, sulfate-free shampoos, and mild cleansers.",
+      detailedDescription: "Meeting the rising demand for 'Clean Beauty' in the booming Middle Eastern cosmetic market, our Pharmaceutical and Cosmetic grade Rhamnolipids provide a gentle yet effective alternative to harsh synthetic surfactants. They are perfect for formulating luxury skincare, sulfate-free shampoos, and hypoallergenic cleansers.",
+      workingPrinciple: "Rhamnolipids act as natural foaming agents and emulsifiers that are ultra-mild on the skin. They possess inherent anti-microbial properties and moisturization benefits, allowing formulators to create high-performance products with simple, clean labels.",
+      features: ["Sulfate-Free", "Ultra-Mild", "Natural Foaming", "Anti-Microbial", "Eco-Certified"],
+      specifications: ["Purity: 99% (Pharmaceutical Grade)", "Grade: R99/dR99", "Appearance: White Powder", "Solubility: Water Soluble"],
+      applications: ["Anti-Aging Creams", "Sulfat-Free Shampoos", "Facial Cleansers", "Natural Deodorants", "Baby Care"],
+      benefits: ["Gentle on skin", "Rich foaming lather", "Clean label ingredient", "Natural preservation boost", "Sustainability claim"],
+      images: [productImages[2], productImages[1]], // White powders for cosmetics
+      ctaText: "Request Quote"
     },
-    "Biotechnology": {
-      title: "Biotechnology",
-      overview: "Research and development applications in biotechnology, pharmaceuticals, and specialty chemical manufacturing.",
-      detailedDescription: "In biotechnology applications, rhamnolipids serve as key components in pharmaceutical formulations, drug delivery systems, and biotechnological processes. Their biocompatibility and unique properties make them valuable for various high-tech applications requiring natural, safe surfactants.",
-      workingPrinciple: "Rhamnolipids function in biotechnology through their ability to interact with biological membranes, enhance drug solubility, and facilitate cellular uptake. Their natural origin and biocompatibility make them ideal for applications where synthetic surfactants would be unsuitable.",
-      features: ["Pharmaceutical Grade", "Drug Delivery", "Cell Culture Media", "Protein Purification", "Vaccine Adjuvant", "Biocompatible"],
-      specifications: ["Purity: >95%", "Endotoxin: <0.1 EU/mg", "Heavy Metals: <10 ppm", "Sterility: USP <71>", "pH: 6.0-8.0"],
-      applications: ["Drug Formulation", "Gene Therapy", "Vaccine Development", "Cell Culture", "Protein Production"],
-      benefits: ["Pharmaceutical grade quality", "Excellent biocompatibility", "Enhanced drug delivery", "Research grade purity", "Regulatory compliant", "Technical support included"],
-      ctaText: "Request Biotech Grade Quote"
+    "Agriculture": {
+      title: "Agriculture",
+      overview: "Natural biopesticides and soil wetting agents crucial for water conservation in arid climates.",
+      detailedDescription: "For the agricultural sector, specifically in arid climates, Rhamnolipids are game-changers. They serve as highly effective natural biopesticides (zoospores control) and superior soil wetting agents, helping to maximize water retention and nutrient uptake in challenging soil conditions.",
+      workingPrinciple: "As biosurfactants, they significantly lower the surface tension of water, allowing for better spreading and penetration into hydrophobic soils. They also disrupt the cell membranes of certain pests and pathogens, providing natural crop protection without toxic residues.",
+      features: ["Water Conservation", "Soil Penetration", "Natural Pesticide", "Nutrient Uptake", "Biodegradable"],
+      specifications: ["Concentration: Custom Blends", "Activity: Surface Active", "Safety: Non-Phytotoxic", "Organic Certified"],
+      applications: ["Soil Wetting Agents", "Biopesticide Formulation", "Foliar Sprays", "Hydroponics", "Nutrient Delivery"],
+      benefits: ["Improves water efficiency", "Enhances crop yields", "Reduces chemical runoff", "Safe for pollinators", "Organic farming compliant"],
+      images: [contextImages.agriculture, productImages[0]],
+      ctaText: "Request Quote"
     },
-    "Sustainable Manufacturing": {
-      title: "Sustainable Manufacturing",
-      overview: "Green manufacturing processes that require environmentally friendly surfactants and bio-chemical solutions.",
-      detailedDescription: "Rhamnolipids support sustainable manufacturing initiatives by replacing petroleum-based surfactants with renewable, biodegradable alternatives. They maintain high performance while reducing environmental impact and supporting circular economy principles in manufacturing processes.",
-      workingPrinciple: "In sustainable manufacturing, rhamnolipids provide the same functionality as synthetic surfactants while offering superior environmental credentials. They can be produced from renewable feedstocks and completely biodegrade, supporting cradle-to-cradle manufacturing approaches.",
-      features: ["Renewable Source", "Carbon Neutral", "Zero VOCs", "Circular Economy", "Green Chemistry", "Life Cycle Benefits"],
-      specifications: ["Renewable Content: 100%", "Carbon Footprint: Neutral", "Biodegradation: Complete", "VOC Content: 0%", "Sustainability: Certified"],
-      applications: ["Green Cleaning Products", "Sustainable Cosmetics", "Eco-Friendly Paints", "Bio-Plastics", "Renewable Chemicals"],
-      benefits: ["100% renewable origin", "Carbon neutral production", "Supports sustainability goals", "Reduces environmental impact", "Consumer preferred", "Future-ready technology"],
-      ctaText: "Get Sustainable Solutions Quote"
+    "Environmental": {
+      title: "Environmental",
+      overview: "Oil spill remediation and heavy metal removal solutions protecting coastlines and desert ecosystems.",
+      detailedDescription: "We are committed to protecting our coastlines and desert ecosystems with non-toxic chemistry. Our Rhamnolipids are powerful agents for oil spill remediation and heavy metal removal, offering a solution that cleans up pollution without adding new toxins to the environment.",
+      workingPrinciple: "Rhamnolipids increase the bioavailability of hydrophobic pollutants, accelerating their natural biodegradation by native bacteria. They also chelate heavy metals, allowing for their effective removal from soil and water.",
+      features: ["Bioremediation", "Metal Chelation", "Non-Toxic", "Marine Safe", "Rapid Action"],
+      specifications: ["Eco-Toxicity: None", "Biodegradability: 100%", "Form: Liquid/Powder", "Application: Spray/Injection"],
+      applications: ["Oil Spill Response", "Soil Remediation", "Tank Bottom Recovery", "Wastewater Treatment", "Heavy Metal Removal"],
+      benefits: ["Restores ecosystems", "Fast recovery time", "No secondary pollution", "Cost-effective", "Public safety"],
+      images: [contextImages.nature, productImages[0]],
+      ctaText: "Request Quote"
     }
   };
 
   const applications = [
     {
       icon: Factory,
-      title: "Industrial Applications",
-      description: "Enhanced oil recovery, cleaning agents, and industrial processing applications where bio-surfactants provide superior performance.",
-      benefits: ["Biodegradable", "Low Toxicity", "High Performance", "Cost Effective"]
+      title: "Energy & Oil",
+      description: "Microbial Enhanced Oil Recovery (MEOR) & Tank Cleaning. Optimized for the high-salinity and high-heat environments of the Gulf.",
+      benefits: ["High Salinity Tolerance", "Thermal Stability", "Biodegradable"]
+    },
+    {
+      icon: Droplets,
+      title: "Personal Care",
+      description: "Luxury skincare, sulfate-free shampoos, and mild cleansers. Meets the rising demand for 'Clean Beauty' in the Middle East.",
+      benefits: ["Clean Beauty", "Sulfate-Free", "Gentle & Mild"]
     },
     {
       icon: Leaf,
-      title: "Environmental Solutions",
-      description: "Bioremediation and environmental cleanup applications leveraging the natural properties of rhamnolipids for soil and water treatment.",
-      benefits: ["Eco-Friendly", "Natural Origin", "Soil Compatible", "Water Treatment"]
-    },
-    {
-      icon: Beaker,
-      title: "Biotechnology",
-      description: "Research and development applications in biotechnology, pharmaceuticals, and specialty chemical manufacturing.",
-      benefits: ["Research Grade", "Custom Specifications", "Quality Assured", "Technical Support"]
+      title: "Agriculture",
+      description: "Natural biopesticides and soil wetting agents. Crucial for water conservation and sustainable farming in arid climates.",
+      benefits: ["Water Conservation", "Biopesticide", "Soil Health"]
     },
     {
       icon: Recycle,
-      title: "Sustainable Manufacturing",
-      description: "Green manufacturing processes that require environmentally friendly surfactants and bio-chemical solutions.",
-      benefits: ["Renewable", "Sustainable", "Green Chemistry", "Carbon Neutral"]
-    }
-  ];
-
-  const partnershipBenefits = [
-    {
-      icon: Users,
-      title: "Strategic Partnerships",
-      description: "We work with leading biotechnology companies to bring rhamnolipid products to market through strategic partnerships."
-    },
-    {
-      icon: Globe,
-      title: "Global Distribution",
-      description: "Leverage our worldwide distribution network to access rhamnolipid products and related biotechnology solutions."
-    },
-    {
-      icon: Beaker,
-      title: "Technical Expertise",
-      description: "Access to technical expertise and application support for implementing rhamnolipid-based solutions in your processes."
+      title: "Environmental",
+      description: "Oil spill remediation and heavy metal removal. Protecting our coastlines and desert ecosystems with non-toxic chemistry.",
+      benefits: ["Non-Toxic", "Marine Safe", "Remediation"]
     }
   ];
 
@@ -107,109 +105,214 @@ const Rhamnolipids = () => {
     <div className="min-h-screen">
       <SocialMediaSidebar />
       {/* Hero Section */}
-      <section 
+      <section
         className="py-16 lg:py-24 relative bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
+        style={{ backgroundImage: `url(${contextImages.nature})` }}
       >
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/60"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center text-white">
             <Badge variant="outline" className="mb-4 border-white text-white bg-white/10 backdrop-blur-sm">
-              Rhamnolipids Solutions
+              Exclusive Distributor: AGAE Technologies
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              Bio-surfactant Solutions
+              Bridging Innovation and Sustainability
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-white/90">
-              Access high-quality rhamnolipid products through our strategic partnerships, 
-              offering sustainable and environmentally friendly surfactant solutions.
+              We provide the world's most versatile biosurfactants to industries that refuse to compromise on performance or the planet.
             </p>
-            <Button 
-              variant="cta" 
-              size="lg" 
-              onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'end' })}
+            <Button
+              variant="cta"
+              size="lg"
+              onClick={() => document.getElementById('partnership')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
             >
-              Request Information
+              Explore Our Partnership
             </Button>
           </div>
         </div>
       </section>
 
-      {/* What are Rhamnolipids */}
+      {/* The Science Section */}
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-corporate-blue">
-                What are Rhamnolipids?
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Understanding the revolutionary bio-surfactant technology
-              </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <div className="relative rounded-lg overflow-hidden shadow-[var(--shadow-card)]">
+              <img
+                src={contextImages.science}
+                alt="Rhamnolipid Science"
+                className="w-full h-full object-cover"
+              />
             </div>
-
-            <Card className="shadow-[var(--shadow-card)] mb-8">
-              <CardContent className="p-8">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                  <div>
-                    <h3 className="text-2xl font-semibold mb-4 text-corporate-blue">
-                      Revolutionary Bio-Surfactants
-                    </h3>
-                    <p className="text-muted-foreground mb-4">
-                      Rhamnolipids are glycolipid biosurfactants produced by certain bacteria, 
-                      particularly Pseudomonas aeruginosa. These naturally occurring compounds 
-                      offer superior performance compared to traditional chemical surfactants.
-                    </p>
-                    <p className="text-muted-foreground">
-                      With excellent surface-active properties, biodegradability, and low toxicity, 
-                      rhamnolipids represent the future of sustainable surfactant technology.
-                    </p>
-                  </div>
-                  <div className="bg-corporate-blue-light/10 p-6 rounded-lg">
-                    <h4 className="font-semibold text-corporate-blue mb-4">Key Advantages:</h4>
-                    <ul className="space-y-3">
-                      <li className="flex items-center">
-                        <Leaf className="h-4 w-4 text-corporate-blue mr-2" />
-                        <span className="text-muted-foreground">100% Biodegradable</span>
-                      </li>
-                      <li className="flex items-center">
-                        <Beaker className="h-4 w-4 text-corporate-blue mr-2" />
-                        <span className="text-muted-foreground">Low Toxicity</span>
-                      </li>
-                      <li className="flex items-center">
-                        <Factory className="h-4 w-4 text-corporate-blue mr-2" />
-                        <span className="text-muted-foreground">High Performance</span>
-                      </li>
-                      <li className="flex items-center">
-                        <Recycle className="h-4 w-4 text-corporate-blue mr-2" />
-                        <span className="text-muted-foreground">Renewable Source</span>
-                      </li>
-                    </ul>
-                  </div>
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-corporate-blue">
+                The Science of Rhamnolipids
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                Rhamnolipids are not just "green" alternatives—they are <span className="font-semibold text-foreground">superior molecules</span>.
+                Produced through specialized microbial fermentation, these glycolipids offer a unique chemical structure found nowhere else in nature.
+              </p>
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                Unlike synthetic, petroleum-derived surfactants, they outperform across a massive range of temperatures, salinities, and pH levels,
+                making them the ultimate choice for demanding industrial applications.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="flex items-center space-x-3 p-3 bg-secondary rounded-lg">
+                  <CheckCircle className="h-5 w-5 text-white" />
+                  <span className="font-medium text-white">High Salinity Tolerance</span>
                 </div>
+                <div className="flex items-center space-x-3 p-3 bg-secondary rounded-lg">
+                  <CheckCircle className="h-5 w-5 text-white" />
+                  <span className="font-medium text-white">Extreme pH Stability</span>
+                </div>
+                <div className="flex items-center space-x-3 p-3 bg-secondary rounded-lg">
+                  <CheckCircle className="h-5 w-5 text-white" />
+                  <span className="font-medium text-white">Thermal Resistance</span>
+                </div>
+                <div className="flex items-center space-x-3 p-3 bg-secondary rounded-lg">
+                  <CheckCircle className="h-5 w-5 text-white" />
+                  <span className="font-medium text-white">Superior Surface Activity</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Global Advantages */}
+      <section className="py-16 lg:py-24 bg-secondary/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4 text-corporate-blue">
+              Key Global Advantages
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Sustainable solutions delivering superior performance
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <Card className="text-center shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-corporate)] transition-all duration-300">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-corporate-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Globe className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="font-bold text-lg mb-2 text-corporate-blue">Carbon Neutrality</h3>
+                <p className="text-sm text-muted-foreground">A direct answer to global ESG mandates and carbon-reduction goals.</p>
+              </CardContent>
+            </Card>
+            <Card className="text-center shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-corporate)] transition-all duration-300">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-corporate-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Recycle className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="font-bold text-lg mb-2 text-corporate-blue">100% Biodegradable</h3>
+                <p className="text-sm text-muted-foreground">Breaks down naturally in soil and marine environments completely.</p>
+              </CardContent>
+            </Card>
+            <Card className="text-center shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-corporate)] transition-all duration-300">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-corporate-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Droplets className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="font-bold text-lg mb-2 text-corporate-blue">Surface Activity</h3>
+                <p className="text-sm text-muted-foreground">Achieves lower surface tension than many synthetic counterparts.</p>
+              </CardContent>
+            </Card>
+            <Card className="text-center shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-corporate)] transition-all duration-300">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-corporate-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Shield className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="font-bold text-lg mb-2 text-corporate-blue">Low Toxicity</h3>
+                <p className="text-sm text-muted-foreground">Safe for distinct formulations ranging from cosmetics to agriculture.</p>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Applications */}
+      {/* Global Partnership Section */}
+      <section id="partnership" className="py-16 lg:py-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col md:flex-row items-center justify-between mb-12 gap-8">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-corporate-blue mb-2">Global Partnership</h2>
+                <h3 className="text-xl text-muted-foreground">ROS Global <span className="text-corporate-blue font-bold">×</span> AGAE Technologies</h3>
+              </div>
+              <img src={agaeLogo} alt="AGAE Technologies Logo" className="h-16 object-contain transition-all duration-300" />
+            </div>
+
+            <div className="bg-corporate-blue rounded-lg p-8 md:p-12 text-white shadow-2xl relative overflow-hidden">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
+                <div>
+                  <h3 className="text-2xl font-bold mb-6">World’s Premier Manufacturer</h3>
+                  <p className="text-white/90 leading-relaxed mb-6">
+                    Based in the USA, AGAE Technologies is the world’s premier manufacturer of high-purity Rhamnolipids.
+                    Through our exclusive partnership, ROS Global ensures that industries across the MENA region
+                    and beyond have access to American-engineered molecules backed by rigorous global certifications.
+                  </p>
+                  <ul className="space-y-4">
+                    <li className="flex items-start">
+                      <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                        <Beaker className="h-5 w-5 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-bold">Purity Grades</h4>
+                        <p className="text-sm text-white/70">From 85% to 99% purity for specialized lab and industrial use.</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                        <Factory className="h-5 w-5 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-bold">Scalability</h4>
+                        <p className="text-sm text-white/70">The capacity to support multi-ton industrial requirements.</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Product Showcase */}
+                <div className="grid grid-cols-2 gap-4">
+                  {productImages.slice(0, 2).map((img, idx) => (
+                    <div key={idx} className="bg-white rounded-xl p-4 flex flex-col items-center justify-center shadow-lg">
+                      <img src={img} alt={`Rhamnolipid Product ${idx + 1}`} className="w-full h-auto max-h-32 object-contain" />
+                      <span className="text-corporate-blue text-xs font-bold mt-2">Industrial Grade</span>
+                    </div>
+                  ))}
+                  <div className="col-span-2 bg-white rounded-xl p-4 flex items-center justify-center shadow-lg">
+                    <div className="flex items-center space-x-4">
+                      <img src={productImages[2]} alt="Pure Rhamnolipid" className="h-24 object-contain" />
+                      <div className="text-left">
+                        <span className="block text-corporate-blue text-sm font-bold">R99 Pharma Grade</span>
+                        <span className="text-xs text-muted-foreground">99% Purity (White Powder)</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Strategic Solutions */}
       <section className="py-16 lg:py-24 bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-corporate-blue">
-              Rhamnolipid Applications
+              Strategic Solutions for Global Industries
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Versatile bio-surfactants with applications across multiple industries, 
-              from environmental remediation to advanced manufacturing.
+              Delivering high-impact bio-solutions tailored for regional challenges.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {applications.map((application, index) => (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className="h-full shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-corporate)] transition-all duration-300 cursor-pointer hover:scale-105"
                 onClick={() => setSelectedApplication(applicationDetails[application.title])}
               >
@@ -219,7 +322,7 @@ const Rhamnolipids = () => {
                       <application.icon className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <CardTitle className="text-corporate-blue text-lg">
+                      <CardTitle className="text-corporate-blue text-xl">
                         {application.title}
                       </CardTitle>
                     </div>
@@ -229,7 +332,7 @@ const Rhamnolipids = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-2 gap-2 mb-4">
+                  <div className="flex flex-wrap gap-2">
                     {application.benefits.map((benefit, idx) => (
                       <Badge key={idx} variant="secondary" className="text-xs">
                         {benefit}
@@ -243,172 +346,92 @@ const Rhamnolipids = () => {
         </div>
       </section>
 
-      {/* Partnership Model */}
+      {/* Why Partner Section */}
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4 text-corporate-blue">
-                Our Partnership Approach
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Connecting you with leading rhamnolipid producers through strategic partnerships
-              </p>
-            </div>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-corporate-blue">Why Partner with ROS Global?</h2>
+            <p className="text-muted-foreground mt-2">While our reach is global, our focus is personal.</p>
+          </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-              {partnershipBenefits.map((benefit, index) => (
-                <Card key={index} className="text-center shadow-[var(--shadow-card)]">
-                  <CardHeader>
-                    <div className="w-16 h-16 bg-corporate-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                      <benefit.icon className="h-8 w-8 text-white" />
-                    </div>
-                    <CardTitle className="text-corporate-blue">
-                      {benefit.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">
-                      {benefit.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto text-center">
+            <div className="p-6">
+              <div className="w-16 h-16 bg-corporate-blue rounded-full flex items-center justify-center mx-auto mb-6">
+                <Users className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-corporate-blue">Regional Expertise</h3>
+              <p className="text-muted-foreground">We understand the specific regulatory frameworks and business landscape of the Middle East and North Africa.</p>
             </div>
-
-            <Card className="shadow-[var(--shadow-card)]">
-              <CardHeader>
-                <CardTitle className="text-corporate-blue text-center">How We Support Your Rhamnolipid Needs</CardTitle>
-                <CardDescription className="text-center">
-                  Comprehensive support from sourcing to implementation
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <h4 className="font-semibold text-corporate-blue mb-3">Sourcing & Supply</h4>
-                    <ul className="space-y-2 text-muted-foreground">
-                      <li className="flex items-start">
-                        <span className="w-2 h-2 bg-corporate-blue rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        <span>Access to vetted rhamnolipid producers</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="w-2 h-2 bg-corporate-blue rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        <span>Quality assurance and product verification</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="w-2 h-2 bg-corporate-blue rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        <span>Competitive pricing through partnerships</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="w-2 h-2 bg-corporate-blue rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        <span>Reliable supply chain management</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-corporate-blue mb-3">Technical Support</h4>
-                    <ul className="space-y-2 text-muted-foreground">
-                      <li className="flex items-start">
-                        <span className="w-2 h-2 bg-corporate-blue rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        <span>Application development support</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="w-2 h-2 bg-corporate-blue rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        <span>Custom specification development</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="w-2 h-2 bg-corporate-blue rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        <span>Process optimization consulting</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="w-2 h-2 bg-corporate-blue rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        <span>Regulatory guidance and documentation</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            <div className="p-6">
+              <div className="w-16 h-16 bg-corporate-blue rounded-full flex items-center justify-center mx-auto mb-6">
+                <Globe className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-corporate-blue">Global Distribution Hub</h3>
+              <p className="text-muted-foreground">Leveraging the UAE’s world-class logistics infrastructure to ship AGAE’s innovations efficiently worldwide.</p>
+            </div>
+            <div className="p-6">
+              <div className="w-16 h-16 bg-corporate-blue rounded-full flex items-center justify-center mx-auto mb-6">
+                <Beaker className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-corporate-blue">Technical Support</h3>
+              <p className="text-muted-foreground">Our specialists provide formulation guidance to help you transition from synthetic to bio-based surfactants seamlessly.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Industries Served */}
+      {/* Bio-Revolution CTA */}
+      {/* <section className="py-16 lg:py-24 bg-corporate-blue">
+        <div className="container mx-auto px-4 text-center">
+          <Badge variant="outline" className="mb-6 border-white/30 text-white">Sustainability First</Badge>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Join the Bio-Revolution</h2>
+          <p className="text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
+              Whether you are a formulator in Europe, a producer in Asia, or an operator in the GCC,
+            ROS Global provides the high-purity Rhamnolipids you need to lead your industry’s transition to green chemistry.
+            </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+              variant="secondary"
+                size="lg"
+              className="font-bold text-lg px-8"
+                onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'end' })}
+              >
+                Take the Next Step
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+              className="border-white text-white hover:bg-white/10 font-bold text-lg px-8 bg-transparent"
+                onClick={() => document.getElementById('partnership')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                View Products
+              </Button>
+            </div>
+          </div>
+      </section> */}
+
+      {/* Contact Form Section */}
       <section className="py-16 lg:py-24 bg-secondary/30">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-corporate-blue">
-              Industries We Serve
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Rhamnolipids find applications across diverse industries seeking sustainable solutions
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            <div className="text-center p-6 bg-white rounded-lg shadow-[var(--shadow-card)]">
-              <h3 className="font-semibold text-corporate-blue mb-2">Oil & Gas</h3>
-              <p className="text-sm text-muted-foreground">Enhanced oil recovery and drilling fluids</p>
-            </div>
-            <div className="text-center p-6 bg-white rounded-lg shadow-[var(--shadow-card)]">
-              <h3 className="font-semibold text-corporate-blue mb-2">Environmental</h3>
-              <p className="text-sm text-muted-foreground">Bioremediation and cleanup applications</p>
-            </div>
-            <div className="text-center p-6 bg-white rounded-lg shadow-[var(--shadow-card)]">
-              <h3 className="font-semibold text-corporate-blue mb-2">Pharmaceuticals</h3>
-              <p className="text-sm text-muted-foreground">Drug delivery and formulation</p>
-            </div>
-            <div className="text-center p-6 bg-white rounded-lg shadow-[var(--shadow-card)]">
-              <h3 className="font-semibold text-corporate-blue mb-2">Agriculture</h3>
-              <p className="text-sm text-muted-foreground">Pesticide formulations and soil treatment</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section className="py-16 lg:py-24">
-        <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-corporate-blue">
-                Get Started with Rhamnolipids
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Contact our biotechnology specialists to explore how rhamnolipids 
-                can provide sustainable solutions for your specific applications.
-              </p>
-            </div>
-            
             <div id="contact-form" className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
               <div>
                 <h3 className="text-2xl font-semibold mb-6 text-corporate-blue">
-                  Why Choose Bio-surfactants?
+                  Explore Rhamnolipids Potential
                 </h3>
+                <p className="text-muted-foreground mb-8">
+                  Explore how Rhamnolipids can optimize your formulations and elevate your brand's sustainability profile.
+                </p>
                 <div className="space-y-4 text-muted-foreground">
-                  <div className="flex items-start">
-                    <div className="w-2 h-2 bg-corporate-blue rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <p><strong className="text-corporate-blue">Environmental Benefits:</strong> Biodegradable and non-toxic, reducing environmental impact</p>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-2 h-2 bg-corporate-blue rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <p><strong className="text-corporate-blue">Superior Performance:</strong> Often outperform synthetic surfactants in challenging conditions</p>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-2 h-2 bg-corporate-blue rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <p><strong className="text-corporate-blue">Regulatory Advantage:</strong> Meet increasingly strict environmental regulations</p>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-2 h-2 bg-corporate-blue rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <p><strong className="text-corporate-blue">Future-Ready:</strong> Position your business for sustainable growth</p>
-                  </div>
+                  <img src="https://www.agaetech.com/cdn/shop/files/AGAE-logos_300x90.jpg?v=1647969471" alt="AGAE" className="h-12 opacity-80 mb-6 mix-blend-multiply" />
+                  <p className="font-medium text-corporate-blue">Exclusive Distributor for MENA Region</p>
+                  <p>ROS Global x AGAE Technologies</p>
                 </div>
               </div>
-              
-              <ContactForm 
-                title="Request Rhamnolipids Information"
-                description="Let us know about your surfactant requirements and we'll connect you with the right solutions."
+
+              <ContactForm
+                title="Connect with Our Specialists"
+                description="Ready to transition to high-performance bio-surfactants? Send us your inquiry."
                 defaultQueryType="rhamnolipids"
               />
             </div>
