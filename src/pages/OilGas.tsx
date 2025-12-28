@@ -21,17 +21,25 @@ const OilGas = () => {
       specifications: ["Voltage Range: 120V-4160V", "Temperature Range: -40°F to 140°F", "Enclosure Rating: NEMA 4X/7/9", "Hazardous Area: Class I, Div 1&2", "Certification: UL, CSA, ATEX"],
       applications: ["Well Sites", "Production Facilities", "Processing Plants", "Pump Stations", "Compressor Stations"],
       benefits: ["Enhanced safety", "Regulatory compliance", "Reduced downtime", "Remote operation", "Weather resistant", "Long service life"],
+      images: [
+        "http://www.oilgasfacility.com/cms/static/img/2.jpg",
+        "https://theengineeringmindset.com/wp-content/uploads/2020/04/WS-4.png"
+      ],
       ctaText: "Request Electrical Quote"
     },
     "Field Surface Facility - Mechanical": {
       title: "Field Surface Facility - Mechanical",
-      overview: "Mechanical equipment and systems for surface facility operations including pumps, compressors, and processing equipment.",
+      overview: "Mechanical equipment and systems for surface facility operations including pumps, compressors, valves, pipes, fittings and processing equipment.",
       detailedDescription: "Mechanical systems for oil & gas surface facilities encompass all rotating equipment, pressure vessels, and process systems required for production operations. Our solutions are engineered for continuous operation in demanding environments with minimal maintenance requirements.",
       workingPrinciple: "Mechanical systems are designed for optimal efficiency and reliability using proven technologies. Pumps and compressors utilize advanced materials and designs for extended service life, while processing equipment incorporates automated controls for safe and efficient operation.",
       features: ["Continuous Duty Rating", "Corrosion Resistant Materials", "Automated Controls", "Vibration Monitoring", "Easy Maintenance", "API Standards"],
       specifications: ["Operating Pressure: 150-1500 PSI", "Flow Rates: 10-5000 GPM", "Materials: Stainless Steel, Hastelloy", "Standards: API 610, 674", "Temperature: -20°F to 400°F"],
       applications: ["Oil Production", "Gas Processing", "Water Injection", "Chemical Injection", "Separation Systems"],
       benefits: ["High reliability", "Extended service life", "Reduced maintenance", "Energy efficient", "API compliant", "Cost effective"],
+      images: [
+        "https://norgascontrols.com/wp-content/uploads/2021/12/Types-of-gas-valves-in-gas-industry-1.jpg.webp",
+        "https://www.allaircompressors.com.au/wp-content/uploads/sites/54/How-Do-Air-Compressor-Piping-Systems-Work.jpg"
+      ],
       ctaText: "Get Mechanical Quote"
     },
     "Field Surface Facility - Instrumentation": {
@@ -43,6 +51,10 @@ const OilGas = () => {
       specifications: ["Accuracy: ±0.1% of span", "Operating Range: -40°F to 185°F", "Communication: HART, Foundation Fieldbus", "Safety Rating: SIL 2/3", "Explosion Proof: Class I Div 1"],
       applications: ["Flow Measurement", "Pressure Monitoring", "Temperature Control", "Level Detection", "Gas Analysis"],
       benefits: ["High accuracy", "Predictive maintenance", "Remote monitoring", "Safety compliance", "Reduced calibration", "Long-term stability"],
+      images: [
+        "https://images-cdn.ubuy.ae/695121b8ce1ad3b780027f65-universal-water-pressure-test-gauge-kit.jpg",
+        "https://web-material3.yokogawa.com/1/10/overview/flowmeters-all2.jpg"
+      ],
       ctaText: "Request Instrumentation Quote"
     },
     "Drilling - Rig Spaces & Mud Pumps": {
@@ -54,6 +66,10 @@ const OilGas = () => {
       specifications: ["Operating Pressure: 3000-7500 PSI", "Flow Rate: 350-1200 GPM", "Power: 1000-3000 HP", "Liner Size: 5-7.5 inches", "Stroke Rate: 40-120 SPM"],
       applications: ["Onshore Drilling", "Offshore Operations", "Directional Drilling", "Extended Reach", "HPHT Wells"],
       benefits: ["Enhanced drilling performance", "Improved safety", "Reduced NPT", "Higher penetration rates", "Better hole cleaning", "Extended equipment life"],
+      images: [
+        "https://www.slb.com/-/media/images/cam-drlg/rig-equipment/mud-pumps/mud-pump-cmp1600-combo.jpg?la=en&h=969&w=1110&hash=71AF56536D1D53B9055F4F1379B9E78A",
+        "https://www.kw-hydraulik.de/thumbnail/2d/ac/88/1600955808/JOY1GEO%20Bild%201_776x776.jpg?ts=1648650125"
+      ],
       ctaText: "Get Drilling Equipment Quote"
     }
   };
@@ -68,7 +84,7 @@ const OilGas = () => {
     {
       icon: Wrench,
       title: "Field Surface Facility - Mechanical",
-      description: "Mechanical equipment and systems for surface facility operations including pumps, compressors, and processing equipment.",
+      description: "Mechanical equipment and systems for surface facility operations including pumps, compressors, valves, pipes, fittings and processing equipment.",
       features: ["Processing Equipment", "Pumps & Compressors", "Piping Systems", "Valves & Fittings"]
     },
     {
@@ -89,7 +105,7 @@ const OilGas = () => {
     <div className="min-h-screen">
       <SocialMediaSidebar />
       {/* Hero Section */}
-      <section 
+      <section
         className="py-16 lg:py-24 relative bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
@@ -103,12 +119,12 @@ const OilGas = () => {
               Complete Oil & Gas Equipment Solutions
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-white/90">
-              From field surface facilities to drilling operations, we provide comprehensive 
+              From field surface facilities to drilling operations, we provide comprehensive
               electrical, mechanical, and instrumentation solutions for the oil & gas industry.
             </p>
-            <Button 
-              variant="cta" 
-              size="lg" 
+            <Button
+              variant="cta"
+              size="lg"
               onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'end' })}
             >
               Request Quote
@@ -125,15 +141,15 @@ const OilGas = () => {
               Our Oil & Gas Services
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive equipment and support services for every aspect of 
+              Comprehensive equipment and support services for every aspect of
               oil & gas operations, from surface facilities to drilling.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {services.map((service, index) => (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className="h-full shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-corporate)] transition-all duration-300 cursor-pointer hover:scale-105"
                 onClick={() => setSelectedService(serviceDetails[service.title])}
               >
@@ -174,7 +190,7 @@ const OilGas = () => {
             <h2 className="text-3xl font-bold mb-8 text-corporate-blue text-center">
               Specialized Solutions
             </h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               <Card className="shadow-[var(--shadow-card)]">
                 <CardHeader>
@@ -235,11 +251,11 @@ const OilGas = () => {
                 Get Your Oil & Gas Equipment Quote
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Contact our specialists to discuss your oil & gas equipment requirements. 
+                Contact our specialists to discuss your oil & gas equipment requirements.
                 We provide detailed quotes and technical specifications for all our products.
               </p>
             </div>
-            
+
             <div id="contact-form" className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
               <div>
                 <h3 className="text-2xl font-semibold mb-6 text-corporate-blue">
@@ -264,8 +280,8 @@ const OilGas = () => {
                   </div>
                 </div>
               </div>
-              
-              <ContactForm 
+
+              <ContactForm
                 title="Request Oil & Gas Quote"
                 description="Tell us about your project requirements and we'll provide a detailed quote."
                 defaultQueryType="oil-gas"
