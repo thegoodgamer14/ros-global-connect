@@ -22,7 +22,7 @@ const OilGas = () => {
       applications: ["Well Sites", "Production Facilities", "Processing Plants", "Pump Stations", "Compressor Stations"],
       benefits: ["Enhanced safety", "Regulatory compliance", "Reduced downtime", "Remote operation", "Weather resistant", "Long service life"],
       images: [
-        "http://www.oilgasfacility.com/cms/static/img/2.jpg",
+        "https://www.puffer.com/website/media/Shared/Industries/Oil%20and%20Gas/Onshore%20Oil%20and%20Gas/Text%20and%20Media/wellhead_t-m.jpg",
         "https://theengineeringmindset.com/wp-content/uploads/2020/04/WS-4.png"
       ],
       ctaText: "Request Electrical Quote"
