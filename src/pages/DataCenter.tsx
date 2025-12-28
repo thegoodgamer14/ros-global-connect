@@ -6,7 +6,7 @@ import ContactForm from "@/components/ui/contact-form";
 import SocialMediaSidebar from "@/components/ui/social-media-sidebar";
 import GenericModal, { GenericModalData } from "@/components/ui/generic-modal";
 import { Server, Shield, Snowflake, Zap, Filter, Wind } from "lucide-react";
-import heroImage from "@/assets/hero-datacenter.webp";
+import heroImage from "@/assets/hero-datacenter.jpg";
 
 const DataCenter = () => {
   const [selectedSolution, setSelectedSolution] = useState<GenericModalData | null>(null);

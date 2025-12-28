@@ -6,7 +6,7 @@ import ContactForm from "@/components/ui/contact-form";
 import ProductModal from "@/components/ui/product-modal";
 import SocialMediaSidebar from "@/components/ui/social-media-sidebar";
 import { Wind, Droplets, Filter, Thermometer, Zap, Wrench } from "lucide-react";
-import heroImage from "@/assets/hero-hvac.webp";
+import heroImage from "@/assets/hero-hvac.jpg";
 
 const HVAC = () => {
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
