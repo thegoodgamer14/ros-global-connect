@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import ContactForm from "@/components/ui/contact-form";
 import ProductModal from "@/components/ui/product-modal";
 import SocialMediaSidebar from "@/components/ui/social-media-sidebar";
+import SEO from "@/components/SEO";
 import { Wind, Droplets, Filter, Thermometer, Zap, Wrench } from "lucide-react";
 import heroImage from "@/assets/hero-hvac.jpg";
 
@@ -211,6 +212,12 @@ const HVAC = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="HVAC Solutions & Air Filtration Systems | ROS Global Solutions"
+        description="Advanced HVAC products including commercial dehumidifiers, air filters, gas filters, and Celdec cooling pads. Industrial-grade climate control and filtration systems for demanding environments."
+        keywords="HVAC solutions UAE, dehumidifier commercial, air filtration systems, gas filter industrial, Celdec pad, climate control Dubai"
+        path="/hvac"
+      />
       <SocialMediaSidebar />
       {/* Hero Section */}
       <section

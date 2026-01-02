@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import SocialMediaSidebar from "@/components/ui/social-media-sidebar";
 import CustomerLogos from "@/components/ui/customer-logos";
+import SEO from "@/components/SEO";
 import { ArrowRight, Globe, Shield, Users, Zap } from "lucide-react";
 import heroImage from "@/assets/hero-corporate.webp";
 import oilGasIcon from "@/assets/oil-gas-icon.jpg";
@@ -68,11 +69,17 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="ROS Global Solutions | Industrial Engineering & HVAC Solutions UAE"
+        description="ROS Global Solutions delivers specialized consulting and product supply for oil & gas, HVAC, data centers, and biotechnology sectors worldwide. Total engineering solutions provider based in UAE."
+        keywords="oil and gas equipment UAE, HVAC solutions Dubai, data center filtration, rhamnolipids biosurfactant, industrial engineering UAE, Sharjah engineering company"
+        path="/"
+      />
       <SocialMediaSidebar />
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[var(--gradient-corporate)] opacity-90 z-10" />
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
         />
@@ -86,7 +93,7 @@ const Index = () => {
               </span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto">
-              ROS Global Solutions delivers specialized consulting and product supply solutions 
+              ROS Global Solutions delivers specialized consulting and product supply solutions
               across oil & gas, HVAC, data centers, and biotechnology sectors worldwide.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -96,9 +103,9 @@ const Index = () => {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              <Button 
-                variant="corporate-outline" 
-                size="lg" 
+              <Button
+                variant="corporate-outline"
+                size="lg"
                 className="text-lg px-8 py-3 h-12 w-full sm:w-auto border-white text-white hover:bg-white hover:text-corporate-blue"
                 onClick={() => document.getElementById('product-lines')?.scrollIntoView({ behavior: 'smooth' })}
               >
@@ -123,9 +130,9 @@ const Index = () => {
               Your Trusted Partner in Industrial Engineering Solutions
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              With decades of experience, ROS Global Solutions specializes in providing 
-              mission-critical products and consulting services to the world's most demanding 
-              industries. From oil & gas operations to cutting-edge data centers, we deliver 
+              With decades of experience, ROS Global Solutions specializes in providing
+              mission-critical products and consulting services to the world's most demanding
+              industries. From oil & gas operations to cutting-edge data centers, we deliver
               the reliability and expertise your business demands.
             </p>
           </div>
@@ -140,21 +147,21 @@ const Index = () => {
               Our Product Lines
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive solutions across four specialized sectors, delivering 
+              Comprehensive solutions across four specialized sectors, delivering
               quality products and expert support worldwide.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {productLines.map((product, index) => (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className="group hover:shadow-[var(--shadow-corporate)] transition-all duration-300 transform hover:-translate-y-1 border-0 shadow-[var(--shadow-card)]"
               >
                 <CardHeader className="text-center pb-4">
                   <div className="w-24 h-24 mx-auto mb-4 rounded-lg overflow-hidden shadow-md">
-                    <img 
-                      src={product.icon} 
+                    <img
+                      src={product.icon}
                       alt={product.title}
                       className="w-full h-full object-cover"
                     />
@@ -195,7 +202,7 @@ const Index = () => {
               Why Choose ROS Global Solutions
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We combine global capabilities with local expertise to deliver 
+              We combine global capabilities with local expertise to deliver
               exceptional value to our clients worldwide.
             </p>
           </div>
@@ -225,7 +232,7 @@ const Index = () => {
             Ready to Get Started?
           </h2>
           <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
-            Contact our team today to discuss your requirements and discover 
+            Contact our team today to discuss your requirements and discover
             how ROS Global Solutions can support your business objectives.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

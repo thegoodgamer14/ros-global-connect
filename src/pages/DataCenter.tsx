@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import ContactForm from "@/components/ui/contact-form";
 import SocialMediaSidebar from "@/components/ui/social-media-sidebar";
 import GenericModal, { GenericModalData } from "@/components/ui/generic-modal";
+import SEO from "@/components/SEO";
 import { Server, Shield, Snowflake, Zap, Filter, Wind } from "lucide-react";
 import heroImage from "@/assets/hero-datacenter.jpg";
 
@@ -121,6 +122,12 @@ const DataCenter = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Data Center Air & Chemical Filtration | ROS Global Solutions"
+        description="Specialized air and chemical filtration systems for data centers. HEPA filtration, precision cooling, and environmental control solutions to protect critical infrastructure."
+        keywords="data center filtration, HEPA filter server room, chemical filtration data center, precision cooling, environmental control, AMC contamination control"
+        path="/datacenter"
+      />
       <SocialMediaSidebar />
       {/* Hero Section */}
       <section

@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import ContactForm from "@/components/ui/contact-form";
 import SocialMediaSidebar from "@/components/ui/social-media-sidebar";
 import GenericModal, { GenericModalData } from "@/components/ui/generic-modal";
+import SEO from "@/components/SEO";
 import { Leaf, Users, Globe, Beaker, Factory, Recycle, Droplets, Shield, CheckCircle } from "lucide-react";
 
 const Rhamnolipids = () => {
@@ -103,6 +104,12 @@ const Rhamnolipids = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Rhamnolipids Bio-Surfactants | AGAE Technologies Distributor | ROS Global"
+        description="Exclusive MENA distributor of AGAE Technologies Rhamnolipids. High-purity bio-surfactants for oil recovery, personal care, agriculture, and environmental remediation. 100% biodegradable."
+        keywords="rhamnolipids, biosurfactant, AGAE Technologies, bio-surfactant UAE, MEOR, green chemistry, biodegradable surfactant, clean beauty ingredients"
+        path="/rhamnolipids"
+      />
       <SocialMediaSidebar />
       {/* Hero Section */}
       <section

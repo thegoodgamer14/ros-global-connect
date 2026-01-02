@@ -1,11 +1,18 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import ContactForm from "@/components/ui/contact-form";
 import SocialMediaSidebar from "@/components/ui/social-media-sidebar";
+import SEO from "@/components/SEO";
 import { MapPin, Mail, Phone, Clock, Linkedin } from "lucide-react";
 
 const Contact = () => {
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Contact ROS Global Solutions | UAE Industrial Engineering Company"
+        description="Contact ROS Global Solutions for oil & gas equipment, HVAC systems, data center solutions, and rhamnolipids. Located in Sharjah, UAE. Get a quote today."
+        keywords="contact ROS Global, UAE engineering company, Sharjah industrial supply, request quote, oil gas supplier contact"
+        path="/contact"
+      />
       <SocialMediaSidebar />
       {/* Contact Information & Form */}
       <section className="py-16 lg:py-24">
@@ -19,8 +26,8 @@ const Contact = () => {
                     Get In Touch
                   </h2>
                   <p className="text-lg text-muted-foreground mb-8">
-                    Our global team is ready to assist you with all your industrial supply needs. 
-                    Contact us today to discuss your requirements and discover how ROS Global 
+                    Our global team is ready to assist you with all your industrial supply needs.
+                    Contact us today to discuss your requirements and discover how ROS Global
                     can support your business objectives.
                   </p>
                 </div>
@@ -100,7 +107,7 @@ const Contact = () => {
 
               {/* Contact Form */}
               <div>
-                <ContactForm 
+                <ContactForm
                   title="Send Us A Message"
                   description="Fill out the form below and our team will get back to you within 24 hours."
                 />
@@ -211,7 +218,7 @@ const Contact = () => {
             Ready to Start Your Project?
           </h2>
           <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
-            Our team of specialists is standing by to help you find the perfect 
+            Our team of specialists is standing by to help you find the perfect
             solutions for your industrial supply and consulting needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

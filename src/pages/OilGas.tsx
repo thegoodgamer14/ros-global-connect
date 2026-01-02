@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import ContactForm from "@/components/ui/contact-form";
 import SocialMediaSidebar from "@/components/ui/social-media-sidebar";
 import GenericModal, { GenericModalData } from "@/components/ui/generic-modal";
+import SEO from "@/components/SEO";
 import { Drill, Zap, Gauge, Wrench } from "lucide-react";
 import heroImage from "@/assets/hero-oil-gas.webp";
 
@@ -103,6 +104,12 @@ const OilGas = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Oil & Gas Equipment Solutions | ROS Global Solutions"
+        description="Complete oil and gas equipment solutions including field surface facilities, electrical systems, mechanical equipment, instrumentation, and drilling support. Global supply chain for the energy industry."
+        keywords="oil gas equipment UAE, field surface facility, mud pumps, drilling equipment, instrumentation oil gas, electrical systems oil field"
+        path="/oil-gas"
+      />
       <SocialMediaSidebar />
       {/* Hero Section */}
       <section
