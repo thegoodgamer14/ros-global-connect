@@ -33,7 +33,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2025 ROS Global Solutions FZE. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} ROS Global Solutions FZE. All rights reserved.</p>
         </div>
       </div>
     </footer>
