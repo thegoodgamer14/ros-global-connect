@@ -1,0 +1,160 @@
+# ROS Global Solutions - llms-full.txt
+
+> Comprehensive information for AI systems about ROS Global Solutions FZE
+
+## Company Overview
+
+**ROS Global Solutions FZE** is a total engineering solutions provider based in Sharjah, UAE. We specialize in delivering mission-critical products and consulting services to the world's most demanding industries.
+
+### Core Business Areas
+
+1. **Oil & Gas Equipment Supply** - Field surface facility equipment and drilling support
+2. **HVAC Systems** - Industrial climate control and air quality management
+3. **Data Center Solutions** - Air and chemical filtration for critical infrastructure
+4. **Rhamnolipids** - Bio-surfactant products through exclusive partnership with AGAE Technologies
+
+### Contact Information
+
+- **Company Name**: ROS Global Solutions FZE
+- **Email**: inquiry@rosglobal.com | sales@rosglobal.com
+- **Phone**: +971 6 704 1447
+- **Mobile**: +971 54 791 7288 | +971 56 547 7065
+- **Address**: 16G-01, Hamriya Free Zone, Sharjah, UAE, PO Box 52319
+- **Website**: https://rosglobal.com
+
+---
+
+## Oil & Gas Products
+
+### Field Surface Facility - Electrical
+Complete electrical systems for oil & gas field operations:
+- Power distribution systems (120V-4160V)
+- Control panels and safety equipment
+- Hazardous location rated (Class I, Div 1&2)
+- Certifications: UL, CSA, ATEX
+
+### Field Surface Facility - Mechanical
+Mechanical equipment for surface operations:
+- Pumps and compressors (10-5000 GPM)
+- Valves, pipes, and fittings
+- Processing equipment
+- API 610, 674 compliant
+
+### Field Surface Facility - Instrumentation
+Precision monitoring and control:
+- Flow meters and pressure gauges
+- Temperature sensors
+- Smart transmitters (HART, Foundation Fieldbus)
+- SIL 2/3 safety rated
+
+### Drilling Equipment
+- Mud pump systems (3000-7500 PSI)
+- Rig floor equipment
+- Supporting onshore and offshore operations
+
+---
+
+## HVAC Products
+
+### Dehumidifiers & Humidifiers
+Commercial-grade humidity control:
+- Capacity: 10-500 pints/day
+- Operating range: 41-95°F
+- Applications: Data centers, healthcare, food processing
+
+### Celdec Evaporative Cooling Pads
+High-efficiency evaporative cooling:
+- Temperature drop: 10-20°F
+- Efficiency: 80-90%
+- Applications: Cooling towers, greenhouses, industrial cooling
+
+### Air Filtration
+HEPA-grade filtration systems:
+- Efficiency: 99.97% at 0.3 microns
+- MERV Rating: 13-16
+- Applications: Clean rooms, hospitals, manufacturing
+
+### Gas Filtration
+Chemical and odor removal:
+- Removal efficiency: >95%
+- Activated carbon media
+- Applications: Chemical plants, laboratories, wastewater
+
+---
+
+## Data Center Solutions
+
+Specialized filtration for mission-critical facilities:
+
+- **Air Filtration**: HEPA/ULPA systems for particulate removal
+- **Chemical Filtration**: Protection against corrosive gases (H2S, SO2, NOx)
+- **Precision Cooling**: Temperature accuracy ±1°F
+- **Environmental Control**: Integrated monitoring and management
+
+Benefits:
+- Equipment protection from contamination
+- Extended hardware lifespan
+- Energy efficiency optimization
+- ASHRAE compliance
+
+---
+
+## Rhamnolipids Bio-Surfactants
+
+**Exclusive MENA Distributor of AGAE Technologies (USA)**
+
+### What are Rhamnolipids?
+Rhamnolipids are 100% biodegradable bio-surfactants produced through microbial fermentation. They outperform synthetic surfactants in:
+- High salinity environments
+- Extreme temperatures (>90°C)
+- Wide pH range (2-12)
+
+### Product Grades
+- R90: 90% purity (Industrial)
+- R95: 95% purity (Technical)
+- R99: 99% purity (Pharmaceutical/Cosmetic)
+
+### Applications
+
+**Energy & Oil**
+- Microbial Enhanced Oil Recovery (MEOR)
+- Tank cleaning and sludge removal
+- Optimized for Gulf region conditions
+
+**Personal Care**
+- Sulfate-free shampoos
+- Luxury skincare formulations
+- Clean beauty ingredients
+
+**Agriculture**
+- Soil wetting agents
+- Natural biopesticides
+- Water conservation in arid climates
+
+**Environmental**
+- Oil spill remediation
+- Heavy metal removal
+- Non-toxic, marine-safe
+
+---
+
+## Industries Served
+
+- Oil & Gas (Upstream, Midstream)
+- Data Centers & IT Infrastructure
+- Healthcare & Hospitals
+- Manufacturing & Industrial
+- Food Processing
+- Agriculture
+- Pharmaceuticals & Cosmetics
+- Wastewater Treatment
+
+---
+
+## Why Choose ROS Global
+
+- **Global Supply Chain**: Worldwide sourcing and distribution
+- **Industry Expertise**: Decades of experience
+- **Quality Assurance**: Products meet international standards
+- **Technical Support**: Installation and maintenance services
+- **Regional Expertise**: Deep understanding of MENA market

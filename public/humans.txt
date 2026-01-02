@@ -1,0 +1,17 @@
+/* TEAM */
+Company: ROS Global Solutions FZE
+Site: https://rosglobal.com
+Location: Sharjah, UAE
+Contact: inquiry@rosglobal.com
+
+/* TECHNOLOGY */
+Framework: React 18
+Build Tool: Vite
+UI Components: Radix UI, shadcn/ui
+Styling: Tailwind CSS
+Deployment: cPanel via GitHub Actions
+
+/* SITE */
+Last update: 2026-01-02
+Standards: HTML5, CSS3, ECMAScript 2022
+Software: Visual Studio Code

@@ -74,6 +74,7 @@ const Index = () => {
         description="ROS Global Solutions delivers specialized consulting and product supply for oil & gas, HVAC, data centers, and biotechnology sectors worldwide. Total engineering solutions provider based in UAE."
         keywords="oil and gas equipment UAE, HVAC solutions Dubai, data center filtration, rhamnolipids biosurfactant, industrial engineering UAE, Sharjah engineering company"
         path="/"
+        pageType="home"
       />
       <SocialMediaSidebar />
       {/* Hero Section */}
