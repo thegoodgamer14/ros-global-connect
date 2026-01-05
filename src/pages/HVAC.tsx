@@ -6,58 +6,108 @@ import ContactForm from "@/components/ui/contact-form";
 import ProductModal from "@/components/ui/product-modal";
 import SocialMediaSidebar from "@/components/ui/social-media-sidebar";
 import SEO from "@/components/SEO";
-import { Wind, Droplets, Filter, Thermometer, Zap, Wrench } from "lucide-react";
+import { Wind, Droplets, Filter, Thermometer, Zap, Wrench, CheckCircle, Factory, Building, UtensilsCrossed, Heart, Globe, Users, Beaker, DollarSign, ThermometerSun, TrendingUp, AlertTriangle, CloudRain, Waves } from "lucide-react";
 import heroImage from "@/assets/hero-hvac.jpg";
 
 const HVAC = () => {
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
 
+  // Bry-Air Assets
+  const bryAirLogo = "https://www.bryair.com/wp-content/uploads/2023/02/logo-group-img2.webp";
+  const productImages = {
+    dehumidifier: [
+      "https://i0.wp.com/www.bryair.com/wp-content/uploads/2023/10/FLB-1-1.png?fit=646%2C306&ssl=1",
+      "https://i0.wp.com/www.bryair.com/wp-content/uploads/2023/10/BBS-1.png?fit=646%2C306&ssl=1",
+      "https://i0.wp.com/www.bryair.com/wp-content/uploads/2024/01/P95x.webp?fit=646%2C306&ssl=1"
+    ],
+    airPurifier: [
+      "https://i0.wp.com/www.bryair.com/wp-content/uploads/2023/10/data-center-air-purifier.png?fit=646%2C306&ssl=1",
+      "https://i0.wp.com/www.bryair.com/wp-content/uploads/2024/01/BryShield-Standing.png?fit=1346%2C638&ssl=1",
+      "https://i0.wp.com/www.bryair.com/wp-content/uploads/2023/10/Thin-bed.png?fit=646%2C306&ssl=1"
+    ]
+  };
+
   const productDetails = {
     dehumidifier: {
-      title: "Dehumidifier / Humidifier",
-      overview: "Advanced humidity control systems for precise environmental management in commercial and industrial applications.",
-      detailedDescription: "Our commercial-grade dehumidifier and humidifier systems are engineered for demanding environments where precise humidity control is critical. These units feature advanced sensor technology, intelligent controls, and energy-efficient operation to maintain optimal moisture levels while minimizing operational costs.",
-      workingPrinciple: "The system works by continuously monitoring ambient humidity levels through precision sensors. When dehumidification is needed, the unit draws air through cooling coils where moisture condenses and is collected in a reservoir or drained away. For humidification, the system uses ultrasonic or evaporative technology to add precisely controlled amounts of moisture to the air stream, ensuring optimal comfort and equipment protection.",
+      title: "Bry-Air Desiccant Dehumidifiers",
+      overview: "Patented EcoDry and BrySmart® series using desiccant rotors for precision humidity control even at low temperatures.",
+      detailedDescription: "Traditional refrigerant ACs often struggle in the Gulf's extreme humidity. Bry-Air's patented EcoDry and BrySmart® series use desiccant rotors to pull moisture directly from the air, ensuring precision humidity control even at low temperatures. These Industry 4.0-ready systems optimize performance in real-time with up to 48% more energy efficiency than standard systems.",
+      workingPrinciple: "Desiccant dehumidification works by passing humid air through a rotating wheel impregnated with silica gel or other desiccant materials. The desiccant adsorbs moisture from the air stream, and a separate heated reactivation sector regenerates the desiccant for continuous operation. This process is effective even at low temperatures where refrigerant-based systems fail.",
       features: [
-        "Commercial Grade Construction",
-        "Energy Efficient Operation",
-        "Smart Control Systems",
-        "Low Maintenance Design",
-        "Real-time Monitoring",
-        "Remote Access Capability",
-        "Auto-drain Function",
-        "Stainless Steel Components"
+        "EcoDry Technology",
+        "BrySmart® Industry 4.0 Ready",
+        "Desiccant Rotor Technology",
+        "48% Energy Savings",
+        "Low Temperature Operation",
+        "Real-time Optimization",
+        "Tropicalized for 50°C+",
+        "Precision Humidity Control"
       ],
       specifications: [
-        "Capacity: 10-500 pints/day",
-        "Humidity Range: 30-90% RH",
-        "Operating Temperature: 41-95°F",
-        "Power Supply: 115V/230V",
-        "Refrigerant: R-410A",
-        "Noise Level: <50 dB",
-        "Dimensions: Various sizes available",
-        "Warranty: 3 years parts & labor"
+        "Energy Savings: Up to 48%",
+        "Ambient Temp: Up to 55°C",
+        "Dew Point: As low as -60°C",
+        "Control: Industry 4.0 IoT",
+        "Rotor Type: Silica Gel/Molecular Sieve",
+        "Air Flow: Custom CFM ranges",
+        "Power: 380-415V/3Ph/50Hz",
+        "Warranty: 2 years parts & labor"
       ],
-      applications: ["Data Centers", "Manufacturing", "Healthcare", "Food Processing", "Laboratories", "Museums", "Warehouses", "Clean Rooms"],
+      applications: ["Data Centers", "Pharmaceutical Cleanrooms", "Commercial Swimming Pools", "Food Processing", "Cold Storage", "Museums & Archives", "Lithium Battery Manufacturing", "Offshore Control Rooms"],
       benefits: [
-        "Prevents equipment corrosion and failure",
-        "Reduces energy costs by up to 30%",
-        "Improves indoor air quality",
-        "Protects sensitive equipment",
-        "Prevents mold and mildew growth",
-        "Extends equipment lifespan",
-        "Meets industry compliance standards",
-        "24/7 reliable operation"
+        "Up to 48% more energy-efficient than standard systems",
+        "Precision control even at extreme temperatures",
+        "Industry 4.0 real-time monitoring and optimization",
+        "Designed for Gulf's high humidity and heat",
+        "Prevents corrosion and equipment damage",
+        "Reduces maintenance and downtime costs",
+        "Meets stringent cleanroom standards",
+        "Rapid ROI through energy savings"
       ],
-      images: [
-        "https://i0.wp.com/www.bryair.com/wp-content/uploads/2023/10/FLB-1-1.png?fit=646%2C306&ssl=1",
-        "https://i0.wp.com/www.bryair.com/wp-content/uploads/2024/01/P95x.webp?fit=646%2C306&ssl=1"
-      ]
+      images: productImages.dehumidifier
+    },
+    airPurifier: {
+      title: "Bry-Air Gas-Phase Air Filtration",
+      overview: "Advanced honeycomb chemical filters protecting sensitive electronics from corrosive gases like H₂S and SO₂.",
+      detailedDescription: "In industrial zones and urban centers, dust and corrosive gases (like H₂S or SO₂) can destroy sensitive electronics. Bry-Air air purifiers utilize advanced honeycomb chemical filters to protect server rooms and data centers, remove odors and harmful VOCs, and ensure 'Clean Room' standards for medical and food-grade facilities.",
+      workingPrinciple: "Gas-phase filtration uses activated carbon and chemically impregnated media arranged in a honeycomb structure for maximum surface area. Air passes through the media where gaseous contaminants are adsorbed or chemically neutralized. This multi-stage approach removes a wide spectrum of pollutants including H₂S, SO₂, NOx, ammonia, and VOCs.",
+      features: [
+        "Honeycomb Chemical Filters",
+        "H₂S & SO₂ Removal",
+        "VOC Elimination",
+        "Data Center Protection",
+        "Clean Room Standards",
+        "Odor Control",
+        "Multi-Stage Filtration",
+        "ISA G1 Corrosion Standards"
+      ],
+      specifications: [
+        "Efficiency: >95% for target gases",
+        "Media: Activated Carbon/Impregnated",
+        "Corrosion Standard: ISA G1",
+        "Particle Filtration: HEPA available",
+        "Pressure Drop: Optimized design",
+        "Media Life: 12-24 months typical",
+        "Monitoring: Real-time sensors",
+        "Configuration: Modular/Custom"
+      ],
+      applications: ["Server Rooms", "Data Centers", "Control Rooms", "Commercial Buildings", "Hospitals & Labs", "Food Processing", "Electronics Manufacturing", "Petrochemical Facilities"],
+      benefits: [
+        "Protects sensitive electronics from corrosion",
+        "Extends equipment lifespan significantly",
+        "Removes harmful VOCs and odors",
+        "Meets ISA G1 corrosion standards",
+        "Ensures clean room air quality",
+        "Reduces maintenance costs",
+        "Modular design for flexibility",
+        "Real-time air quality monitoring"
+      ],
+      images: productImages.airPurifier
     },
     celdecPad: {
-      title: "Celdec Pad",
+      title: "Celdec Evaporative Cooling Pads",
       overview: "High-performance evaporative cooling pads that provide efficient temperature reduction and air purification.",
-      detailedDescription: "Celdec pads are manufactured using advanced cellulose technology with specially treated fibers that maximize water retention and air contact. These pads provide superior cooling efficiency while filtering airborne particles, making them ideal for both cooling and air purification applications.",
+      detailedDescription: "Celdec pads are manufactured using advanced cellulose technology with specially treated fibers that maximize water retention and air contact. These pads provide superior cooling efficiency while filtering airborne particles, making them ideal for both cooling and air purification applications in the demanding MENA climate.",
       workingPrinciple: "Air passes through the saturated Celdec pad where evaporative cooling occurs. As water evaporates from the pad surface, it absorbs heat from the air stream, resulting in significant temperature reduction. The pad's unique fiber structure creates turbulent airflow that maximizes the evaporation process while trapping dust and particles.",
       features: [
         "High Efficiency Cooling",
@@ -95,49 +145,8 @@ const HVAC = () => {
         "https://cdn-ilblcbn.nitrocdn.com/XMgYWWKIvpBdgcpsxvqWjXsXkdbyzuHe/assets/images/optimized/rev-6bcdd7b/chinaexhaustfan.com/wp-content/uploads/2024/10/%E6%B9%BF%E5%B8%98-1-1.png"
       ]
     },
-    airFilter: {
-      title: "Air Filter",
-      overview: "Premium air filtration solutions for removing contaminants and ensuring optimal indoor air quality.",
-      detailedDescription: "Our comprehensive range of air filters includes HEPA, ULPA, carbon, and pre-filters designed for various applications. Each filter is manufactured to strict quality standards and tested for efficiency, capacity, and durability to ensure optimal performance in demanding environments.",
-      workingPrinciple: "Air filtration works through multiple mechanisms including mechanical straining, impaction, interception, and diffusion. HEPA filters use dense mat of small fibers to capture particles, while carbon filters use activated carbon to adsorb gases and odors. Our multi-stage filtration systems combine different filter types for comprehensive air cleaning.",
-      features: [
-        "HEPA Grade Efficiency",
-        "Antimicrobial Treatment",
-        "Long Service Life",
-        "Multiple Size Options",
-        "Low Pressure Drop",
-        "High Dust Holding Capacity",
-        "Moisture Resistant",
-        "Temperature Stable"
-      ],
-      specifications: [
-        "Efficiency: 99.97% at 0.3 microns",
-        "MERV Rating: 13-16",
-        "Initial Pressure Drop: 0.5-1.0\" WG",
-        "Final Pressure Drop: 2.0-3.0\" WG",
-        "Temperature Range: -20°F to 200°F",
-        "Humidity Range: 0-100% RH",
-        "Frame Material: Galvanized steel/Aluminum",
-        "Media: Pleated synthetic/Glass fiber"
-      ],
-      applications: ["Clean Rooms", "Hospitals", "Offices", "Manufacturing", "Laboratories", "Food Processing", "Pharmaceutical", "Electronics"],
-      benefits: [
-        "Removes 99.97% of airborne particles",
-        "Reduces allergens and pollutants",
-        "Protects sensitive equipment",
-        "Improves worker health and safety",
-        "Meets strict industry standards",
-        "Extends HVAC system life",
-        "Reduces cleaning and maintenance costs",
-        "Ensures regulatory compliance"
-      ],
-      images: [
-        "https://cdn.prod.website-files.com/605bb73f62e039589786b760/66e31b80b37854bca42859bb_industrial-air-gas.jpeg",
-        "https://nigen.com/wp-content/uploads/2022/05/air-filtration.png"
-      ]
-    },
     gasFilter: {
-      title: "Gas Filter",
+      title: "Industrial Gas Filters",
       overview: "Specialized gas filtration systems designed to remove harmful gases and ensure safe air quality.",
       detailedDescription: "Our gas filtration systems utilize advanced activated carbon and specialized chemical media to remove a wide range of gaseous contaminants including VOCs, ammonia, hydrogen sulfide, and other harmful compounds. These systems are engineered for industrial applications where air quality is critical for safety and compliance.",
       workingPrinciple: "Gas filtration occurs through adsorption, where gas molecules are attracted to and held by the filter media surface. Activated carbon provides a large surface area for adsorption, while specialized impregnated carbons target specific gases. Chemical filters use reactive media that neutralize harmful gases through chemical reactions.",
@@ -179,46 +188,80 @@ const HVAC = () => {
     }
   };
 
-  const products = [
+  // Bry-Air Featured Products (highlighted)
+  const bryAirProducts = [
     {
       icon: Droplets,
-      title: "Dehumidifier / Humidifier",
-      description: "Advanced humidity control systems for precise environmental management in commercial and industrial applications.",
-      features: ["Commercial Grade", "Energy Efficient", "Smart Controls", "Low Maintenance"],
-      applications: ["Data Centers", "Manufacturing", "Healthcare", "Food Processing"]
-    },
-    {
-      icon: Filter,
-      title: "Celdec Pad",
-      description: "High-performance evaporative cooling pads that provide efficient temperature reduction and air purification.",
-      features: ["High Efficiency", "Durable Materials", "Easy Installation", "Cost Effective"],
-      applications: ["Cooling Towers", "Air Handlers", "Industrial Cooling", "Greenhouse Climate"]
+      title: "Desiccant Dehumidifiers",
+      description: "Bry-Air's patented EcoDry and BrySmart® series with desiccant rotors for precision humidity control. Up to 48% more energy-efficient than standard systems.",
+      features: ["EcoDry Technology", "BrySmart® IoT Ready", "48% Energy Savings", "Low Temp Operation"],
+      applications: ["Data Centers", "Pharmaceuticals", "Cold Storage", "Swimming Pools"],
+      productKey: "dehumidifier",
+      isBryAir: true
     },
     {
       icon: Wind,
-      title: "Air Filter",
-      description: "Premium air filtration solutions for removing contaminants and ensuring optimal indoor air quality.",
-      features: ["HEPA Grade", "Antimicrobial", "Long Lasting", "Multiple Sizes"],
-      applications: ["Clean Rooms", "Hospitals", "Offices", "Manufacturing"]
+      title: "Gas-Phase Air Filtration",
+      description: "Advanced honeycomb chemical filters protecting sensitive electronics from corrosive gases like H₂S and SO₂. Meets ISA G1 corrosion standards.",
+      features: ["Honeycomb Filters", "VOC Removal", "ISA G1 Standard", "Data Center Grade"],
+      applications: ["Server Rooms", "Control Rooms", "Hospitals", "Clean Rooms"],
+      productKey: "airPurifier",
+      isBryAir: true
+    }
+  ];
+
+  // Complementary Products (not Bry-Air)
+  const complementaryProducts = [
+    {
+      icon: Filter,
+      title: "Celdec Cooling Pads",
+      description: "High-performance evaporative cooling pads for efficient temperature reduction and air purification.",
+      features: ["High Efficiency", "Durable Cellulose", "Easy Installation", "Cost Effective"],
+      applications: ["Cooling Towers", "Air Handlers", "Greenhouses", "Industrial Cooling"],
+      productKey: "celdecPad",
+      isBryAir: false
     },
     {
       icon: Thermometer,
-      title: "Gas Filter",
-      description: "Specialized gas filtration systems designed to remove harmful gases and ensure safe air quality.",
+      title: "Industrial Gas Filters",
+      description: "Specialized gas filtration systems for removing harmful gases and ensuring safe air quality.",
       features: ["Chemical Removal", "Odor Control", "Industrial Grade", "Custom Solutions"],
-      applications: ["Chemical Plants", "Laboratories", "Wastewater Treatment", "Industrial Facilities"]
+      applications: ["Chemical Plants", "Laboratories", "Wastewater", "Refineries"],
+      productKey: "gasFilter",
+      isBryAir: false
     }
+  ];
+
+  const climateChallenge = [
+    { icon: CloudRain, title: "Extreme Humidity", description: "Humidity levels regularly exceed 90% RH in coastal areas" },
+    { icon: AlertTriangle, title: "Corrosive Gases", description: "H₂S, SO₂, and saline air destroy sensitive electronics" },
+    { icon: ThermometerSun, title: "Extreme Heat", description: "Ambient temperatures routinely exceed 50°C" },
+    { icon: Waves, title: "Saline Air", description: "High salt content accelerates equipment corrosion" }
+  ];
+
+  const whyChoose = [
+    { icon: DollarSign, title: "Best-in-Class Cost", description: "Streamlined supply chain delivers Bry-Air's premium technology at the most competitive prices in the Middle East." },
+    { icon: ThermometerSun, title: "Tropicalized Design", description: "Systems engineered to withstand ambient temperatures exceeding 50°C—perfect for Gulf conditions." },
+    { icon: TrendingUp, title: "Rapid ROI", description: "Reduced energy consumption and lower maintenance costs mean these units pay for themselves faster than alternatives." }
+  ];
+
+  const industries = [
+    { icon: Factory, title: "Oil & Gas", description: "Corrosion control for offshore and onshore control rooms" },
+    { icon: UtensilsCrossed, title: "Cold Storage & Food", description: "Preventing frost build-up and maintaining dry-room integrity" },
+    { icon: Building, title: "Hospitality", description: "Humidity control for luxury hotels, spas, and indoor water parks" },
+    { icon: Heart, title: "Healthcare", description: "Sterile air environments for hospitals and labs" }
   ];
 
   return (
     <div className="min-h-screen">
       <SEO
-        title="HVAC Solutions & Air Filtration Systems | ROS Global Solutions"
-        description="Advanced HVAC products including commercial dehumidifiers, air filters, gas filters, and Celdec cooling pads. Industrial-grade climate control and filtration systems for demanding environments."
-        keywords="HVAC solutions UAE, dehumidifier commercial, air filtration systems, gas filter industrial, Celdec pad, climate control Dubai"
+        title="Bry-Air Dehumidifiers & Air Purifiers | MENA Distributor | ROS Global"
+        description="Exclusive MENA distributor of Bry-Air dehumidifiers and gas-phase filtration systems. Up to 48% energy savings. Tropicalized for Gulf conditions. Best prices in Middle East."
+        keywords="Bry-Air distributor UAE, desiccant dehumidifier MENA, EcoDry, BrySmart, gas phase filtration Dubai, industrial dehumidifier Middle East, data center air purifier"
         path="/hvac"
       />
       <SocialMediaSidebar />
+      
       {/* Hero Section */}
       <section
         className="py-16 lg:py-24 relative bg-cover bg-center bg-no-repeat"
@@ -228,62 +271,163 @@ const HVAC = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center text-white">
             <Badge variant="outline" className="mb-4 border-white text-white bg-white/10 backdrop-blur-sm">
-              HVAC Solutions
+              Exclusive Distributor: Bry-Air
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              Advanced Air Control & Filtration Systems
+              Mastering the Middle East Climate
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-white/90 leading-relaxed">
-              ROS Global provides comprehensive HVAC solutions including industrial-grade dehumidifiers,
-              high-performance filtration systems, and advanced air quality management technologies. Our products
-              are engineered for demanding commercial and industrial environments where precision and reliability are essential.
+              We provide the UAE and wider Middle East market with Bry-Air's world-leading dehumidifiers 
+              and gas-phase filtration systems at the region's most competitive costs.
             </p>
             <Button
               variant="cta"
               size="lg"
-              onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'end' })}
+              onClick={() => document.getElementById('partnership')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
             >
-              Request Product Catalog
+              Explore Our Partnership
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Products Overview */}
+      {/* The Climate Challenge Section */}
+      <section className="py-16 lg:py-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-corporate-blue">
+              The Middle East Climate Challenge
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              In the MENA region, temperature is only half the battle. High humidity and airborne 
+              contaminants pose constant threats to industrial equipment, product shelf-life, and indoor air quality.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {climateChallenge.map((challenge, index) => (
+              <Card key={index} className="text-center shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-corporate)] transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="w-16 h-16 bg-corporate-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                    <challenge.icon className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="font-bold text-lg mb-2 text-corporate-blue">{challenge.title}</h3>
+                  <p className="text-sm text-muted-foreground">{challenge.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Global Partnership Section */}
+      <section id="partnership" className="py-16 lg:py-24 bg-secondary/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col md:flex-row items-center justify-between mb-12 gap-8">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-corporate-blue mb-2">Global Partnership</h2>
+                <h3 className="text-xl text-muted-foreground">ROS Global <span className="text-corporate-blue font-bold">×</span> Bry-Air</h3>
+              </div>
+              <img 
+                src={bryAirLogo} 
+                alt="Bry-Air Logo" 
+                className="h-12 md:h-16 object-contain" 
+                onError={(e) => {
+                  e.currentTarget.src = "https://www.bryair.com/wp-content/themes/developer starter theme/assets/images/Bry-air-logo.png";
+                }}
+              />
+            </div>
+
+            <div className="bg-corporate-blue rounded-lg p-8 md:p-12 text-white shadow-2xl relative overflow-hidden">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
+                <div>
+                  <h3 className="text-2xl font-bold mb-6">World Leader in Dehumidification</h3>
+                  <p className="text-white/90 leading-relaxed mb-6">
+                    Bry-Air is the world's foremost manufacturer of industrial desiccant dehumidifiers and 
+                    gas-phase filtration systems. Through our exclusive partnership, ROS Global ensures 
+                    industries across the MENA region have access to their cutting-edge technology at 
+                    unbeatable prices.
+                  </p>
+                  <ul className="space-y-4">
+                    <li className="flex items-start">
+                      <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                        <Beaker className="h-5 w-5 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-bold">Patented Technology</h4>
+                        <p className="text-sm text-white/70">EcoDry and BrySmart® series with Industry 4.0 optimization.</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                        <Zap className="h-5 w-5 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-bold">48% Energy Savings</h4>
+                        <p className="text-sm text-white/70">More efficient than standard refrigerant-based systems.</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Product Showcase */}
+                <div className="grid grid-cols-2 gap-4">
+                  {productImages.dehumidifier.slice(0, 2).map((img, idx) => (
+                    <div key={idx} className="bg-white rounded-xl p-4 flex flex-col items-center justify-center shadow-lg">
+                      <img src={img} alt={`Bry-Air Product ${idx + 1}`} className="w-full h-auto max-h-32 object-contain" />
+                      <span className="text-corporate-blue text-xs font-bold mt-2">{idx === 0 ? 'FLB Series' : 'BrySmart®'}</span>
+                    </div>
+                  ))}
+                  <div className="col-span-2 bg-white rounded-xl p-4 flex items-center justify-center shadow-lg">
+                    <div className="flex items-center space-x-4">
+                      <img src={productImages.airPurifier[0]} alt="Data Center Air Purifier" className="h-24 object-contain" />
+                      <div className="text-left">
+                        <span className="block text-corporate-blue text-sm font-bold">Data Center Protection</span>
+                        <span className="text-xs text-muted-foreground">Gas-Phase Filtration System</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Bry-Air Featured Products */}
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-ros-blue">
-              Our HVAC Product Line
+            <Badge variant="secondary" className="mb-4">Bry-Air Solutions</Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-corporate-blue">
+              Our Core HVAC Solutions
             </h2>
-            <p className="text-lg text-foreground max-w-3xl mx-auto leading-relaxed">
-              ROS Global specializes in providing professional-grade HVAC equipment and filtration systems
-              engineered for demanding commercial and industrial environments. Our comprehensive product line
-              ensures optimal air quality, temperature control, and environmental management for critical applications
-              across industries including healthcare, manufacturing, data centers, and food processing.
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Premium Bry-Air technology engineered for the Gulf's extreme conditions—available 
+              at the most competitive prices in the Middle East.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {products.map((product, index) => (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
+            {bryAirProducts.map((product, index) => (
               <Card
                 key={index}
-                className="h-full shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-corporate)] transition-all duration-300 cursor-pointer hover:scale-105"
-                onClick={() => {
-                  const productKey = product.title.toLowerCase().replace(/[^a-z0-9]/g, '').replace('dehumidifierhumidifier', 'dehumidifier').replace('celdecpad', 'celdecPad').replace('airfilter', 'airFilter').replace('gasfilter', 'gasFilter');
-                  setSelectedProduct(productDetails[productKey as keyof typeof productDetails]);
-                }}
+                className="h-full shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-corporate)] transition-all duration-300 cursor-pointer hover:scale-105 border-2 border-corporate-blue/20"
+                onClick={() => setSelectedProduct(productDetails[product.productKey as keyof typeof productDetails])}
               >
                 <CardHeader>
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-ros-blue rounded-lg flex items-center justify-center mr-4">
-                      <product.icon className="h-6 w-6 text-white" />
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center">
+                      <div className="w-12 h-12 bg-corporate-blue rounded-lg flex items-center justify-center mr-4">
+                        <product.icon className="h-6 w-6 text-white" />
+                      </div>
+                      <div>
+                        <CardTitle className="text-corporate-blue text-xl">
+                          {product.title}
+                        </CardTitle>
+                      </div>
                     </div>
-                    <div>
-                      <CardTitle className="text-ros-blue text-lg">
-                        {product.title}
-                      </CardTitle>
-                    </div>
+                    <Badge className="bg-corporate-blue text-white">Bry-Air</Badge>
                   </div>
                   <CardDescription className="text-base leading-relaxed text-foreground">
                     {product.description}
@@ -291,7 +435,7 @@ const HVAC = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div>
-                    <h4 className="font-semibold text-ros-blue mb-2">Key Features:</h4>
+                    <h4 className="font-semibold text-corporate-blue mb-2">Key Features:</h4>
                     <div className="grid grid-cols-2 gap-2 mb-4">
                       {product.features.map((feature, idx) => (
                         <Badge key={idx} variant="secondary" className="text-xs">
@@ -301,7 +445,7 @@ const HVAC = () => {
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-ros-blue mb-2">Applications:</h4>
+                    <h4 className="font-semibold text-corporate-blue mb-2">Applications:</h4>
                     <div className="grid grid-cols-2 gap-2">
                       {product.applications.map((app, idx) => (
                         <Badge key={idx} variant="outline" className="text-xs">
@@ -314,138 +458,129 @@ const HVAC = () => {
               </Card>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Product Categories */}
-      <section className="py-16 lg:py-24 bg-secondary/30">
-        <div className="container mx-auto px-4">
+          {/* Complementary Products */}
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-corporate-blue text-center">
-              Complete HVAC Solutions
-            </h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <Card className="shadow-[var(--shadow-card)]">
-                <CardHeader>
-                  <CardTitle className="text-corporate-blue">Climate Control Systems</CardTitle>
-                  <CardDescription>Precision environmental management</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-semibold text-corporate-blue mb-2">Dehumidifier / Humidifier Systems</h4>
-                      <p className="text-muted-foreground text-sm">
-                        Advanced humidity control for maintaining optimal moisture levels in critical environments.
-                        Features include precise controls, energy efficiency, and reliable operation.
-                      </p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-corporate-blue mb-2">Temperature Management</h4>
-                      <p className="text-muted-foreground text-sm">
-                        Integrated systems that work with your existing HVAC infrastructure to maintain
-                        precise temperature and humidity parameters.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-[var(--shadow-card)]">
-                <CardHeader>
-                  <CardTitle className="text-corporate-blue">Filtration Systems</CardTitle>
-                  <CardDescription>Advanced air and gas purification</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-semibold text-corporate-blue mb-2">Celdec Pad & Air Filters</h4>
-                      <p className="text-muted-foreground text-sm">
-                        High-performance filtration media including evaporative cooling pads and HEPA-grade
-                        air filters for superior air quality management.
-                      </p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-corporate-blue mb-2">Gas Filter Systems</h4>
-                      <p className="text-muted-foreground text-sm">
-                        Specialized chemical and gas filtration solutions for removing harmful contaminants
-                        and ensuring safe, clean air in industrial environments.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold text-corporate-blue mb-2">Complementary Solutions</h3>
+              <p className="text-muted-foreground">Additional products for complete environmental control</p>
             </div>
-
-            {/* Benefits Section */}
-            <div className="mt-12 bg-corporate-blue-light/10 rounded-lg p-8">
-              <h3 className="text-2xl font-semibold mb-6 text-corporate-blue text-center">
-                Why Our HVAC Solutions Excel
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-corporate-blue rounded-full flex items-center justify-center mx-auto mb-3">
-                    <Filter className="h-6 w-6 text-white" />
-                  </div>
-                  <h4 className="font-semibold text-corporate-blue mb-2">Superior Filtration</h4>
-                  <p className="text-muted-foreground text-sm">Advanced filtration technology that exceeds industry standards</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-corporate-blue rounded-full flex items-center justify-center mx-auto mb-3">
-                    <Zap className="h-6 w-6 text-white" />
-                  </div>
-                  <h4 className="font-semibold text-corporate-blue mb-2">Energy Efficient</h4>
-                  <p className="text-muted-foreground text-sm">Optimized designs that reduce operational costs</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-corporate-blue rounded-full flex items-center justify-center mx-auto mb-3">
-                    <Wrench className="h-6 w-6 text-white" />
-                  </div>
-                  <h4 className="font-semibold text-corporate-blue mb-2">Easy Maintenance</h4>
-                  <p className="text-muted-foreground text-sm">User-friendly designs with minimal maintenance requirements</p>
-                </div>
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {complementaryProducts.map((product, index) => (
+                <Card
+                  key={index}
+                  className="h-full shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-corporate)] transition-all duration-300 cursor-pointer hover:scale-[1.02]"
+                  onClick={() => setSelectedProduct(productDetails[product.productKey as keyof typeof productDetails])}
+                >
+                  <CardHeader>
+                    <div className="flex items-center mb-4">
+                      <div className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center mr-4">
+                        <product.icon className="h-5 w-5 text-corporate-blue" />
+                      </div>
+                      <CardTitle className="text-corporate-blue text-lg">
+                        {product.title}
+                      </CardTitle>
+                    </div>
+                    <CardDescription className="text-sm leading-relaxed">
+                      {product.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex flex-wrap gap-2">
+                      {product.features.map((feature, idx) => (
+                        <Badge key={idx} variant="outline" className="text-xs">
+                          {feature}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Why Choose Bry-Air through ROS Global */}
+      <section className="py-16 lg:py-24 bg-secondary/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-corporate-blue">Why Choose Bry-Air through ROS Global?</h2>
+            <p className="text-muted-foreground mt-2">We don't just sell units; we sell engineered solutions.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto text-center">
+            {whyChoose.map((item, index) => (
+              <div key={index} className="p-6">
+                <div className="w-16 h-16 bg-corporate-blue rounded-full flex items-center justify-center mx-auto mb-6">
+                  <item.icon className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-corporate-blue">{item.title}</h3>
+                <p className="text-muted-foreground">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Industries We Serve */}
       <section className="py-16 lg:py-24">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-corporate-blue">Industries We Serve in MENA</h2>
+            <p className="text-muted-foreground mt-2">Tailored environmental control for every sector</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {industries.map((industry, index) => (
+              <Card key={index} className="text-center shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-corporate)] transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="w-14 h-14 bg-corporate-blue/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <industry.icon className="h-7 w-7 text-corporate-blue" />
+                  </div>
+                  <h3 className="font-bold text-lg mb-2 text-corporate-blue">{industry.title}</h3>
+                  <p className="text-sm text-muted-foreground">{industry.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-16 lg:py-24 bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-corporate-blue">
-                Get Your HVAC Solution Quote
+                Optimize Your Environment Today
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Our HVAC specialists are ready to help you find the perfect climate control
-                and filtration solutions for your specific requirements.
+                Stop fighting the humidity and start controlling it. Contact us for a technical audit 
+                of your HVAC requirements and a quote on our Bry-Air inventory.
               </p>
             </div>
 
             <div id="contact-form" className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
               <div>
                 <h3 className="text-2xl font-semibold mb-6 text-corporate-blue">
-                  HVAC Solutions for Every Industry
+                  Bry-Air Solutions for Your Industry
                 </h3>
-                <div className="space-y-6">
-                  <div>
-                    <h4 className="font-semibold text-corporate-blue mb-2">Commercial Buildings</h4>
-                    <p className="text-muted-foreground">Office buildings, retail spaces, and hospitality venues requiring optimal indoor air quality.</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-corporate-blue mb-2">Industrial Facilities</h4>
-                    <p className="text-muted-foreground">Manufacturing plants, warehouses, and processing facilities with demanding environmental requirements.</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-corporate-blue mb-2">Healthcare Facilities</h4>
-                    <p className="text-muted-foreground">Hospitals, clinics, and medical facilities requiring precise air quality and contamination control.</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-corporate-blue mb-2">Data Centers</h4>
-                    <p className="text-muted-foreground">Critical infrastructure facilities requiring precise climate control and air filtration.</p>
-                  </div>
+                <p className="text-muted-foreground mb-8">
+                  Our HVAC specialists will recommend the perfect climate control and air quality 
+                  solutions for your specific requirements—at the best prices in the region.
+                </p>
+                <div className="space-y-4 text-muted-foreground">
+                  <img 
+                    src={bryAirLogo} 
+                    alt="Bry-Air" 
+                    className="h-10 opacity-80 mb-6" 
+                    onError={(e) => {
+                      e.currentTarget.src = "https://www.bryair.com/wp-content/themes/developer starter theme/assets/images/Bry-air-logo.png";
+                    }}
+                  />
+                  <p className="font-medium text-corporate-blue">Exclusive Distributor for MENA Region</p>
+                  <p>ROS Global × Bry-Air</p>
                 </div>
               </div>
 
