@@ -255,13 +255,13 @@ const HVAC = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Bry-Air Dehumidifiers & Air Purifiers | MENA Distributor | ROS Global"
+        title="Dehumidifiers & Air Purifiers | Bry-Air MENA Distributor | ROS Global"
         description="Exclusive MENA distributor of Bry-Air dehumidifiers and gas-phase filtration systems. Up to 48% energy savings. Tropicalized for Gulf conditions. Best prices in Middle East."
         keywords="Bry-Air distributor UAE, desiccant dehumidifier MENA, EcoDry, BrySmart, gas phase filtration Dubai, industrial dehumidifier Middle East, data center air purifier"
         path="/hvac"
       />
       <SocialMediaSidebar />
-      
+
       {/* Hero Section */}
       <section
         className="py-16 lg:py-24 relative bg-cover bg-center bg-no-repeat"
@@ -277,7 +277,7 @@ const HVAC = () => {
               Mastering the Middle East Climate
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-white/90 leading-relaxed">
-              We provide the UAE and wider Middle East market with Bry-Air's world-leading dehumidifiers 
+              We provide the UAE and wider Middle East market with Bry-Air's world-leading dehumidifiers
               and gas-phase filtration systems at the region's most competitive costs.
             </p>
             <Button
@@ -299,7 +299,7 @@ const HVAC = () => {
               The Middle East Climate Challenge
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              In the MENA region, temperature is only half the battle. High humidity and airborne 
+              In the MENA region, temperature is only half the battle. High humidity and airborne
               contaminants pose constant threats to industrial equipment, product shelf-life, and indoor air quality.
             </p>
           </div>
@@ -328,10 +328,10 @@ const HVAC = () => {
                 <h2 className="text-3xl md:text-4xl font-bold text-corporate-blue mb-2">Global Partnership</h2>
                 <h3 className="text-xl text-muted-foreground">ROS Global <span className="text-corporate-blue font-bold">×</span> Bry-Air</h3>
               </div>
-              <img 
-                src={bryAirLogo} 
-                alt="Bry-Air Logo" 
-                className="h-12 md:h-16 object-contain" 
+              <img
+                src={bryAirLogo}
+                alt="Bry-Air Logo"
+                className="h-12 md:h-16 object-contain"
                 onError={(e) => {
                   e.currentTarget.src = "https://www.bryair.com/wp-content/themes/developer starter theme/assets/images/Bry-air-logo.png";
                 }}
@@ -343,9 +343,9 @@ const HVAC = () => {
                 <div>
                   <h3 className="text-2xl font-bold mb-6">World Leader in Dehumidification</h3>
                   <p className="text-white/90 leading-relaxed mb-6">
-                    Bry-Air is the world's foremost manufacturer of industrial desiccant dehumidifiers and 
-                    gas-phase filtration systems. Through our exclusive partnership, ROS Global ensures 
-                    industries across the MENA region have access to their cutting-edge technology at 
+                    Bry-Air is the world's foremost manufacturer of industrial desiccant dehumidifiers and
+                    gas-phase filtration systems. Through our exclusive partnership, ROS Global ensures
+                    industries across the MENA region have access to their cutting-edge technology at
                     unbeatable prices.
                   </p>
                   <ul className="space-y-4">
@@ -403,7 +403,7 @@ const HVAC = () => {
               Our Core HVAC Solutions
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Premium Bry-Air technology engineered for the Gulf's extreme conditions—available 
+              Premium Bry-Air technology engineered for the Gulf's extreme conditions—available
               at the most competitive prices in the Middle East.
             </p>
           </div>
@@ -556,7 +556,7 @@ const HVAC = () => {
                 Optimize Your Environment Today
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Stop fighting the humidity and start controlling it. Contact us for a technical audit 
+                Stop fighting the humidity and start controlling it. Contact us for a technical audit
                 of your HVAC requirements and a quote on our Bry-Air inventory.
               </p>
             </div>
@@ -567,14 +567,14 @@ const HVAC = () => {
                   Bry-Air Solutions for Your Industry
                 </h3>
                 <p className="text-muted-foreground mb-8">
-                  Our HVAC specialists will recommend the perfect climate control and air quality 
+                  Our HVAC specialists will recommend the perfect climate control and air quality
                   solutions for your specific requirements—at the best prices in the region.
                 </p>
                 <div className="space-y-4 text-muted-foreground">
-                  <img 
-                    src={bryAirLogo} 
-                    alt="Bry-Air" 
-                    className="h-10 opacity-80 mb-6" 
+                  <img
+                    src={bryAirLogo}
+                    alt="Bry-Air"
+                    className="h-10 opacity-80 mb-6"
                     onError={(e) => {
                       e.currentTarget.src = "https://www.bryair.com/wp-content/themes/developer starter theme/assets/images/Bry-air-logo.png";
                     }}
