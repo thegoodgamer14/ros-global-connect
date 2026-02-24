@@ -26,7 +26,7 @@ const Footer = () => {
               <li><Link to="/contact" className="hover:text-white transition-colors">Get In Touch</Link></li>
               <li><a href="mailto:inquiry@rosglobal.com"><span className="text-gray-400">Email: inquiry@rosglobal.com</span></a></li>
               <li><a href="tel:+97167041447"><span className="text-gray-400">Tel: +971 6 704 1447</span></a></li>
-              <li><a href="tel:+971547917288"><span className="text-gray-400">Mobile: +971 54 791 7288</span></a></li>
+              <li><a href="tel:+971527305496"><span className="text-gray-400">Mobile: +971 52 730 5496</span></a></li>
               <li><a href="tel:+971565477065"><span className="text-gray-400">Mobile: +971 56 547 7065</span></a></li>
 
             </ul>

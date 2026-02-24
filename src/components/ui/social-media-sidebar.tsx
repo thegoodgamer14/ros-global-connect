@@ -15,7 +15,7 @@ interface SocialMediaSidebarProps {
 const defaultSocialLinks: SocialLink[] = [
   {
     icon: Linkedin,
-    href: "https://linkedin.com/company/ros-global",
+    href: "https://linkedin.com/company/ros-global-solutions-fze/about/",
     label: "LinkedIn",
     color: "bg-[#0077b5] hover:bg-[#005885]"
   },

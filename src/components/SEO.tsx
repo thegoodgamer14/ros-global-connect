@@ -57,13 +57,13 @@ export const SEO = ({
             },
             {
                 '@type': 'ContactPoint',
-                telephone: '+971-54-791-7288',
+                telephone: '+971-52-730-5496',
                 contactType: 'sales',
                 email: 'sales@rosglobal.com',
             },
         ],
         sameAs: [
-            'https://www.linkedin.com/company/ros-global-solutions',
+            'https://www.linkedin.com/company/ros-global-solutions-fze/about/',
         ],
     };
 

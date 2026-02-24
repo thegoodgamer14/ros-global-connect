@@ -55,7 +55,7 @@ const Contact = () => {
                       <div>
                         <h3 className="font-semibold text-corporate-blue">Phone</h3>
                         <a href="tel:+971565477065" className=""><p className="text-muted-foreground">+971 56 547 7065</p></a>
-                        <a href="tel:+971547917288" className=""><p className="text-muted-foreground">+971 54 791 7288</p></a>
+                        <a href="tel:+971527305496" className=""><p className="text-muted-foreground">+971 52 730 5496</p></a>
                         <a href="tel:+97167041447" className=""><p className="text-muted-foreground">+971 6 704 1447</p></a>
                       </div>
                     </CardContent>
@@ -227,7 +227,7 @@ const Contact = () => {
                 Email Us Now
               </button>
             </a>
-            <a href="tel:+971547917288" className="inline-block">
+            <a href="tel:+971527305496" className="inline-block">
               <button className="px-8 py-3 border-2 border-white text-white font-semibold rounded-md hover:bg-white/10 transition-colors">
                 Call Today
               </button>
