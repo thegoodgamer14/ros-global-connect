@@ -86,7 +86,7 @@ const ContactForm = ({
         phone: formData.phone,
         query_type: formData.queryType,
         message: formData.message,
-        to_email: import.meta.env.TO_EMAIL,
+        to_email: import.meta.env.VITE_TO_EMAIL,
         date: formattedDate,
         time: formattedTime,
         date_time: formattedDateTime,
@@ -171,7 +171,7 @@ const ContactForm = ({
               )}
             </div>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="phone">Phone</Label>
@@ -210,10 +210,10 @@ const ContactForm = ({
             />
           </div>
 
-          <Button 
-            type="submit" 
-            variant="corporate" 
-            className="w-full" 
+          <Button
+            type="submit"
+            variant="corporate"
+            className="w-full"
             disabled={isSubmitting}
           >
             {isSubmitting ? "Sending..." : "Send Message"}
