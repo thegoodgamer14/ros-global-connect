@@ -4,6 +4,7 @@ import SocialMediaSidebar from "@/components/ui/social-media-sidebar";
 import SEO from "@/components/SEO";
 import { MapPin, Mail, Phone, Clock, Linkedin } from "lucide-react";
 
+
 const Contact = () => {
   return (
     <div className="min-h-screen">
