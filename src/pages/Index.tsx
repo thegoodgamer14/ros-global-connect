@@ -30,7 +30,7 @@ const Index = () => {
     },
     {
       title: "Data Center",
-      description: "Specialized air and chemical filtration systems for critical infrastructure",
+      description: "Specialized air and chemical filtration systems",
       icon: datacenterIcon,
       href: "/datacenter",
       features: ["Air Filtration", "Chemical Filtration", "Cooling Systems", "Environmental Control"]

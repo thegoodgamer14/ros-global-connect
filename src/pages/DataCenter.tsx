@@ -1,134 +1,65 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import ContactForm from "@/components/ui/contact-form";
 import SocialMediaSidebar from "@/components/ui/social-media-sidebar";
-import GenericModal, { GenericModalData } from "@/components/ui/generic-modal";
 import SEO from "@/components/SEO";
-import { Server, Shield, Snowflake, Zap, Filter, Wind } from "lucide-react";
+import { Link } from "react-router-dom";
+import {
+  Filter, Shield, Snowflake, Activity, ArrowRight,
+  Server, Zap, AlertTriangle, Thermometer, Droplets
+} from "lucide-react";
 import heroImage from "@/assets/hero-datacenter.jpg";
 
 const DataCenter = () => {
-  const [selectedSolution, setSelectedSolution] = useState<GenericModalData | null>(null);
-
-  const solutionDetails: { [key: string]: GenericModalData } = {
-    "Air Filtration Systems": {
-      title: "Air Filtration Systems",
-      overview: "Advanced HEPA and ULPA filtration systems designed specifically for data center environments to remove particles and contaminants.",
-      detailedDescription: "Our data center air filtration systems provide comprehensive protection against particulate contamination that can damage sensitive electronic equipment. These systems feature advanced HEPA and ULPA filters with high efficiency ratings, ensuring removal of particles down to 0.3 microns with 99.97% efficiency.",
-      workingPrinciple: "The filtration system works by drawing contaminated air through a series of progressively finer filters. Pre-filters capture larger particles, while HEPA/ULPA filters remove microscopic contaminants. The filtered air is then distributed throughout the data center maintaining positive pressure to prevent contamination infiltration.",
-      features: ["HEPA/ULPA Grade Efficiency", "Low Pressure Drop Design", "High Dust Holding Capacity", "Long Service Life", "Smart Monitoring", "Energy Efficient"],
-      specifications: ["Efficiency: 99.97% at 0.3 microns", "Initial Pressure Drop: 0.5-1.0\" WG", "Operating Temperature: -20°F to 200°F", "Frame: Galvanized Steel", "Media: Pleated Synthetic"],
-      applications: ["Data Centers", "Server Rooms", "Telecom Facilities", "Cloud Computing Centers", "Network Operations Centers"],
-      benefits: ["Protects sensitive equipment", "Reduces equipment failures", "Extends hardware lifespan", "Maintains optimal performance", "Meets industry standards", "Energy efficient operation"],
-      images: [
-        "https://www.camfil.com/dam/images/30911/90246/absolute_opakfil.png?width=470&height=470&bgcolor=white",
-        "https://www.camfil.com/dam/images/18135/1329037/Absolute-D-Dust-HEPA_wooden-frame_1500x1500.png?width=470&height=470&bgcolor=white"
-      ],
-      ctaText: "Get Air Filtration Assessment"
-    },
-    "Chemical Filtration": {
-      title: "Chemical Filtration",
-      overview: "Specialized chemical filtration to protect sensitive electronic equipment from corrosive gases and airborne molecular contamination.",
-      detailedDescription: "Chemical filtration systems are essential for data centers to remove gaseous contaminants that can cause corrosion and failure of electronic components. Our systems use activated carbon and specialized media to target specific contaminants common in data center environments.",
-      workingPrinciple: "Chemical filtration occurs through adsorption and chemical reaction processes. Activated carbon media provides a large surface area for contaminant adsorption, while impregnated carbons target specific gases like hydrogen sulfide, sulfur dioxide, and nitrogen oxides through chemical neutralization.",
-      features: ["Activated Carbon Media", "Multi-Stage Filtration", "Corrosion Protection", "Real-time Monitoring", "Automatic Regeneration", "Custom Solutions"],
-      specifications: ["Removal Efficiency: >95% for target gases", "Bed Depth: 2-4 inches", "Contact Time: 0.1-0.3 seconds", "Operating Temperature: 32-150°F", "Media Life: 12-24 months"],
-      applications: ["Data Centers", "Server Farms", "Telecom Switching Centers", "IT Equipment Rooms", "Control Rooms"],
-      benefits: ["Prevents equipment corrosion", "Eliminates odors", "Protects circuit boards", "Reduces maintenance costs", "Ensures reliable operation", "Meets ASHRAE standards"],
-      images: [
-        "https://fltr.com.au/wp-content/uploads/2025/02/Schematic-of-a-data-center-cooling-system-FLTR.jpg",
-        "https://www.airpurifiers-r-us.com/images/capture-recirculating-data-center2.jpg?crc=3882485462"
-      ],
-      ctaText: "Request Chemical Filtration Quote"
-    },
-    "Precision Cooling": {
-      title: "Precision Cooling",
-      overview: "High-efficiency cooling solutions that work in conjunction with filtration systems to maintain optimal temperature and humidity.",
-      detailedDescription: "Precision cooling systems for data centers provide accurate temperature and humidity control essential for optimal equipment performance. These systems integrate seamlessly with filtration technology to deliver clean, conditioned air throughout the facility.",
-      workingPrinciple: "Precision cooling systems use advanced sensors and controls to maintain tight temperature and humidity tolerances. Variable capacity compressors and intelligent controls respond quickly to load changes, while integrated filtration ensures clean air delivery to equipment.",
-      features: ["Variable Capacity Control", "Precise Temperature Control", "Humidity Management", "Energy Recovery", "Intelligent Controls", "Redundant Systems"],
-      specifications: ["Temperature Accuracy: ±1°F", "Humidity Control: ±5% RH", "Energy Efficiency: Up to 30% savings", "Cooling Capacity: 5-100 tons", "Operating Range: 65-80°F"],
-      applications: ["Data Centers", "Server Rooms", "Edge Computing", "Colocation Facilities", "Enterprise IT"],
-      benefits: ["Optimal equipment performance", "Energy cost savings", "Improved reliability", "Extended equipment life", "Reduced hotspots", "Meets ASHRAE guidelines"],
-      images: [
-        "https://www.deltapowersolutions.com/media/download/Liquid-to-Air-CDU-115kW-front_1.jpg.jpg",
-        "https://appliance-standards.org/sites/default/files/styles/content_890/public/computer_room_air_conditioners.jpg?itok=usG_Q6s4"
-      ],
-      ctaText: "Get Cooling System Quote"
-    },
-    "Environmental Control": {
-      title: "Environmental Control",
-      overview: "Comprehensive environmental management systems that integrate air filtration, chemical removal, and climate control.",
-      detailedDescription: "Complete environmental control systems provide integrated management of all aspects of data center air quality including temperature, humidity, particle filtration, and chemical contamination control. These systems ensure optimal conditions for sensitive electronic equipment.",
-      workingPrinciple: "Environmental control systems use integrated sensors and controls to monitor and manage all aspects of the data center environment. Real-time monitoring enables predictive maintenance and automatic adjustments to maintain optimal conditions while minimizing energy consumption.",
-      features: ["Integrated Control Systems", "Real-time Monitoring", "Predictive Maintenance", "Energy Optimization", "Remote Access", "Automated Alarms"],
-      specifications: ["Monitoring Points: Temperature, Humidity, Particles, Gases", "Control Accuracy: ±1°F, ±3% RH", "Response Time: <60 seconds", "Energy Savings: Up to 40%", "Uptime: 99.9%+"],
-      applications: ["Large Data Centers", "Mission Critical Facilities", "Cloud Service Providers", "Financial Data Centers", "Government Facilities"],
-      benefits: ["Comprehensive protection", "Automated operation", "Energy efficiency", "Predictive maintenance", "Maximum uptime", "Regulatory compliance"],
-      images: [
-        "https://www.raritan.com/assets/ram/blog/data-center-infrastructure-management-DCIM.jpg",
-        "https://www.akcp.com/wp-content/uploads/2025/03/server-room-environmental-monitoring-software-systems-1-e1620291899532.jpg"
-      ],
-      ctaText: "Request Environmental Assessment"
-    }
-  };
-
   const solutions = [
     {
       icon: Filter,
       title: "Air Filtration Systems",
-      description: "Advanced HEPA and ULPA filtration systems designed specifically for data center environments to remove particles and contaminants.",
-      features: ["HEPA Grade", "Low Pressure Drop", "High Capacity", "Long Service Life"]
+      description: "Multi-stage HEPA/ULPA filtration achieving 99.97% particle capture at 0.3µm. ISO 14644-1 Class 8 cleanroom standards and ASHRAE TC 9.9 compliance.",
+      features: ["HEPA/ULPA Filters", "Multi-Stage Design", "ISO 14644-1", "Low Pressure Drop"],
+      href: "/datacenter/air-filtration-systems"
     },
     {
       icon: Shield,
       title: "Chemical Filtration",
-      description: "Specialized chemical filtration to protect sensitive electronic equipment from corrosive gases and airborne molecular contamination.",
-      features: ["Corrosion Protection", "Gas Removal", "AMC Control", "Equipment Protection"]
+      description: "Activated carbon and chemically impregnated media systems removing H₂S, SO₂, NOₓ, and VOCs to achieve ISA G1 'Mild' corrosivity for OEM warranty compliance.",
+      features: ["ISA G1 Compliance", "Multi-Gas Removal", "> 95% Efficiency", "Corrosion Monitoring"],
+      href: "/datacenter/chemical-filtration"
     },
     {
       icon: Snowflake,
       title: "Precision Cooling",
-      description: "High-efficiency cooling solutions that work in conjunction with filtration systems to maintain optimal temperature and humidity.",
-      features: ["Energy Efficient", "Precise Control", "Redundant Systems", "Smart Monitoring"]
+      description: "CRAC/CRAH units, in-row cooling, hot/cold aisle containment, and liquid cooling solutions delivering ±1°F temperature accuracy with up to 30% energy savings.",
+      features: ["CRAC/CRAH", "Containment", "Liquid Cooling", "PUE Optimization"],
+      href: "/datacenter/precision-cooling"
     },
     {
-      icon: Wind,
+      icon: Activity,
       title: "Environmental Control",
-      description: "Comprehensive environmental management systems that integrate air filtration, chemical removal, and climate control.",
-      features: ["Integrated Systems", "Real-time Monitoring", "Automated Controls", "Predictive Maintenance"]
+      description: "Integrated monitoring and management of temperature, humidity, air quality, and power across your facility. DCIM/BMS integration with predictive analytics.",
+      features: ["DCIM Integration", "Predictive Maintenance", "AI Analytics", "99.9%+ Uptime"],
+      href: "/datacenter/environmental-control"
     }
   ];
 
   const challenges = [
-    {
-      icon: Server,
-      title: "Equipment Protection",
-      description: "Protect sensitive servers and networking equipment from dust, particles, and chemical contaminants that can cause failures and reduce lifespan."
-    },
-    {
-      icon: Zap,
-      title: "Energy Efficiency",
-      description: "Maintain optimal air quality while minimizing energy consumption and operational costs through efficient filtration and cooling systems."
-    },
-    {
-      icon: Shield,
-      title: "Uptime Assurance",
-      description: "Ensure maximum uptime through reliable environmental control systems that prevent equipment failures due to contamination."
-    }
+    { icon: AlertTriangle, value: "$9,000+", label: "Cost per minute of unplanned downtime" },
+    { icon: Thermometer, value: "20-50 kW", label: "Heat generated by a single high-density rack" },
+    { icon: Droplets, value: "70%", label: "Hardware failures linked to environmental contamination" },
+    { icon: Server, value: "3-5 years", label: "Equipment life extension with proper environmental control" }
   ];
 
   return (
     <div className="min-h-screen">
       <SEO
-        title="Data Center Air & Chemical Filtration | ROS Global Solutions"
-        description="Specialized air and chemical filtration systems for data centers. HEPA filtration, precision cooling, and environmental control solutions to protect critical infrastructure."
-        keywords="data center filtration, HEPA filter server room, chemical filtration data center, precision cooling, environmental control, AMC contamination control"
+        title="Data Center Environmental Solutions | Air Filtration, Cooling & Monitoring | ROS Global Solutions"
+        description="Complete data center environmental solutions — air filtration, chemical filtration, precision cooling, and DCIM environmental control. ISA G1, ASHRAE TC 9.9 compliant."
+        keywords="data center air filtration, precision cooling data center, chemical filtration server room, environmental monitoring data center, ISA G1, ASHRAE TC 9.9, DCIM"
         path="/datacenter"
       />
       <SocialMediaSidebar />
+
       {/* Hero Section */}
       <section
         className="py-16 lg:py-24 relative bg-cover bg-center bg-no-repeat"
@@ -141,66 +72,44 @@ const DataCenter = () => {
               Data Center Solutions
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              Air & Chemical Filtration for Data Centers
+              Protect Your Data Center Infrastructure
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-white/90">
-              Specialized filtration systems designed to protect critical data center
-              infrastructure from airborne contaminants and ensure optimal performance.
+            <p className="text-xl md:text-2xl mb-8 text-white/90 leading-relaxed">
+              Comprehensive environmental solutions for air quality, cooling, and monitoring —
+              engineered to maximise uptime and efficiency in the world's most demanding climates.
             </p>
             <Button
               variant="cta"
               size="lg"
               onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'end' })}
             >
-              Get Assessment
+              Request Assessment
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Solutions Overview */}
+      {/* The Challenge */}
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          <div className="max-w-4xl mx-auto text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-corporate-blue">
-              Data Center Filtration Solutions
+              The Data Center Environmental Challenge
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive air and chemical filtration systems specifically engineered
-              for the demanding requirements of modern data centers.
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Modern data centers face an invisible enemy: airborne contamination and inefficient cooling.
+              Even microscopic particles can cause short circuits, while uncontrolled humidity and corrosive gases silently destroy equipment.
             </p>
           </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {solutions.map((solution, index) => (
-              <Card
-                key={index}
-                className="h-full shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-corporate)] transition-all duration-300 cursor-pointer hover:scale-105"
-                onClick={() => setSelectedSolution(solutionDetails[solution.title])}
-              >
-                <CardHeader>
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-corporate-blue rounded-lg flex items-center justify-center mr-4">
-                      <solution.icon className="h-6 w-6 text-white" />
-                    </div>
-                    <div>
-                      <CardTitle className="text-corporate-blue text-lg">
-                        {solution.title}
-                      </CardTitle>
-                    </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {challenges.map((item, index) => (
+              <Card key={index} className="text-center shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-corporate)] transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="w-14 h-14 bg-corporate-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                    <item.icon className="h-7 w-7 text-white" />
                   </div>
-                  <CardDescription className="text-base leading-relaxed">
-                    {solution.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid grid-cols-2 gap-2 mb-4">
-                    {solution.features.map((feature, idx) => (
-                      <Badge key={idx} variant="secondary" className="text-xs">
-                        {feature}
-                      </Badge>
-                    ))}
-                  </div>
+                  <p className="text-2xl font-bold text-corporate-blue mb-1">{item.value}</p>
+                  <p className="text-sm text-muted-foreground">{item.label}</p>
                 </CardContent>
               </Card>
             ))}
@@ -208,133 +117,79 @@ const DataCenter = () => {
         </div>
       </section>
 
-      {/* Data Center Challenges */}
+      {/* Solutions — linking to product pages */}
       <section className="py-16 lg:py-24 bg-secondary/30">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-corporate-blue text-center">
-              Data Center Environmental Challenges
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-corporate-blue">
+              Our Data Center Solutions
             </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              An integrated approach to data center environmental management — from the air
+              entering your facility to the intelligence governing every system.
+            </p>
+          </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-              {challenges.map((challenge, index) => (
-                <Card key={index} className="text-center shadow-[var(--shadow-card)]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {solutions.map((solution, index) => (
+              <Link key={index} to={solution.href} className="block group">
+                <Card className="h-full shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-corporate)] transition-all duration-300 group-hover:scale-[1.02] border-2 border-transparent group-hover:border-corporate-blue/20">
                   <CardHeader>
-                    <div className="w-16 h-16 bg-corporate-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                      <challenge.icon className="h-8 w-8 text-white" />
+                    <div className="flex items-center mb-4">
+                      <div className="w-12 h-12 bg-corporate-blue rounded-lg flex items-center justify-center mr-4">
+                        <solution.icon className="h-6 w-6 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <CardTitle className="text-corporate-blue text-lg">
+                          {solution.title}
+                        </CardTitle>
+                      </div>
+                      <ArrowRight className="h-5 w-5 text-corporate-blue opacity-0 group-hover:opacity-100 transition-opacity" />
                     </div>
-                    <CardTitle className="text-corporate-blue">
-                      {challenge.title}
-                    </CardTitle>
+                    <CardDescription className="text-base leading-relaxed">
+                      {solution.description}
+                    </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground">
-                      {challenge.description}
-                    </p>
+                    <div className="grid grid-cols-2 gap-2 mb-4">
+                      {solution.features.map((feature, idx) => (
+                        <Badge key={idx} variant="secondary" className="text-xs">
+                          {feature}
+                        </Badge>
+                      ))}
+                    </div>
+                    <span className="text-sm font-medium text-corporate-blue group-hover:underline">
+                      Learn More →
+                    </span>
                   </CardContent>
                 </Card>
-              ))}
-            </div>
-
-            {/* Technical Specifications */}
-            <Card className="shadow-[var(--shadow-card)]">
-              <CardHeader>
-                <CardTitle className="text-corporate-blue text-center">Our Data Center Solution Approach</CardTitle>
-                <CardDescription className="text-center">
-                  Comprehensive filtration strategy tailored to data center requirements
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <h4 className="font-semibold text-corporate-blue mb-3">Air Filtration Focus</h4>
-                    <ul className="space-y-2 text-muted-foreground">
-                      <li className="flex items-start">
-                        <span className="w-2 h-2 bg-corporate-blue rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        <span>Particulate removal (dust, fibers, skin cells)</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="w-2 h-2 bg-corporate-blue rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        <span>High-efficiency HEPA and ULPA filtration</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="w-2 h-2 bg-corporate-blue rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        <span>Low pressure drop design for energy efficiency</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="w-2 h-2 bg-corporate-blue rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        <span>Extended filter life and reduced maintenance</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-corporate-blue mb-3">Chemical Filtration Focus</h4>
-                    <ul className="space-y-2 text-muted-foreground">
-                      <li className="flex items-start">
-                        <span className="w-2 h-2 bg-corporate-blue rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        <span>Removal of corrosive gases (H2S, SO2, NOx)</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="w-2 h-2 bg-corporate-blue rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        <span>Airborne Molecular Contamination (AMC) control</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="w-2 h-2 bg-corporate-blue rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        <span>Protection of sensitive electronic components</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="w-2 h-2 bg-corporate-blue rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        <span>Real-time monitoring and control systems</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
+      {/* Why Choose ROS Global */}
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-corporate-blue">
-              Benefits of Professional Data Center Filtration
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Invest in proper filtration to protect your critical infrastructure and ensure optimal performance.
-            </p>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-corporate-blue">Why Choose ROS Global for Data Centres?</h2>
+            <p className="text-muted-foreground mt-2">One partner for every environmental challenge</p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-corporate-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="h-8 w-8 text-white" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {[
+              { icon: Shield, title: "Integrated Approach", description: "One partner for filtration, cooling, monitoring, and control — eliminating gaps between single-discipline vendors." },
+              { icon: Zap, title: "Energy Optimization", description: "PUE-focused design approach to minimise operational costs while maintaining environmental compliance." },
+              { icon: Server, title: "99.9%+ Uptime Target", description: "Environmental control designed to eliminate unplanned downtime caused by temperature, humidity, or contamination events." }
+            ].map((item, index) => (
+              <div key={index} className="text-center p-6">
+                <div className="w-16 h-16 bg-corporate-blue rounded-full flex items-center justify-center mx-auto mb-6">
+                  <item.icon className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-corporate-blue">{item.title}</h3>
+                <p className="text-muted-foreground">{item.description}</p>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-corporate-blue">Equipment Protection</h3>
-              <p className="text-muted-foreground">
-                Extend equipment lifespan by protecting against corrosive contaminants and particulates.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-corporate-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                <Zap className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2 text-corporate-blue">Reduced Downtime</h3>
-              <p className="text-muted-foreground">
-                Minimize equipment failures and unplanned maintenance through proactive environmental control.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-corporate-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                <Snowflake className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2 text-corporate-blue">Energy Efficiency</h3>
-              <p className="text-muted-foreground">
-                Optimize cooling efficiency and reduce energy costs with proper air quality management.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -345,57 +200,48 @@ const DataCenter = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-corporate-blue">
-                Get Your Data Center Assessment
+                Take Control of Your Data Centre Environment
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Our data center specialists will evaluate your facility and recommend
-                the optimal filtration strategy for your specific requirements.
+                From environmental assessment to fully integrated control — our specialists will design
+                the optimal solution for your facility.
               </p>
             </div>
 
             <div id="contact-form" className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
               <div>
                 <h3 className="text-2xl font-semibold mb-6 text-corporate-blue">
-                  Complete Data Center Services
+                  Full-Spectrum Support
                 </h3>
                 <div className="space-y-4 text-muted-foreground">
                   <div className="flex items-start">
                     <div className="w-2 h-2 bg-corporate-blue rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <p><strong className="text-corporate-blue">Environmental Assessment:</strong> Comprehensive evaluation of your current air quality and contamination risks</p>
+                    <p><strong className="text-corporate-blue">Environmental Assessment:</strong> On-site air quality testing, thermal mapping, and contamination analysis</p>
                   </div>
                   <div className="flex items-start">
                     <div className="w-2 h-2 bg-corporate-blue rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <p><strong className="text-corporate-blue">Custom Design:</strong> Tailored filtration solutions based on your facility's specific needs</p>
+                    <p><strong className="text-corporate-blue">System Design:</strong> Custom filtration, cooling, and monitoring solutions for your facility</p>
                   </div>
                   <div className="flex items-start">
                     <div className="w-2 h-2 bg-corporate-blue rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <p><strong className="text-corporate-blue">Installation Support:</strong> Professional installation and commissioning services</p>
+                    <p><strong className="text-corporate-blue">Installation & Commissioning:</strong> Professional deployment with performance verification</p>
                   </div>
                   <div className="flex items-start">
                     <div className="w-2 h-2 bg-corporate-blue rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <p><strong className="text-corporate-blue">Ongoing Maintenance:</strong> Preventive maintenance programs to ensure optimal performance</p>
+                    <p><strong className="text-corporate-blue">Ongoing Support:</strong> Maintenance, filter replacement, and performance monitoring</p>
                   </div>
                 </div>
               </div>
 
               <ContactForm
-                title="Request Data Center Assessment"
-                description="Contact us for a comprehensive evaluation of your data center's filtration needs."
+                title="Request Data Centre Assessment"
+                description="Tell us about your data centre requirements and we'll design the right solution."
                 defaultQueryType="datacenter"
               />
             </div>
           </div>
         </div>
       </section>
-
-      {/* Modal */}
-      {selectedSolution && (
-        <GenericModal
-          isOpen={!!selectedSolution}
-          onClose={() => setSelectedSolution(null)}
-          data={selectedSolution}
-        />
-      )}
     </div>
   );
 };

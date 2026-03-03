@@ -1,194 +1,19 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import ContactForm from "@/components/ui/contact-form";
-import ProductModal from "@/components/ui/product-modal";
 import SocialMediaSidebar from "@/components/ui/social-media-sidebar";
 import SEO from "@/components/SEO";
-import { Wind, Droplets, Filter, Thermometer, Zap, Wrench, CheckCircle, Factory, Building, UtensilsCrossed, Heart, Globe, Users, Beaker, DollarSign, ThermometerSun, TrendingUp, AlertTriangle, CloudRain, Waves } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Wind, Droplets, Filter, Thermometer, Zap, ArrowRight, DollarSign, ThermometerSun, TrendingUp, AlertTriangle, CloudRain, Waves, Factory, Building, UtensilsCrossed, Heart, Beaker } from "lucide-react";
 import heroImage from "@/assets/hero-hvac.jpg";
+import flbSeriesImage from "@/assets/hvac/flb-series.webp";
+import brySmartImage from "@/assets/hvac/brysmart.webp";
+import dcAirPurifier from "@/assets/hvac/data-center-air-purifier.webp";
 
 const HVAC = () => {
-  const [selectedProduct, setSelectedProduct] = useState<any>(null);
-
-  // Bry-Air Assets
   const bryAirLogo = "https://www.bryair.com/wp-content/uploads/2023/02/logo-group-img2.webp";
-  const productImages = {
-    dehumidifier: [
-      "https://i0.wp.com/www.bryair.com/wp-content/uploads/2023/10/FLB-1-1.png?fit=646%2C306&ssl=1",
-      "https://i0.wp.com/www.bryair.com/wp-content/uploads/2023/10/BBS-1.png?fit=646%2C306&ssl=1",
-      "https://i0.wp.com/www.bryair.com/wp-content/uploads/2024/01/P95x.webp?fit=646%2C306&ssl=1"
-    ],
-    airPurifier: [
-      "https://i0.wp.com/www.bryair.com/wp-content/uploads/2023/10/data-center-air-purifier.png?fit=646%2C306&ssl=1",
-      "https://i0.wp.com/www.bryair.com/wp-content/uploads/2024/01/BryShield-Standing.png?fit=1346%2C638&ssl=1",
-      "https://i0.wp.com/www.bryair.com/wp-content/uploads/2023/10/Thin-bed.png?fit=646%2C306&ssl=1"
-    ]
-  };
 
-  const productDetails = {
-    dehumidifier: {
-      title: "Bry-Air Desiccant Dehumidifiers",
-      overview: "Patented EcoDry and BrySmart® series using desiccant rotors for precision humidity control even at low temperatures.",
-      detailedDescription: "Traditional refrigerant ACs often struggle in the Gulf's extreme humidity. Bry-Air's patented EcoDry and BrySmart® series use desiccant rotors to pull moisture directly from the air, ensuring precision humidity control even at low temperatures. These Industry 4.0-ready systems optimize performance in real-time with up to 48% more energy efficiency than standard systems.",
-      workingPrinciple: "Desiccant dehumidification works by passing humid air through a rotating wheel impregnated with silica gel or other desiccant materials. The desiccant adsorbs moisture from the air stream, and a separate heated reactivation sector regenerates the desiccant for continuous operation. This process is effective even at low temperatures where refrigerant-based systems fail.",
-      features: [
-        "EcoDry Technology",
-        "BrySmart® Industry 4.0 Ready",
-        "Desiccant Rotor Technology",
-        "48% Energy Savings",
-        "Low Temperature Operation",
-        "Real-time Optimization",
-        "Tropicalized for 50°C+",
-        "Precision Humidity Control"
-      ],
-      specifications: [
-        "Energy Savings: Up to 48%",
-        "Ambient Temp: Up to 55°C",
-        "Dew Point: As low as -60°C",
-        "Control: Industry 4.0 IoT",
-        "Rotor Type: Silica Gel/Molecular Sieve",
-        "Air Flow: Custom CFM ranges",
-        "Power: 380-415V/3Ph/50Hz",
-        "Warranty: 2 years parts & labor"
-      ],
-      applications: ["Data Centers", "Pharmaceutical Cleanrooms", "Commercial Swimming Pools", "Food Processing", "Cold Storage", "Museums & Archives", "Lithium Battery Manufacturing", "Offshore Control Rooms"],
-      benefits: [
-        "Up to 48% more energy-efficient than standard systems",
-        "Precision control even at extreme temperatures",
-        "Industry 4.0 real-time monitoring and optimization",
-        "Designed for Gulf's high humidity and heat",
-        "Prevents corrosion and equipment damage",
-        "Reduces maintenance and downtime costs",
-        "Meets stringent cleanroom standards",
-        "Rapid ROI through energy savings"
-      ],
-      images: productImages.dehumidifier
-    },
-    airPurifier: {
-      title: "Bry-Air Gas-Phase Air Filtration",
-      overview: "Advanced honeycomb chemical filters protecting sensitive electronics from corrosive gases like H₂S and SO₂.",
-      detailedDescription: "In industrial zones and urban centers, dust and corrosive gases (like H₂S or SO₂) can destroy sensitive electronics. Bry-Air air purifiers utilize advanced honeycomb chemical filters to protect server rooms and data centers, remove odors and harmful VOCs, and ensure 'Clean Room' standards for medical and food-grade facilities.",
-      workingPrinciple: "Gas-phase filtration uses activated carbon and chemically impregnated media arranged in a honeycomb structure for maximum surface area. Air passes through the media where gaseous contaminants are adsorbed or chemically neutralized. This multi-stage approach removes a wide spectrum of pollutants including H₂S, SO₂, NOx, ammonia, and VOCs.",
-      features: [
-        "Honeycomb Chemical Filters",
-        "H₂S & SO₂ Removal",
-        "VOC Elimination",
-        "Data Center Protection",
-        "Clean Room Standards",
-        "Odor Control",
-        "Multi-Stage Filtration",
-        "ISA G1 Corrosion Standards"
-      ],
-      specifications: [
-        "Efficiency: >95% for target gases",
-        "Media: Activated Carbon/Impregnated",
-        "Corrosion Standard: ISA G1",
-        "Particle Filtration: HEPA available",
-        "Pressure Drop: Optimized design",
-        "Media Life: 12-24 months typical",
-        "Monitoring: Real-time sensors",
-        "Configuration: Modular/Custom"
-      ],
-      applications: ["Server Rooms", "Data Centers", "Control Rooms", "Commercial Buildings", "Hospitals & Labs", "Food Processing", "Electronics Manufacturing", "Petrochemical Facilities"],
-      benefits: [
-        "Protects sensitive electronics from corrosion",
-        "Extends equipment lifespan significantly",
-        "Removes harmful VOCs and odors",
-        "Meets ISA G1 corrosion standards",
-        "Ensures clean room air quality",
-        "Reduces maintenance costs",
-        "Modular design for flexibility",
-        "Real-time air quality monitoring"
-      ],
-      images: productImages.airPurifier
-    },
-    celdecPad: {
-      title: "Celdec Evaporative Cooling Pads",
-      overview: "High-performance evaporative cooling pads that provide efficient temperature reduction and air purification.",
-      detailedDescription: "Celdec pads are manufactured using advanced cellulose technology with specially treated fibers that maximize water retention and air contact. These pads provide superior cooling efficiency while filtering airborne particles, making them ideal for both cooling and air purification applications in the demanding MENA climate.",
-      workingPrinciple: "Air passes through the saturated Celdec pad where evaporative cooling occurs. As water evaporates from the pad surface, it absorbs heat from the air stream, resulting in significant temperature reduction. The pad's unique fiber structure creates turbulent airflow that maximizes the evaporation process while trapping dust and particles.",
-      features: [
-        "High Efficiency Cooling",
-        "Durable Cellulose Material",
-        "Easy Installation",
-        "Cost Effective Operation",
-        "Self-Cleaning Action",
-        "Antimicrobial Treatment",
-        "Rigid Frame Construction",
-        "Multiple Thickness Options"
-      ],
-      specifications: [
-        "Material: Specially treated cellulose",
-        "Thickness: 4\", 6\", 8\", 12\"",
-        "Height: 12\" to 72\"",
-        "Length: 12\" to 48\"",
-        "Water absorption: 95%",
-        "Air velocity: 250-500 FPM",
-        "Temperature drop: 10-20°F",
-        "Efficiency: 80-90%"
-      ],
-      applications: ["Cooling Towers", "Air Handlers", "Industrial Cooling", "Greenhouse Climate", "Poultry Houses", "Textile Mills", "Data Centers", "Manufacturing Plants"],
-      benefits: [
-        "Reduces operating temperatures significantly",
-        "Improves air quality through filtration",
-        "Low maintenance requirements",
-        "Environmentally friendly cooling solution",
-        "Cost-effective compared to mechanical cooling",
-        "Reduces dust and particulates",
-        "Self-cleaning action reduces clogging",
-        "Long service life with proper maintenance"
-      ],
-      images: [
-        "https://www.climatecontrolairtreatment.com/emea/wp-content/uploads/sites/climatecontrol/2025/08/CELdek-RR-greenhouse-608.jpg",
-        "https://cdn-ilblcbn.nitrocdn.com/XMgYWWKIvpBdgcpsxvqWjXsXkdbyzuHe/assets/images/optimized/rev-6bcdd7b/chinaexhaustfan.com/wp-content/uploads/2024/10/%E6%B9%BF%E5%B8%98-1-1.png"
-      ]
-    },
-    gasFilter: {
-      title: "Industrial Gas Filters",
-      overview: "Specialized gas filtration systems designed to remove harmful gases and ensure safe air quality.",
-      detailedDescription: "Our gas filtration systems utilize advanced activated carbon and specialized chemical media to remove a wide range of gaseous contaminants including VOCs, ammonia, hydrogen sulfide, and other harmful compounds. These systems are engineered for industrial applications where air quality is critical for safety and compliance.",
-      workingPrinciple: "Gas filtration occurs through adsorption, where gas molecules are attracted to and held by the filter media surface. Activated carbon provides a large surface area for adsorption, while specialized impregnated carbons target specific gases. Chemical filters use reactive media that neutralize harmful gases through chemical reactions.",
-      features: [
-        "Chemical Removal Technology",
-        "Odor Control Capability",
-        "Industrial Grade Construction",
-        "Custom Solutions Available",
-        "High Adsorption Capacity",
-        "Long Service Life",
-        "Low Pressure Drop",
-        "Regenerable Media Options"
-      ],
-      specifications: [
-        "Removal Efficiency: >95% for target gases",
-        "Carbon Type: Activated/Impregnated",
-        "Bed Depth: 2\" to 12\"",
-        "Contact Time: 0.1-0.5 seconds",
-        "Operating Temperature: 32-150°F",
-        "Relative Humidity: 30-85%",
-        "Pressure Drop: 0.5-2.0\" WG",
-        "Media Life: 6-24 months"
-      ],
-      applications: ["Chemical Plants", "Laboratories", "Wastewater Treatment", "Industrial Facilities", "Printing Operations", "Paint Booths", "Refineries", "Semiconductor Fabs"],
-      benefits: [
-        "Removes harmful gases and vapors",
-        "Eliminates odors effectively",
-        "Protects worker health and safety",
-        "Ensures environmental compliance",
-        "Prevents corrosion of equipment",
-        "Improves workplace conditions",
-        "Customizable for specific applications",
-        "Cost-effective gas removal solution"
-      ],
-      images: [
-        "https://energas.co.za/wp-content/uploads/2022/07/Gas-Filtration.jpg",
-        "https://www.filsonfilters.com/wp-content/uploads/2020/07/Figure-5-Components-of-gas-filter.jpg"
-      ]
-    }
-  };
-
-  // Bry-Air Featured Products (highlighted)
   const bryAirProducts = [
     {
       icon: Droplets,
@@ -196,39 +21,32 @@ const HVAC = () => {
       description: "Bry-Air's patented EcoDry and BrySmart® series with desiccant rotors for precision humidity control. Up to 48% more energy-efficient than standard systems.",
       features: ["EcoDry Technology", "BrySmart® IoT Ready", "48% Energy Savings", "Low Temp Operation"],
       applications: ["Data Centers", "Pharmaceuticals", "Cold Storage", "Swimming Pools"],
-      productKey: "dehumidifier",
-      isBryAir: true
+      href: "/hvac/desiccant-dehumidifiers"
     },
     {
       icon: Wind,
       title: "Gas-Phase Air Filtration",
-      description: "Advanced honeycomb chemical filters protecting sensitive electronics from corrosive gases like H₂S and SO₂. Meets ISA G1 corrosion standards.",
-      features: ["Honeycomb Filters", "VOC Removal", "ISA G1 Standard", "Data Center Grade"],
+      description: "Advanced DRISORB™ honeycomb chemical filters protecting sensitive electronics from corrosive gases like H₂S and SO₂. Meets ISA G1 corrosion standards.",
+      features: ["DRISORB™ Filters", "VOC Removal", "ISA G1 Standard", "Data Center Grade"],
       applications: ["Server Rooms", "Control Rooms", "Hospitals", "Clean Rooms"],
-      productKey: "airPurifier",
-      isBryAir: true
+      href: "/hvac/gas-phase-air-filtration"
     }
   ];
 
-  // Complementary Products (not Bry-Air)
   const complementaryProducts = [
     {
       icon: Filter,
       title: "Celdec Cooling Pads",
-      description: "High-performance evaporative cooling pads for efficient temperature reduction and air purification.",
-      features: ["High Efficiency", "Durable Cellulose", "Easy Installation", "Cost Effective"],
-      applications: ["Cooling Towers", "Air Handlers", "Greenhouses", "Industrial Cooling"],
-      productKey: "celdecPad",
-      isBryAir: false
+      description: "High-performance evaporative cooling pads with 80-90% efficiency. Cross-fluted cellulose design delivers superior cooling with minimal energy.",
+      features: ["80-90% Efficiency", "Cross-Fluted Design", "Low Energy", "Self-Cleaning"],
+      href: "/hvac/celdec-cooling-pads"
     },
     {
       icon: Thermometer,
       title: "Industrial Gas Filters",
-      description: "Specialized gas filtration systems for removing harmful gases and ensuring safe air quality.",
-      features: ["Chemical Removal", "Odor Control", "Industrial Grade", "Custom Solutions"],
-      applications: ["Chemical Plants", "Laboratories", "Wastewater", "Refineries"],
-      productKey: "gasFilter",
-      isBryAir: false
+      description: "Activated carbon and chemically impregnated media for VOC, H₂S, ammonia, and odor removal across industrial applications.",
+      features: ["Activated Carbon", "90-99% Removal", "Custom Media", "Multiple Configs"],
+      href: "/hvac/industrial-gas-filters"
     }
   ];
 
@@ -370,17 +188,25 @@ const HVAC = () => {
                   </ul>
                 </div>
 
-                {/* Product Showcase */}
+                {/* Product images */}
                 <div className="grid grid-cols-2 gap-4">
-                  {productImages.dehumidifier.slice(0, 2).map((img, idx) => (
-                    <div key={idx} className="bg-white rounded-xl p-4 flex flex-col items-center justify-center shadow-lg">
-                      <img src={img} alt={`Bry-Air Product ${idx + 1}`} className="w-full h-auto max-h-32 object-contain" />
-                      <span className="text-corporate-blue text-xs font-bold mt-2">{idx === 0 ? 'FLB Series' : 'BrySmart®'}</span>
+                  <div className="bg-white rounded-xl p-4 flex flex-col items-center justify-center shadow-lg aspect-square">
+                    <div className="w-full flex-1 rounded-lg flex items-center justify-center mb-2 overflow-hidden">
+                      <img src={flbSeriesImage} alt="FLB Series Dehumidifier" className="w-full h-full object-contain" />
                     </div>
-                  ))}
+                    <span className="text-corporate-blue text-xs font-bold mt-2">FLB Series</span>
+                  </div>
+                  <div className="bg-white rounded-xl p-4 flex flex-col items-center justify-center shadow-lg aspect-square">
+                    <div className="w-full flex-1 rounded-lg flex items-center justify-center mb-2 overflow-hidden">
+                      <img src={brySmartImage} alt="BrySmart® IoT Dehumidifier" className="w-full h-full object-contain" />
+                    </div>
+                    <span className="text-corporate-blue text-xs font-bold mt-2">BrySmart®</span>
+                  </div>
                   <div className="col-span-2 bg-white rounded-xl p-4 flex items-center justify-center shadow-lg">
                     <div className="flex items-center space-x-4">
-                      <img src={productImages.airPurifier[0]} alt="Data Center Air Purifier" className="h-24 object-contain" />
+                      <div className="w-24 h-20 rounded-lg flex items-center justify-center overflow-hidden">
+                        <img src={dcAirPurifier} alt="Data Center Air Purifier" className="w-full h-full object-contain" />
+                      </div>
                       <div className="text-left">
                         <span className="block text-corporate-blue text-sm font-bold">Data Center Protection</span>
                         <span className="text-xs text-muted-foreground">Gas-Phase Filtration System</span>
@@ -394,7 +220,7 @@ const HVAC = () => {
         </div>
       </section>
 
-      {/* Bry-Air Featured Products */}
+      {/* Bry-Air Featured Products — now linking to pages */}
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -410,52 +236,54 @@ const HVAC = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
             {bryAirProducts.map((product, index) => (
-              <Card
-                key={index}
-                className="h-full shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-corporate)] transition-all duration-300 cursor-pointer hover:scale-105 border-2 border-corporate-blue/20"
-                onClick={() => setSelectedProduct(productDetails[product.productKey as keyof typeof productDetails])}
-              >
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center">
-                      <div className="w-12 h-12 bg-corporate-blue rounded-lg flex items-center justify-center mr-4">
-                        <product.icon className="h-6 w-6 text-white" />
-                      </div>
-                      <div>
+              <Link key={index} to={product.href} className="block group">
+                <Card className="h-full shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-corporate)] transition-all duration-300 group-hover:scale-[1.02] border-2 border-corporate-blue/20 group-hover:border-corporate-blue/40">
+                  <CardHeader>
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center">
+                        <div className="w-12 h-12 bg-corporate-blue rounded-lg flex items-center justify-center mr-4">
+                          <product.icon className="h-6 w-6 text-white" />
+                        </div>
                         <CardTitle className="text-corporate-blue text-xl">
                           {product.title}
                         </CardTitle>
                       </div>
+                      <div className="flex items-center gap-2">
+                        <Badge className="bg-corporate-blue text-white">Bry-Air</Badge>
+                        <ArrowRight className="h-5 w-5 text-corporate-blue opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </div>
                     </div>
-                    <Badge className="bg-corporate-blue text-white">Bry-Air</Badge>
-                  </div>
-                  <CardDescription className="text-base leading-relaxed text-foreground">
-                    {product.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold text-corporate-blue mb-2">Key Features:</h4>
-                    <div className="grid grid-cols-2 gap-2 mb-4">
-                      {product.features.map((feature, idx) => (
-                        <Badge key={idx} variant="secondary" className="text-xs">
-                          {feature}
-                        </Badge>
-                      ))}
+                    <CardDescription className="text-base leading-relaxed text-foreground">
+                      {product.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold text-corporate-blue mb-2">Key Features:</h4>
+                      <div className="grid grid-cols-2 gap-2 mb-4">
+                        {product.features.map((feature, idx) => (
+                          <Badge key={idx} variant="secondary" className="text-xs">
+                            {feature}
+                          </Badge>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-corporate-blue mb-2">Applications:</h4>
-                    <div className="grid grid-cols-2 gap-2">
-                      {product.applications.map((app, idx) => (
-                        <Badge key={idx} variant="outline" className="text-xs">
-                          {app}
-                        </Badge>
-                      ))}
+                    <div>
+                      <h4 className="font-semibold text-corporate-blue mb-2">Applications:</h4>
+                      <div className="grid grid-cols-2 gap-2">
+                        {product.applications.map((app, idx) => (
+                          <Badge key={idx} variant="outline" className="text-xs">
+                            {app}
+                          </Badge>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
+                    <span className="text-sm font-medium text-corporate-blue group-hover:underline inline-block mt-2">
+                      View Details →
+                    </span>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
 
@@ -467,34 +295,36 @@ const HVAC = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {complementaryProducts.map((product, index) => (
-                <Card
-                  key={index}
-                  className="h-full shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-corporate)] transition-all duration-300 cursor-pointer hover:scale-[1.02]"
-                  onClick={() => setSelectedProduct(productDetails[product.productKey as keyof typeof productDetails])}
-                >
-                  <CardHeader>
-                    <div className="flex items-center mb-4">
-                      <div className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center mr-4">
-                        <product.icon className="h-5 w-5 text-corporate-blue" />
+                <Link key={index} to={product.href} className="block group">
+                  <Card className="h-full shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-corporate)] transition-all duration-300 group-hover:scale-[1.02]">
+                    <CardHeader>
+                      <div className="flex items-center mb-4">
+                        <div className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center mr-4">
+                          <product.icon className="h-5 w-5 text-corporate-blue" />
+                        </div>
+                        <CardTitle className="text-corporate-blue text-lg flex-1">
+                          {product.title}
+                        </CardTitle>
+                        <ArrowRight className="h-5 w-5 text-corporate-blue opacity-0 group-hover:opacity-100 transition-opacity" />
                       </div>
-                      <CardTitle className="text-corporate-blue text-lg">
-                        {product.title}
-                      </CardTitle>
-                    </div>
-                    <CardDescription className="text-sm leading-relaxed">
-                      {product.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex flex-wrap gap-2">
-                      {product.features.map((feature, idx) => (
-                        <Badge key={idx} variant="outline" className="text-xs">
-                          {feature}
-                        </Badge>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+                      <CardDescription className="text-sm leading-relaxed">
+                        {product.description}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex flex-wrap gap-2 mb-2">
+                        {product.features.map((feature, idx) => (
+                          <Badge key={idx} variant="outline" className="text-xs">
+                            {feature}
+                          </Badge>
+                        ))}
+                      </div>
+                      <span className="text-sm font-medium text-corporate-blue group-hover:underline inline-block mt-2">
+                        Learn More →
+                      </span>
+                    </CardContent>
+                  </Card>
+                </Link>
               ))}
             </div>
           </div>
@@ -593,15 +423,6 @@ const HVAC = () => {
           </div>
         </div>
       </section>
-
-      {/* Product Modal */}
-      {selectedProduct && (
-        <ProductModal
-          isOpen={!!selectedProduct}
-          onClose={() => setSelectedProduct(null)}
-          product={selectedProduct}
-        />
-      )}
     </div>
   );
 };
