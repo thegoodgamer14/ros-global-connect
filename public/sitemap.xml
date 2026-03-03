@@ -1,60 +1,199 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage -->
   <url>
     <loc>https://rosglobal.com/</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-03-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://rosglobal.com/og-image.png</image:loc>
-      <image:title>ROS Global Solutions - Industrial Engineering Company</image:title>
+      <image:title>ROS Global Solutions — Total Engineering Solutions Provider</image:title>
     </image:image>
   </url>
+
+  <!-- Oil & Gas Category -->
   <url>
     <loc>https://rosglobal.com/oil-gas</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-03-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://rosglobal.com/og-image.png</image:loc>
-      <image:title>Oil and Gas Equipment Solutions</image:title>
+      <image:title>Oil and Gas Equipment Supply — Custom Engineered Solutions</image:title>
     </image:image>
   </url>
+
+  <!-- Oil & Gas Sub-Pages -->
   <url>
-    <loc>https://rosglobal.com/hvac</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://rosglobal.com/og-image.png</image:loc>
-      <image:title>HVAC Solutions and Air Filtration Systems</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://rosglobal.com/datacenter</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://rosglobal.com/og-image.png</image:loc>
-      <image:title>Data Center Air and Chemical Filtration</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://rosglobal.com/rhamnolipids</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://rosglobal.com/og-image.png</image:loc>
-      <image:title>Rhamnolipids Bio-Surfactants - AGAE Technologies Distributor</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://rosglobal.com/contact</loc>
-    <lastmod>2026-01-06</lastmod>
+    <loc>https://rosglobal.com/oil-gas/field-surface-facility-electrical</loc>
+    <lastmod>2026-03-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rosglobal.com/og-image.png</image:loc>
+      <image:title>Field Surface Facility Electrical Systems — Power Distribution &amp; Control Panels</image:title>
+    </image:image>
   </url>
+  <url>
+    <loc>https://rosglobal.com/oil-gas/field-surface-facility-mechanical</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rosglobal.com/og-image.png</image:loc>
+      <image:title>Field Surface Facility Mechanical Equipment — Pumps, Compressors &amp; Valves</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://rosglobal.com/oil-gas/field-surface-facility-instrumentation</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rosglobal.com/og-image.png</image:loc>
+      <image:title>Field Surface Facility Instrumentation — Smart Transmitters &amp; Safety Systems</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://rosglobal.com/oil-gas/drilling-rig-spaces-mud-pumps</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rosglobal.com/og-image.png</image:loc>
+      <image:title>Drilling Rig Equipment &amp; Mud Pumps — Consumables &amp; Spares</image:title>
+    </image:image>
+  </url>
+
+  <!-- HVAC Category -->
+  <url>
+    <loc>https://rosglobal.com/hvac</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://rosglobal.com/og-image.png</image:loc>
+      <image:title>HVAC Solutions — Bry-Air Dehumidifiers &amp; Air Filtration Systems</image:title>
+    </image:image>
+  </url>
+
+  <!-- HVAC Sub-Pages -->
+  <url>
+    <loc>https://rosglobal.com/hvac/desiccant-dehumidifiers</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rosglobal.com/og-image.png</image:loc>
+      <image:title>Bry-Air Desiccant Dehumidifiers — EcoDry &amp; BrySmart® Series</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://rosglobal.com/hvac/gas-phase-air-filtration</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rosglobal.com/og-image.png</image:loc>
+      <image:title>Bry-Air Gas-Phase Air Filtration — Corrosive Gas Removal</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://rosglobal.com/hvac/celdec-cooling-pads</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rosglobal.com/og-image.png</image:loc>
+      <image:title>Celdec Evaporative Cooling Pads — High-Efficiency Cellulose Media</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://rosglobal.com/hvac/industrial-gas-filters</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rosglobal.com/og-image.png</image:loc>
+      <image:title>Industrial Gas Filters — Activated Carbon &amp; Chemical Media Filtration</image:title>
+    </image:image>
+  </url>
+
+  <!-- Data Center Category -->
+  <url>
+    <loc>https://rosglobal.com/datacenter</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://rosglobal.com/og-image.png</image:loc>
+      <image:title>Data Center Solutions — Air Filtration, Cooling &amp; Environmental Control</image:title>
+    </image:image>
+  </url>
+
+  <!-- Data Center Sub-Pages -->
+  <url>
+    <loc>https://rosglobal.com/datacenter/air-filtration-systems</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rosglobal.com/og-image.png</image:loc>
+      <image:title>Data Center Air Filtration Systems — Multi-Stage Particulate Filtration</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://rosglobal.com/datacenter/chemical-filtration</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rosglobal.com/og-image.png</image:loc>
+      <image:title>Data Center Chemical Filtration — Corrosive Gas Removal</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://rosglobal.com/datacenter/precision-cooling</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rosglobal.com/og-image.png</image:loc>
+      <image:title>Data Center Precision Cooling — CRAC, CRAH &amp; Liquid Cooling</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://rosglobal.com/datacenter/environmental-control</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rosglobal.com/og-image.png</image:loc>
+      <image:title>Data Center Environmental Control — Monitoring &amp; Management</image:title>
+    </image:image>
+  </url>
+
+  <!-- Rhamnolipids -->
+  <url>
+    <loc>https://rosglobal.com/rhamnolipids</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://rosglobal.com/og-image.png</image:loc>
+      <image:title>Rhamnolipids Bio-Surfactants — AGAE Technologies MENA Distributor</image:title>
+    </image:image>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://rosglobal.com/contact</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

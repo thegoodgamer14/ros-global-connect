@@ -1,160 +1,108 @@
-# ROS Global Solutions - llms-full.txt
+# ROS Global Solutions — Complete Site Documentation
 
-> Comprehensive information for AI systems about ROS Global Solutions FZE
+> Total engineering solutions provider specializing in Oil & Gas equipment, HVAC systems (exclusive Bry-Air MENA distributor), Data Center filtration & cooling, and Rhamnolipids bio-surfactants. Based in Sharjah, UAE.
 
-## Company Overview
+## Company Profile
 
-**ROS Global Solutions FZE** is a total engineering solutions provider based in Sharjah, UAE. We specialize in delivering mission-critical products and consulting services to the world's most demanding industries.
+**ROS Global Solutions FZE** is an industrial engineering company based in Hamriya Free Zone, Sharjah, UAE. We provide specialized consulting and custom product supply solutions across multiple industrial sectors worldwide. Our core differentiator is the ability to supply custom-engineered products to meet any requirement — from standard inventory items to bespoke solutions.
 
-### Core Business Areas
+**Contact Information:**
+- General: inquiry@rosglobal.com | +971 6 704 1447
+- Sales: sales@rosglobal.com | +971 52 730 5496
+- Address: 16G-01, Hamriya Free Zone, Sharjah, UAE 52319
 
-1. **Oil & Gas Equipment Supply** - Field surface facility equipment and drilling support
-2. **HVAC Systems** - Industrial climate control and air quality management
-3. **Data Center Solutions** - Air and chemical filtration for critical infrastructure
-4. **Rhamnolipids** - Bio-surfactant products through exclusive partnership with AGAE Technologies
-
-### Contact Information
-
-- **Company Name**: ROS Global Solutions FZE
-- **Email**: inquiry@rosglobal.com | sales@rosglobal.com
-- **Phone**: +971 6 704 1447
-- **Mobile**: +971 52 730 5496 | +971 56 547 7065
-- **Address**: 16G-01, Hamriya Free Zone, Sharjah, UAE, PO Box 52319
-- **Website**: https://rosglobal.com
+**Key Partnerships:**
+- **Bry-Air**: Exclusive MENA distributor for desiccant dehumidifiers and gas-phase air filtration
+- **AGAE Technologies**: Exclusive MENA distributor for rhamnolipids bio-surfactants
 
 ---
 
-## Oil & Gas Products
+## Oil & Gas Equipment
 
-### Field Surface Facility - Electrical
-Complete electrical systems for oil & gas field operations:
-- Power distribution systems (120V-4160V)
-- Control panels and safety equipment
-- Hazardous location rated (Class I, Div 1&2)
-- Certifications: UL, CSA, ATEX
+**Category Page:** https://rosglobal.com/oil-gas
 
-### Field Surface Facility - Mechanical
-Mechanical equipment for surface operations:
-- Pumps and compressors (10-5000 GPM)
-- Valves, pipes, and fittings
-- Processing equipment
-- API 610, 674 compliant
+Custom-sourced equipment for upstream and midstream oil & gas operations. All equipment specified to exact project requirements, sourced from tier-1 manufacturers worldwide.
 
-### Field Surface Facility - Instrumentation
-Precision monitoring and control:
-- Flow meters and pressure gauges
-- Temperature sensors
-- Smart transmitters (HART, Foundation Fieldbus)
-- SIL 2/3 safety rated
+### Field Surface Facility — Electrical
+**Page:** https://rosglobal.com/oil-gas/field-surface-facility-electrical
+Power distribution systems, motor control centres, custom-built control panels (PLC/SCADA/HMI), emergency shutdown systems, fire & gas detection, hazardous area classified equipment, lighting, cable management, UPS, and heat tracing. Certified to NEC, IEC, ATEX, IECEx. For well sites, production facilities, compressor stations, tank farms, and pipeline infrastructure.
 
-### Drilling Equipment
-- Mud pump systems (3000-7500 PSI)
-- Rig floor equipment
-- Supporting onshore and offshore operations
+### Field Surface Facility — Mechanical
+**Page:** https://rosglobal.com/oil-gas/field-surface-facility-mechanical
+Centrifugal and positive-displacement pumps, compressors (reciprocating/centrifugal/screw), valves (gate/ball/check/plug), process piping, pressure vessels, separators, heat exchangers, storage tanks, and mechanical seals. All meeting API, ASME standards. For production facilities, gas processing, water injection, pipeline stations.
+
+### Field Surface Facility — Instrumentation
+**Page:** https://rosglobal.com/oil-gas/field-surface-facility-instrumentation
+Smart transmitters (pressure/temperature/level/multivariable), flow meters (Coriolis/ultrasonic/DP/turbine/vortex), gas analysers, control valves, safety instrumented system components, and wireless monitoring solutions. For flow measurement, pressure monitoring, temperature control, emergency shutdown.
+
+### Drilling — Rig Spaces & Mud Pumps
+**Page:** https://rosglobal.com/oil-gas/drilling-rig-spaces-mud-pumps
+Triplex/duplex/quintuplex mud pumps, mud pump consumables (bi-metallic liners, rubber pistons, carbide valves/seats), solids control equipment (shale shakers, degassers, centrifuges), rig floor equipment, mud system tanks. Compatible with NOV, Gardner Denver, BOMCO, and other major OEM platforms.
 
 ---
 
-## HVAC Products
+## HVAC Solutions
 
-### Dehumidifiers & Humidifiers
-Commercial-grade humidity control:
-- Capacity: 10-500 pints/day
-- Operating range: 41-95°F
-- Applications: Data centers, healthcare, food processing
+**Category Page:** https://rosglobal.com/hvac
+
+Industrial-grade climate control and air quality solutions. **Exclusive Bry-Air MENA distributor** — world-leading dehumidification and gas-phase filtration at the region's most competitive prices.
+
+### Bry-Air Desiccant Dehumidifiers
+**Page:** https://rosglobal.com/hvac/desiccant-dehumidifiers
+Bry-Air EcoDry and BrySmart® (IoT-enabled) desiccant dehumidifier series. Tropicalized for Gulf climate (50°C+). Precision humidity control for data centres, pharmaceuticals, cold storage, battery manufacturing, offshore control rooms, food processing. Custom high-volume engineered solutions available.
+
+### Bry-Air Gas-Phase Air Filtration
+**Page:** https://rosglobal.com/hvac/gas-phase-air-filtration
+Bry-Air DRISORB™ honeycomb chemical filters. Removes H₂S, SO₂, NOₓ, VOCs. Protects electronics from corrosion. Solutions for server rooms, control rooms, hospitals, museums. Custom media formulations for specific contaminant profiles. Assess–Design–Verify approach.
 
 ### Celdec Evaporative Cooling Pads
-High-efficiency evaporative cooling:
-- Temperature drop: 10-20°F
-- Efficiency: 80-90%
-- Applications: Cooling towers, greenhouses, industrial cooling
+**Page:** https://rosglobal.com/hvac/celdec-cooling-pads
+Genuine Celdec (CELdek) cellulose evaporative cooling pads. Cross-fluted self-cleaning design. For gas turbine air intake, industrial warehouses, greenhouses, poultry houses, manufacturing plants. Multiple thicknesses available plus custom sizing.
 
-### Air Filtration
-HEPA-grade filtration systems:
-- Efficiency: 99.97% at 0.3 microns
-- MERV Rating: 13-16
-- Applications: Clean rooms, hospitals, manufacturing
-
-### Gas Filtration
-Chemical and odor removal:
-- Removal efficiency: >95%
-- Activated carbon media
-- Applications: Chemical plants, laboratories, wastewater
+### Industrial Gas Filters
+**Page:** https://rosglobal.com/hvac/industrial-gas-filters
+Activated carbon and chemically impregnated media for VOC, H₂S, ammonia, chlorine, and odour removal. Panel filters, cartridge systems, deep-bed vessels. Custom media formulations. Media replacement programs with spent carbon disposal. For oil & gas, petrochemical, wastewater, environmental remediation.
 
 ---
 
 ## Data Center Solutions
 
-Specialized filtration for mission-critical facilities:
+**Category Page:** https://rosglobal.com/datacenter
 
-- **Air Filtration**: HEPA/ULPA systems for particulate removal
-- **Chemical Filtration**: Protection against corrosive gases (H2S, SO2, NOx)
-- **Precision Cooling**: Temperature accuracy ±1°F
-- **Environmental Control**: Integrated monitoring and management
+Specialized filtration, cooling, and environmental control for mission-critical data centre infrastructure.
 
-Benefits:
-- Equipment protection from contamination
-- Extended hardware lifespan
-- Energy efficiency optimization
-- ASHRAE compliance
+### Air Filtration Systems
+**Page:** https://rosglobal.com/datacenter/air-filtration-systems
+Multi-stage particulate filtration: pre-filters, secondary filters, high-efficiency/ultra-high-efficiency final filters, fan filter units. Standards compliant. Energy-optimised low pressure drop designs. Filter monitoring and lifecycle management. Custom filter housings and configurations.
+
+### Chemical Filtration
+**Page:** https://rosglobal.com/datacenter/chemical-filtration
+Activated carbon chemical filtration for corrosive gas removal. Protects electronics from airborne molecular contamination. Recirculating, fresh-air, and hybrid configurations. Corrosion monitoring (coupons + real-time). Custom media blends. Media replacement programs.
+
+### Precision Cooling
+**Page:** https://rosglobal.com/datacenter/precision-cooling
+CRAC and CRAH room-level cooling. In-row cooling, rear door heat exchangers. Hot/cold aisle containment. Direct-to-chip liquid cooling, immersion cooling. Free cooling/economiser systems. Energy-optimised for PUE improvement. Custom designs for any heat load.
+
+### Environmental Control
+**Page:** https://rosglobal.com/datacenter/environmental-control
+Integrated environmental monitoring and management. Temperature, humidity, particulate, gaseous contaminant, airflow, leak, and smoke monitoring. Real-time dashboards, predictive maintenance analytics. DCIM and BMS integration. One-partner solution combining filtration, cooling, and monitoring.
 
 ---
 
 ## Rhamnolipids Bio-Surfactants
 
-**Exclusive MENA Distributor of AGAE Technologies (USA)**
+**Page:** https://rosglobal.com/rhamnolipids
 
-### What are Rhamnolipids?
-Rhamnolipids are 100% biodegradable bio-surfactants produced through microbial fermentation. They outperform synthetic surfactants in:
-- High salinity environments
-- Extreme temperatures (>90°C)
-- Wide pH range (2-12)
-
-### Product Grades
-- R90: 90% purity (Industrial)
-- R95: 95% purity (Technical)
-- R99: 99% purity (Pharmaceutical/Cosmetic)
-
-### Applications
-
-**Energy & Oil**
-- Microbial Enhanced Oil Recovery (MEOR)
-- Tank cleaning and sludge removal
-- Optimized for Gulf region conditions
-
-**Personal Care**
-- Sulfate-free shampoos
-- Luxury skincare formulations
-- Clean beauty ingredients
-
-**Agriculture**
-- Soil wetting agents
-- Natural biopesticides
-- Water conservation in arid climates
-
-**Environmental**
-- Oil spill remediation
-- Heavy metal removal
-- Non-toxic, marine-safe
+Exclusive MENA distributor of AGAE Technologies rhamnolipids. 100% biodegradable bio-surfactants. Applications: Microbial Enhanced Oil Recovery (MEOR), personal care, agriculture, and environmental remediation. Purity grades from 85% to 99%.
 
 ---
 
-## Industries Served
+## Site Links
 
-- Oil & Gas (Upstream, Midstream)
-- Data Centers & IT Infrastructure
-- Healthcare & Hospitals
-- Manufacturing & Industrial
-- Food Processing
-- Agriculture
-- Pharmaceuticals & Cosmetics
-- Wastewater Treatment
-
----
-
-## Why Choose ROS Global
-
-- **Global Supply Chain**: Worldwide sourcing and distribution
-- **Industry Expertise**: Decades of experience
-- **Quality Assurance**: Products meet international standards
-- **Technical Support**: Installation and maintenance services
-- **Regional Expertise**: Deep understanding of MENA market
+- [Homepage](https://rosglobal.com/)
+- [Oil & Gas Equipment](https://rosglobal.com/oil-gas)
+- [HVAC Solutions](https://rosglobal.com/hvac)
+- [Data Center Solutions](https://rosglobal.com/datacenter)
+- [Rhamnolipids](https://rosglobal.com/rhamnolipids)
+- [Contact Us](https://rosglobal.com/contact)
+- [Sitemap](https://rosglobal.com/sitemap.xml)

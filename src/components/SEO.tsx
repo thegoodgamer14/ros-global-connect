@@ -150,6 +150,28 @@ export const SEO = ({
         schemas.push(localBusinessSchema);
     }
 
+    // Service schema for product/service pages
+    if (pageType === 'product' || pageType === 'service') {
+        const serviceSchema = {
+            '@context': 'https://schema.org',
+            '@type': 'Service',
+            '@id': `${fullUrl}/#service`,
+            name: title.split('|')[0]?.trim() || title,
+            description: description,
+            url: fullUrl,
+            provider: { '@id': `${SITE_URL}/#organization` },
+            areaServed: [
+                { '@type': 'Country', 'name': 'United Arab Emirates' },
+                { '@type': 'Country', 'name': 'Saudi Arabia' },
+                { '@type': 'Country', 'name': 'Oman' },
+                { '@type': 'Country', 'name': 'Qatar' },
+                { '@type': 'Country', 'name': 'Kuwait' },
+                { '@type': 'Country', 'name': 'Bahrain' },
+            ],
+        };
+        schemas.push(serviceSchema);
+    }
+
     if (breadcrumbSchema) {
         schemas.push(breadcrumbSchema);
     }

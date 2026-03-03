@@ -1,10 +1,10 @@
 # ROS Global Solutions
 
-> Total engineering solutions provider specializing in Oil & Gas equipment, HVAC systems, Data Center filtration, and Rhamnolipids bio-surfactants. Based in Sharjah, UAE.
+> Total engineering solutions provider specializing in Oil & Gas equipment, HVAC systems, Data Center filtration & cooling, and Rhamnolipids bio-surfactants. Based in Sharjah, UAE. Custom-engineered supply for any requirement.
 
 ## About
 
-ROS Global Solutions FZE is an industrial engineering company providing specialized consulting and product supply solutions across multiple sectors worldwide. We deliver mission-critical products and services to the oil & gas, HVAC, data center, and biotechnology industries.
+ROS Global Solutions FZE is an industrial engineering company providing specialized consulting and product supply solutions across multiple sectors worldwide. We deliver mission-critical products and services to the oil & gas, HVAC, data center, and biotechnology industries. We specialize in custom-engineered solutions and can supply as per any requirement.
 
 **Contact:**
 - Email: inquiry@rosglobal.com
@@ -14,25 +14,25 @@ ROS Global Solutions FZE is an industrial engineering company providing speciali
 ## Product Lines
 
 ### [Oil & Gas Equipment](https://rosglobal.com/oil-gas)
-Complete oil and gas equipment solutions including:
-- Field Surface Facility - Electrical systems
-- Field Surface Facility - Mechanical equipment  
-- Field Surface Facility - Instrumentation
-- Drilling - Rig Spaces & Mud Pumps
+Complete oil and gas equipment solutions — custom-sourced for your project requirements:
+- [Field Surface Facility — Electrical](https://rosglobal.com/oil-gas/field-surface-facility-electrical): Power distribution, control panels, hazardous area equipment, safety systems
+- [Field Surface Facility — Mechanical](https://rosglobal.com/oil-gas/field-surface-facility-mechanical): Pumps, compressors, valves, process vessels, piping systems
+- [Field Surface Facility — Instrumentation](https://rosglobal.com/oil-gas/field-surface-facility-instrumentation): Smart transmitters, flow meters, safety instruments, wireless monitoring
+- [Drilling — Rig Spaces & Mud Pumps](https://rosglobal.com/oil-gas/drilling-rig-spaces-mud-pumps): Mud pumps, consumables, rig floor equipment, solids control
 
 ### [HVAC Solutions](https://rosglobal.com/hvac)
-Industrial-grade climate control and filtration:
-- Commercial Dehumidifiers & Humidifiers
-- Celdec Evaporative Cooling Pads
-- HEPA Air Filtration Systems
-- Gas Filtration Systems
+Industrial-grade climate control and filtration — exclusive Bry-Air MENA distributor:
+- [Bry-Air Desiccant Dehumidifiers](https://rosglobal.com/hvac/desiccant-dehumidifiers): EcoDry & BrySmart® series, precision humidity control, tropicalized for Gulf climate
+- [Bry-Air Gas-Phase Air Filtration](https://rosglobal.com/hvac/gas-phase-air-filtration): DRISORB™ chemical filters, corrosive gas removal, data center protection
+- [Celdec Evaporative Cooling Pads](https://rosglobal.com/hvac/celdec-cooling-pads): High-efficiency cellulose media, energy-efficient cooling
+- [Industrial Gas Filters](https://rosglobal.com/hvac/industrial-gas-filters): Activated carbon, chemical media, VOC and odour removal
 
-### [Data Center Filtration](https://rosglobal.com/datacenter)
-Specialized filtration for critical infrastructure:
-- HEPA/ULPA Air Filtration
-- Chemical Filtration (AMC Control)
-- Precision Cooling Systems
-- Environmental Control
+### [Data Center Solutions](https://rosglobal.com/datacenter)
+Specialized filtration, cooling, and environmental control for critical infrastructure:
+- [Air Filtration Systems](https://rosglobal.com/datacenter/air-filtration-systems): Multi-stage particulate filtration, HEPA/ULPA, fan filter units
+- [Chemical Filtration](https://rosglobal.com/datacenter/chemical-filtration): Corrosive gas removal, corrosion monitoring, custom media blends
+- [Precision Cooling](https://rosglobal.com/datacenter/precision-cooling): CRAC/CRAH, in-row cooling, liquid cooling, containment systems
+- [Environmental Control](https://rosglobal.com/datacenter/environmental-control): Integrated monitoring, predictive maintenance, unified management
 
 ### [Rhamnolipids Bio-Surfactants](https://rosglobal.com/rhamnolipids)
 Exclusive MENA distributor of AGAE Technologies:
